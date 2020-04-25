@@ -1,0 +1,35 @@
+.background-login{
+    background-image: radial-gradient(rgb(0, 0, 0, 0.3),rgb(0, 0, 0, 0.75)),url('../img/health.jpg');
+    background-repeat: no-repeat;
+    width: 100%;  
+    min-height: 100vh;
+    padding-top: 15px;
+    background-size: cover;
+    position: relative;
+    z-index: 1;  
+
+}
+
+.header-login{
+    height: 150px;
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.header-login h2{
+    color: azure;
+}
+
+.national-bgd-login{
+    height: 80px;
+    width: 80px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
