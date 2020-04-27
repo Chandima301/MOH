@@ -1,0 +1,115 @@
+@keyframes fadeIn {
+    from {opacity:20%;}
+    to {opacity: 100%;}
+}
+
+.sidebar{
+    height:calc(100vh - 60px);
+    background-color: rgb(88, 88, 88);
+    padding: 0;
+}
+.sidebar hr{
+    height: 1px;
+    color: beige;
+    background-color: beige;
+}
+
+
+.profile-img{
+    height: 120px;
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    margin-top: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.596);
+}
+
+.name-tag{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    color: beige;
+}
+
+.sidebar-btn{
+    padding-top: 10px;
+}
+
+.sidebar-btn li{
+
+    line-height: 20px;
+    list-style: none;
+    text-align: center;
+}
+
+.sidebar-btn li a{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 13px;
+    display: block;
+    text-decoration: none;
+    color: rgb(220, 241, 245);
+}
+
+.sidebar-btn li:hover{
+    background-color: #646464;
+    transition: 0.5s;
+}
+
+.sidebar-btn li.active{
+    background-color: #424242;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
+}
+
+.tab{
+    display: none;
+    background-color: #fffbea;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.596);
+}
+
+.tab-heading{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    color: #583a3a;
+    display: block;
+
+}
+.tab hr{
+    margin-top: 0;
+    height: 2px;
+    color: rgb(133, 131, 110);
+    background-color: rgb(133, 131, 110);
+}
+
+
+.sub-tab{
+    display: none;
+    background-color: #f5f3ee;
+    padding: 10px;
+    border: 2px solid #b3aa85;
+    animation-name: fadeIn;
+    animation-duration: 0.2s;
+}
+.sub{
+    background-color: #f5f3ee;
+    padding: 10px;
+    border: 2px solid #b3aa85;
+}
+
+
+#tab-btn button{
+    background-color: #c0b99f;
+    border: none;
+}
+
+#tab-btn button.active{
+    background-color: #9b916a;
+    border: none;
+}
+

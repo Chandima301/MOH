@@ -1,0 +1,62 @@
+body
+{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(photo.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff !important;
+    width: 100%;
+}
+.services
+{
+    margin: 90px auto;
+    text-align: center;
+}
+h1
+{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+h1:after
+{
+    content: '';
+    background: white;
+    display: block;
+    width: 150px;
+    height: 3px;
+    margin: 10px auto;
+}
+.icon
+{
+    font-size: 40px;
+    margin: 20px auto;
+    padding: 10px;
+    height: 80px;
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 60%;
+}
+.col-md-3:hover
+{
+    box-shadow: 5px 7px 9px -3px rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: Black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:active {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
