@@ -1,7 +1,7 @@
 function toggleTab(tab, evt, tabBtnClass, tabClass){
     
     var tabs = document.getElementsByClassName(tabClass);
-    var tabBtns = document.getElementsByClassName(tabBtnClass)
+    var tabBtns = document.getElementsByClassName(tabBtnClass);
 
     for (var index = 0; index < tabs.length; index++) {
         tabs[index].style.display = "none";

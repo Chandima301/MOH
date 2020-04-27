@@ -1,3 +1,9 @@
+@keyframes fadeIn {
+    from {opacity:20%;}
+    to {opacity: 100%;}
+}
+
+
 .background-login{
     background-image: radial-gradient(rgb(0, 0, 0, 0.3),rgb(0, 0, 0, 0.75)),url('../img/health.jpg');
     background-repeat: no-repeat;
@@ -20,5 +26,72 @@
 
 .header-login h2{
     color: azure;
+}
+.national-bgd-login{
+    height: 80px;
+    width: 80px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.btn-base-login{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 150px;
+    width: 300px;
+    height: 100px;
+}
+
+.btn-login{
+    width: 120px;
+    padding: 20px;
+    border: 1px solid white; 
+    border-radius: 30px;
+    background-color: transparent;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-login:hover{
+    background-color: white;   
+    transition: 0.5s;
+}
+
+.btn-login a{
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    color: mintcream;
+    text-shadow: 0px 0px 3px black;
+}
+#client{
+    position: relative;
+    left: 0px;
+}
+
+#staff{
+    position: relative;
+    left: 60px;
+}
+
+.client-login{
+    height: 400px;
+    width: 300px;
+    display: none;
+    background-color: rgb(211, 228, 227);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
 }
 

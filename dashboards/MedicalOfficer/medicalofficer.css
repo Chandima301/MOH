@@ -3,17 +3,6 @@
     to {opacity: 100%;}
 }
 
-.national-bgd-login{
-    height: 80px;
-    width: 80px;
-    overflow: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .sidebar{
     height:calc(100vh - 60px);
     background-color: rgb(88, 88, 88);
