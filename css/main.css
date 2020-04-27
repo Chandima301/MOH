@@ -9,8 +9,8 @@
 }
 
 @keyframes fadeInR {
-    0% {width: 300px; height: 330px;}
-    100% {width: 400px; height: 330px;}
+    0% {width: 300px; height: 300px;}
+    100% {width: 400px; height: 490px;}
 }
 
 
