@@ -1,6 +1,6 @@
 
-function view(id){
-    var a = document.getElementsByClassName("btn-base-login");
+function view(id, hideClass){
+    var a = document.getElementsByClassName(hideClass);
     for (let index = 0; index < a.length; index++) {
         a[index].style.display = "none";
         

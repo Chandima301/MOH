@@ -1,13 +1,22 @@
 @keyframes fadeIn {
     0% {width: 100px; height: 50px;}
-    100% {width: 300px; height: 290px;}
+    100% {width: 300px; height: 250px;}
 }
 
 @keyframes fadeInC {
     0% {width: 100px; height: 50px;}
-    100% {width: 300px; height: 330px;}
+    100% {width: 300px; height: 300px;}
 }
 
+@keyframes fadeInR {
+    0% {width: 300px; height: 300px;}
+    100% {width: 400px; height: 490px;}
+}
+
+@keyframes fade{
+    0%{opacity: 0%;}
+    100%{opacity: 100%;}
+}
 
 
 .background-login{
@@ -92,7 +101,7 @@
 
 .client-login{
     padding: 15px;
-    height: 290px;
+    height: auto;
     width: 300px;
     display: none;
     background-color: rgb(211, 228, 227);
@@ -113,8 +122,16 @@
 }
 
 #client-tab{
-    height: 330px;
+    height: auto;
     animation-name: fadeInC;
+    background-color: rgb(165, 231, 227);
+}
+
+#registration-login{
+    height: auto;
+    margin-top: 20px;
+    width: 400px;
+    animation-name: fadeInR;
     background-color: rgb(165, 231, 227);
 }
 
@@ -141,5 +158,14 @@
     text-decoration: none;
     margin-left: auto;
     margin-right: auto;
+}
+
+.foam{
+    opacity: 0%;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    animation-name: fade;
+    animation-duration: 0.5s;
+
 }
 
