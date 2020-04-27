@@ -1,0 +1,141 @@
+
+.clearfix{
+    overflow:auto;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0px;
+    background-color: rgb(112, 121, 129);
+    
+    overflow:auto;
+}
+.slideBar{
+    height: 600px;
+    background-color: rgb(112, 121, 129);
+}
+slider {
+    display: block;
+    width:900px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    background-size: auto;
+    margin: auto;
+   }
+   
+   slider > * {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #1f1f1f;
+    animation: slide 12s infinite;
+    overflow: hidden;
+   }
+   
+   slide:nth-child(1){
+    left: 0%;
+    animation-delay: -1s;
+    background-image:url("../img/12.jpg");
+    background-size: cover;
+    background-position: center;
+   }
+   
+   slide:nth-child(2){
+    animation-delay: 2s;
+    background-image:url("../img/13.jpg");
+    background-size: cover;
+    background-position: center;
+   }
+   
+   slide:nth-child(3){
+    animation-delay: 5s;
+    background-image:url("../img/14.jpg");
+    background-size: cover;
+    background-position: center;
+   }
+   
+   slide:nth-child(4){
+    left: 0%;
+    animation-delay: 8s;
+    background-image:url("../img/16.jpg");
+    background-size: cover;
+    background-position: center;
+   }
+
+@keyframes slide {
+    0% { left: 100%; width: 100%; }
+    5% { left: 0%; }
+    25% { left: 0%; }
+    30% { left: -100%; width: 100%; }
+    30.0001% { left: -100%; width: 0%; }
+    100% { left: 100%; width: 0%; }
+}
+
+.slideBar a p{
+    color: black;
+    text-align-last: center;
+    text-align: center;
+}
+
+.center{
+    background-color: rgb(112, 121, 129);
+
+}
+.months ul{
+    list-style: none;
+    padding: 0%;
+    margin: 0%;
+}
+
+.month {
+    border: 1px solid lightblue;
+    border-radius: 15px;
+    background: lightgray;
+    padding: 10px;
+    margin: 10px;  
+}
+.list{
+    margin-top: 20px;
+    
+}
+.first {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("../img/31.jpeg");
+}
+.first h1{
+    font-size: 300%;
+    color: lightgray;
+    margin: 5%;
+    
+}
+
+.second{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("../img/21.jpg");
+}
+.second h1{
+    font-size: 300%;
+    color: lightgray;
+    margin: 5%;
+}
+
+.flt{
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("../img/32.jpg");
+    width: 100%;
+    height: 300px;
+
+}
+
+.flt footer{
+    padding-top: 250px;
+    text-align: center;
+    margin: auto;
+    font-size: 150%;
+    color: lightgray;
+}
+.flt footer img{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+}
