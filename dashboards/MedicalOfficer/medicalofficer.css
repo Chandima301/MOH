@@ -3,6 +3,23 @@
     to {opacity: 100%;}
 }
 
+.btn-logout{
+    position: absolute;
+    right: 50px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid gray;
+    color: gray;
+    padding: 10px;
+}
+
+.btn-logout:hover{
+    background-color: gray;
+    color: rgb(59, 59, 59);
+    transition: 0.3s;
+}
+
+
 .sidebar{
     height:calc(100vh - 60px);
     background-color: rgb(88, 88, 88);
