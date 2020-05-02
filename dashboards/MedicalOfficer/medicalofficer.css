@@ -112,6 +112,7 @@
     animation-name: fadeIn;
     animation-duration: 0.5s;
     box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.596);
+    padding-bottom: 20px;
 }
 
 .tab-heading{
