@@ -1,0 +1,105 @@
+.btn-logout{
+    position: absolute;
+    right: 50px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid gray;
+    color: gray;
+    padding: 10px;
+}
+
+.btn-logout:hover{
+    background-color: gray;
+    color: rgb(59, 59, 59);
+    transition: 0.3s;
+}
+
+.main{
+    background-color: rgb(78, 78, 78);
+}
+
+.main h1{
+    font-size: 30px;
+    color: honeydew;
+}
+
+.main p{
+    color: white;
+}
+
+.main hr{
+    height: 1px;
+    color: rgb(212, 212, 212);
+    background-color: rgb(224, 224, 224);
+}
+
+.page-content{
+    border: 2px solid rgb(109, 109, 109); 
+    background-color: rgb(255, 255, 255);
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom  : 10px;    
+}
+
+
+
+.tab-text{
+    border: 2px solid black;
+}
+
+.heading{
+    border: 1px solid black;
+    height: 35px;
+    padding-top: 10px;
+    background-color: rgb(177, 174, 174);
+    
+}
+
+.heading p{
+    color: black;
+    font-size: 18px;
+}
+
+.not-heading-multi{
+    border: 1px solid black;
+    padding-top: 10px;
+    background-color: white;
+}
+
+.not-heading-multi p{
+    color: black;
+    font-size: 12px;
+}
+
+.not-heading{
+    border: 1px solid black;
+    height: 30px;
+    padding-top: 10px;
+    background-color: white;
+
+}
+
+.not-heading p{
+    color: black;
+    font-size: 12px;
+}
+
+.tab-val{
+    display: none;
+    border: 2px solid black;
+}
+
+.sub-heading{
+    border: 1px solid black;
+    height: 30px;
+    padding-top: 10px;
+    background-color: white;
+
+}
+
+.sub-heading p{
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+}
