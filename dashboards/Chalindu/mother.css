@@ -1,0 +1,74 @@
+html,
+body
+{   
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(photo.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff !important;
+    width: 100%;
+}
+/* Links */
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+  a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+ a:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:active {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+}
+a.logout,a:hover{
+    background: red;
+    transition: 1.5s;
+}
+/* navigation bar */
+.navbar-brand{
+    font-weight: bold;
+}
+.nav-item{
+    padding: 10px;
+}
+h1:after
+{
+    content: '';
+    background: white;
+    display: block;
+    width: 150px;
+    height: 3px;
+    margin: 10px auto;
+}
+.icon
+{
+    font-size: 40px;
+    margin: 20px auto;
+    padding: 10px;
+    height: 80px;
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 60%;
+}
+
+
+a.navbar-brand{
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+nav ul li a{
+    color: black;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+}
