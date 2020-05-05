@@ -45,13 +45,13 @@
 
 
 .tab-text{
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .heading{
     border: 1px solid black;
     height: 35px;
-    padding-top: 10px;
+    padding-top: 5px;
     background-color: rgb(177, 174, 174);
     
 }
@@ -59,47 +59,125 @@
 .heading p{
     color: black;
     font-size: 18px;
+    
 }
 
 .not-heading-multi{
     border: 1px solid black;
-    padding-top: 10px;
+    padding-top: 7px;
     background-color: white;
 }
 
 .not-heading-multi p{
     color: black;
-    font-size: 12px;
+    font-size:  14px;
 }
 
 .not-heading{
     border: 1px solid black;
     height: 30px;
-    padding-top: 10px;
+    padding-top: 7px;
     background-color: white;
 
 }
 
 .not-heading p{
     color: black;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .tab-val{
-    display: none;
-    border: 2px solid black;
+    border: 1px solid black;
 }
+
+.tab-sum{
+    border: 1px solid black;
+}
+
 
 .sub-heading{
     border: 1px solid black;
     height: 30px;
-    padding-top: 10px;
+    padding-top: 7px;
     background-color: white;
 
 }
 
 .sub-heading p{
     color: black;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
+}
+
+
+.heading-val{
+    border: 1px solid black;
+    height: 35px;
+    padding-top: 5px;
+    background-color: rgb(177, 174, 174);
+    text-align: center;
+}
+
+.heading-val p{
+    color: black;
+    font-size: 18px;
+}
+
+.not-heading-val{
+    border: 1px solid black;
+    height: 30px;
+    padding-top: 7px;
+    background-color: white;
+    text-align: center;
+}
+
+.not-heading-val p{
+    color: black;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+    .heading{
+        padding: 5px;
+    }
+    .heading p{
+        font-size: 10px;
+    }
+    .not-heading{
+        padding: 5px;
+    }
+    .not-heading p{
+        font-size: 10px;
+    }
+    .sub-heading{
+        padding: 5px;
+    }
+    .sub-heading p{
+        font-size: 10px;
+    }
+    .not-heading-multi{
+        padding: 5px;
+    }
+    .not-heading-multi p{
+        font-size: 10px;
+    }
+
+    .heading-val{
+        padding: 1px;
+    }
+    .heading-val p{
+        font-size: 10px;
+    }
+
+    .not-heading-val{
+        padding: 1px;
+    }
+    .not-heading-val p{
+        font-size: 10px;
+    }
+    .tab-sum{
+        display: none;
+    }
+
+
 }
