@@ -21,7 +21,7 @@ class View{
     }
 
     public function content($type){
-          if($type = 'head'){
+          if($type == 'head'){
             return $this->_head;
           }
           elseif($type == 'body'){
