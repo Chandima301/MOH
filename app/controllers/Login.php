@@ -6,6 +6,10 @@ class Login extends Controller{
     }
 
     public function indexAction(){
+        $db = DB::getInstance();
+        $sql = "SELECT * FROM mothers";
+        $mothers = $db->query($sql);
+        dnd($mothers);
         $this->view->render('login/index');
     }
 }
