@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office of Medical Officer of Health</title>
+    <link rel="icon" type="image/png" href="../../img/National.png" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="medicalofficer.css">
+    <link rel="stylesheet" href="../../css/reset-stylesheet.css">
+
+
+   
+</head>
+<body>
+	<!--navigation bar -->
+	 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../../img/National.png" width="40" height="40" class="d-inline-block align-top" alt="">
+        </a>
+        <a class="navbar-brand" href="#">MOH Kelaniya</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav pl-4">
+              <li class="nav-item active pl-3">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item pl-3">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item pl-3">
+                <a class="nav-link" href="#">Help</a>
+              </li>
+
+            </ul>
+        </div>
+    </nav>
+    <!--dashboard-->
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar" >  
+                <img src="../../img/avatar2.png" alt="profile-pic" class="profile-img">
+                <div class="name-tag">
+                    පුශ්පා සොයිසා<br>
+                    <span style="font-size: 15px;">(ම. සෞ. හෙද සොයුරිය)</span> 
+                </div>
+                <hr>
+                <ul class="sidebar-btn">
+                    <li class="side-tab active" onclick="toggleTab('personal-info',event, 'side-tab', 'tab')"> 
+                        <a href="#">පෞද්ගලික තොරතුරු</a>  
+                    </li>
+                    <li class="side-tab" onclick="toggleTab('expected-time-table',event, 'side-tab', 'tab')">
+                        <a href="#" > ඉදිරි කාලසටහන</a>    
+                    </li>
+                    <li class="side-tab" onclick="toggleTab('daily-work-report',event, 'side-tab', 'tab')">
+                        <a href="#">දින වැඩ වාර්තාව</a>    
+                    </li>
+                   
+
+                </ul>
+            </div>
+            <!--toggle tabs-->
+            <!--tab-1 midwife personal details-->
+            <div class="col-md-10 tab" id="personal-info" style="display:block">
+            	<div class="tab-heading">
+                   පවුල් සෞඛ්‍ය සේවා නිලදාරිනියගේ පෞද්ගලික තොරතුරු
+                </div>
+                <hr>
+                <div class="sub">
+					<table class="table table-bordered table-hover">
+							
+							  <tbody>
+							    <tr>
+							      <th scope="row">1</th>
+							      <td>නම</td>
+							      <td>Otto</td>
+							     
+							    </tr>
+
+							    <tr>
+							      <th scope="row">2</th>
+							      <td>හැදුනුම්පත් අංකය</td>
+							      <td>982345456v</td>
+							     
+							    </tr>
+							    
+							  
+							    
+							     <tr>
+							      <th scope="row">3</th>
+							      <td>ප. සෞ. සේ. නි. කොට්ඨාශය</td>
+							      <td>මෑවැල්ල</td>
+							   	</tr>
+
+							     </tr>
+							     <tr>
+							      <th scope="row">4</th>
+							      <td>සංකේත අංකය</td>
+							      <td>2856/02</td>
+							  	</tr>
+
+							    <tr>
+							      <th scope="row">5</th>
+							      <td>දුරකතන අංකය</td>
+							      <td>0783478356</td>
+							    </tr>
+
+							     <tr>
+							      <th scope="row">6</th>
+							      <td>සේවයේ නියුතුද/නැතිද යන වග</td>
+							      <td>නැත</td>
+							    </tr>
+
+							     <tr>
+							      <th scope="row">7</th>
+							      <td>උපන් දිනය</td>
+							      <td>1998-11-20</td>
+							    </tr>
+
+							     <tr>
+							      <th scope="row">8</th>
+							      <td>ස්තිර ලිපිනය</td>
+							      <td>නැත</td>
+							    </tr>
+
+							    <tr>
+							      <th scope="row">9</th>
+							      <td>ඊ-මේල් ලිපිනය</td>
+							      <td>abc@gmail.com</td>
+							    </tr>
+
+							  </tbody>
+					</table>
+                </div>
+
+
+
+            </div>
+            <!--tab2 expected time table-->
+        	<div class="col-md-10 tab" id="expected-time-table" >
+	        	<div class="tab-heading">
+	               ඉදිරි කාලසටහන
+	            </div>
+           		 <hr>
+            	<div class="sub mb-2">
+					<table class="table table-bordered table-hover">
+						
+						  <tbody>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>.......</td>
+						     
+						    </tr>
+
+						    <tr>
+						      <th scope="row">2</th>
+						      <td>.......</td>
+						     
+						    </tr>
+						    
+						  
+
+						  </tbody>
+					</table>
+            	</div>
+					
+				 	<!--modal-toggler-->
+				 	<div class="d-flex" >
+					<button type="button" class="btn btn-primary mt-auto mb-auto" data-toggle="modal" data-target="#exampleModalCenter" style="height:40px" >Approve</button>
+					<nav aria-label="Page navigation example" class="ml-auto p-2" style="display:block">
+					  <ul class="pagination">
+					    <li  class="page-item"><a type="submit" class="page-link" href="#">පෙර</a></li>
+					    <li  class="page-item"><a type="submit" class="page-link" href="#">ඊලග</a></li>
+					  </ul>
+					</nav>
+					</div>
+			  		<!-- Modal -->
+					<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					  <div class="modal-dialog modal-dialog-centered" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLongTitle">Confirm your approval</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+
+					      
+
+					      <div class="modal-footer">
+
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <!--form for submit approved-->
+					        <form class="form-inline" >
+					        <button type="submit" class="btn btn-primary">Confirm</button>
+					    	</form>
+
+
+					      </div>
+					    </div>
+					  </div>
+					</div>
+					
+
+				
+
+   		 </div>
+
+
+			<div class="col-md-10 tab" id="daily-work-report">
+            	
+	        	<div class="tab-heading">
+	               දින වැඩ වාර්තාව
+	            </div>
+           		 <hr>
+            	<div class="sub mb-2">
+            		<nav aria-label="Page navigation example">
+					  <ul class="pagination justify-content-end">
+					    <li class="page-item previous"><a class="page-link" href="#">Previous</a></li>
+					    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+					    <li class="page-item"><a class="page-link" href="#">2</a></li>
+					    <li class="page-item"><a class="page-link" href="#">3</a></li>
+					    <li class="page-item next"><a class="page-link" href="#">Next</a></li>
+					  </ul>
+					</nav>
+					<table class="table table-bordered table-hover">
+						
+						  <tbody>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>.......</td>
+						      <td>.......</td>
+						     
+						    </tr>
+
+						    <tr>
+						      <th scope="row">2</th>
+						      <td>.......</td>
+						      <td>.......</td>
+						     
+						    </tr>
+						    
+						  
+
+						  </tbody>
+					</table>
+            	</div>
+            	<nav aria-label="Page navigation example" class="p-2" style="display:block">
+					  <ul class="pagination">
+					    <li  class="page-item"><a type="submit" class="page-link" href="#">පෙර</a></li>
+					    <li  class="page-item"><a type="submit" class="page-link" href="#">ඊලග</a></li>
+					  </ul>
+					</nav>
+					
+   			 
+
+
+
+
+        </div>
+
+
+
+</body>
+<script type="text/javascript" src="medicalofficer.js"></script>
+<script src="../../js/jquery-3.4.1.js"></script>
+<script src="../../bootstrap/js/bootstrap.js"></script>
+</html>

@@ -3,28 +3,10 @@
     to {opacity: 100%;}
 }
 
-.btn-logout{
-    position: absolute;
-    right: 50px;
-    border-radius: 4px;
-    background-color: transparent;
-    border: 1px solid gray;
-    color: gray;
-    padding: 10px;
-}
-
-.btn-logout:hover{
-    background-color: gray;
-    color: rgb(59, 59, 59);
-    transition: 0.3s;
-}
-
-
 .sidebar{
-    height:auto;
+    height:calc(100vh - 60px);
     background-color: rgb(88, 88, 88);
     padding: 0;
-    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.596);
 }
 .sidebar hr{
     height: 1px;
@@ -54,7 +36,6 @@
 
 .sidebar-btn{
     padding-top: 10px;
-    padding-bottom: 200px;
 }
 
 .sidebar-btn li{
@@ -83,36 +64,12 @@
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
 }
 
-.dot-deactive {
-    height: 10px;
-    width: 10px;
-    background-color: rgb(247, 16, 16);
-    border-radius: 50%;
-    display: inline-block;
-  }
-
-.dot-active {
-    height: 10px;
-    width: 10px;
-    background-color: rgb(10, 233, 48);
-    border-radius: 50%;
-    display: inline-block;
-  }
-
-.indicator{
-    display: block;
-    font-size: 12px;
-    margin-bottom: 10px;
-    color: gray;
-}
-
 .tab{
     display: none;
     background-color: #fffbea;
     animation-name: fadeIn;
     animation-duration: 0.5s;
     box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.596);
-    padding-bottom: 20px;
 }
 
 .tab-heading{
@@ -127,7 +84,7 @@
     margin-top: 0;
     height: 2px;
     color: rgb(133, 131, 110);
-    background-color: rgb(133, 131, 110);
+    background-color: rgb(133, 131, 110);;
 }
 
 
@@ -156,48 +113,7 @@
     border: none;
 }
 
-
-.footer-text{
-    color: grey;
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-bottom: 20px;
-    
-}
-.footer-text h1{
-    color: rgb(161, 160, 160);
-    font-size: 30px;
+#daily-work-report th,#expected-time-table th{
+    width:5%;
 }
 
-.footer-dashboard{
-    background-color: #4e4e4e;
-    color:rgb(154, 179, 179);
-    height: 50px;
-    padding-top: 20px;
-
-}
-
-.footer-icon{
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-
-
-.fa {
-  padding: 20px;
-  font-size: 40px;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  margin-left: 10px;
-  text-decoration:none;
-  color: gray;
-  
-}
-  
-  /* Add a hover effect if you want */
-  .fa:hover {
-    transition: 0.3s;
-    opacity: 0.7;
-  }

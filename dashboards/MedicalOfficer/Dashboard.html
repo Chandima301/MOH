@@ -1,336 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Office of Medical Officer of Health</title>
-  <link rel="icon" type="image/png" href="../../img/National.png" />
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
-  <!-- icons-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!-- main stylesheet -->
-  <link rel="stylesheet" href="medicalofficer.css">
-  <link rel="stylesheet" href="../../css/reset-stylesheet.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office of Medical Officer of Health</title>
+    <link rel="icon" type="image/png" href="../../img/National.png" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="medicalofficer.css">
+    <link rel="stylesheet" href="../../css/reset-stylesheet.css">
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">
-      <img src="../../img/National.png" width="40" height="40" class="d-inline-block align-top" alt="">
-    </a>
-    <a class="navbar-brand" href="#">MOH Kelaniya</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav pl-4">
-        <li class="nav-item active pl-2">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item pl-2">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item pl-2">
-          <a class="nav-link" href="#">Help</a>
-        </li>
-      </ul>
-      <button class="btn-logout">Log out</button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../../img/National.png" width="40" height="40" class="d-inline-block align-top" alt="">
+        </a>
+        <a class="navbar-brand" href="#">MOH Kelaniya</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav pl-4">
+              <li class="nav-item active pl-3">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item pl-3">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item pl-3">
+                <a class="nav-link" href="#">Help</a>
+              </li>
+
+            </ul>
+        </div>
+
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar" >  
+                <img src="../../img/avatar2.png" alt="profile-pic" class="profile-img">
+                <div class="name-tag">
+                    පුශ්පා සොයිසා<br>
+                    <span style="font-size: 15px;">(ම. සෞ. හෙද සොයුරිය)</span> 
+                </div>
+                <hr>
+                <ul class="sidebar-btn">
+                    <li class="side-tab active" onclick="toggleTab('Area',event, 'side-tab', 'tab')"> 
+                        <a href="#">නිලධාරිනියන්ගෙ රාජකාරි ප්‍රදේශ</a>    
+                    </li>
+                    <li class="side-tab" onclick="toggleTab('Approve',event, 'side-tab', 'tab')">
+                        <a href="#" >ඉදිරි කාලසටහන් අනුමත කිරීම</a>    
+                    </li>
+                    <li class="side-tab" onclick="toggleTab('cancel',event, 'side-tab', 'tab')">
+                        <a href="#">සායන අවලංගු කිරීම් දැනුම් දිම</a>    
+                    </li>
+                    <li class="side-tab" onclick="toggleTab('detail',event,'side-tab', 'tab')">
+                        <a href="#">පවුල් සෞඛ්‍ය සේවා නිලධාරිනියන්</a>    
+                    </li>
+
+                </ul>
+            </div>
+            <div class = "col-md-10 tab" style="display: block;" id="Area">
+                <div class="tab-heading">
+                    නිලධාරිනියන්ගෙ රාජකාරි ප්‍රදේශ
+                </div>
+                <hr>
+            </div>
+            <div class="col-md-10 tab" id="Approve">
+                <div class="tab-heading">
+                    ඉදිරි කාලසටහන් අනුමත කිරීම.
+                </div>
+                <hr>
+                
+                <div class="sub">
+                    <h3 style="padding-bottom: 10px;">අනුමැතිය සදහා ඉදිරිපත් කර ඇති කාලසටහන්</h3>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">නම</th>
+                            <th scope="col">හැදුනුම්පත් අංකය</th>
+                            <th scope="col">අදාල මාසය</th>
+                            <th scope="col">ඉදිරි කාලසටහන</th>
+                            
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>R.P.A.P රාමනායක</td>
+                            <td>903451234V</td>
+                            <td>පෙබරවාරි</td>
+                            <td>ප.සෞ.සේ.නි. පෙතියාගොඩ</td>
+                            <td><a href="#">view details</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>D.A.B.D කුමාරසිංහ</td>
+                            <td>923412234V</td>
+                            <td>පෙබරවාරි</td>
+                            <td>ප.සෞ.සේ.නි. වනවාසල බටහිර</td>
+                            <td><a href="#">view details</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>D.A.B.D කොඩිකාර</td>
+                            <td>891351234V</td>
+                            <td>පෙබරවාරි</td>
+                            <td>ප.සෞ.සේ.නි. වනවාසල උතුර</td>
+                            <td><a href="#">view details</a></td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-10 tab" id="cancel">
+                <div class="tab-heading">
+                    සායන අවලංගුකිරීමේ නිවේදන නිකුත්කිරීම.
+                </div>
+                <hr>
+                <form class="needs-validation" novalidate style="font-size: small;">
+                    <div class="form-row">
+                      <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">දිනය</label>
+                        <input type="text" class="form-control" id="validationCustom01"  placeholder="yyyy/mm/dd"  required>
+                        <div class="invalid-feedback">
+                            කරුනාකර දිනය ඇතුලත් කරන්න.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-4">
+                          <label for="validationCustom01">හේතුව</label>
+                          <textarea class="form-control" id="validationCustom02" rows="3" required></textarea>
+                          <div class="invalid-feedback">
+                            කරුනාකර හේතුව කෙටියෙන් සදහන් කරන්න.
+                          </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                  </form>
+                
+            </div>
+            <div class="col-md-10 tab" id="detail">
+                <div class="tab-heading">
+                    පවුල් සෞඛ්‍ය සේවා නිලධාරිනියන් ලියාපදිංචි කිරීම් හා තොරතුරු
+                </div>
+                <hr>
+                <div class="btn-group" id="tab-btn" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary active" onclick="toggleTab('midwifedetail',event, 'btn btn-secondary', 'sub-tab')">තොරතුරු</button>
+                    <button type="button" class="btn btn-secondary" onclick="toggleTab('midwiferegister',event, 'btn btn-secondary', 'sub-tab')">ලියාපදිංචි කිරිම්</button>
+                </div>
+                <div class="sub-tab" id="midwifedetail" style="display: block;" style="font-size: small;">
+                    <nav class="navbar navbar-light" style="background-color: #d4d3cf;">
+                        <form class="form-inline">
+                          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                      </nav>
+
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">නම</th>
+                            <th scope="col">හැදුනුම්පත් අංකය</th>
+                            <th scope="col">දුරකතන අංකය</th>
+                            <th scope="col">සේවයේ නියුතුද/නැතිද යන වග</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>903451234V</td>
+                            <td>0713451276</td>
+                            <td>ඔව්</td>
+                            <td><a href="#">view details</a></td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>923412234V</td>
+                            <td>0773457123</td>
+                            <td>ඔව්</td>
+                            <td><a href="#">view details</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>891351234V</td>
+                            <td>0707654253</td>
+                            <td>නැත</td>
+                            <td><a href="#">view details</a></td>
+
+                          </tr>
+                        </tbody>
+                      </table>
+
+
+                </div>
+
+                <div class="sub-tab" id="midwiferegister" style="font-size: small;">
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                          <div class="col-md-8 mb-3">
+                            <label for="validationCustom01">සම්පූර්ණ නම</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="Full name"  required>
+                            <div class="invalid-feedback">
+                                කරුනාකර සම්පූර්ණ නම ඇතුලත් කරන්න.
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">උපන් දිනය</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="yyyy/mm/dd"  required>
+                            <div class="invalid-feedback">
+                                කරුනාකර උපන්දිනය ඇතුලත් කරන්න.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3 mb-3">
+                              <label for="validationCustom01">ජාතික හැදුනුම්පත් අංකය</label>
+                              <input type="text" class="form-control" id="validationCustom01" placeholder="Id number"  required>
+                              <div class="invalid-feedback">
+                                  කරුනාකර හැදුනුම්පත් අංකය ඇතුලත් කරන්න.
+                              </div>
+                            </div>
+                            
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-12 mb-3">
+                            <label for="validationCustom03">ලිපිනය</label>
+                            <input type="text" class="form-control" id="validationCustom03" placeholder="Address" required>
+                            <div class="invalid-feedback">
+                                කරුනාකර ලිපිනය ඇතුලත් කරන්න.
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                      </form>
+                </div>
+
+                
+            </div>
+
+            
+        </div>
     </div>
 
-  </nav>
 
-  <div class="container-fluid" style="padding-top: 65px;">
-    <div class="row">
-      <div class="col-md-2 sidebar">
-        <img src="../../img/avatar2.png" alt="profile-pic" class="profile-img">
-        <div class="name-tag">
-          පුශ්පා සොයිසා<br>
-          <span style="font-size: 15px;">(ම. සෞ. හෙද සොයුරිය)</span>
-        </div>
-        <hr>
-        <ul class="sidebar-btn">
-          <li class="side-tab active" onclick="toggleTab('Area',event, 'side-tab', 'tab')">
-            <a href="#">නිලධාරිනියන්ගෙ රාජකාරි ප්‍රදේශ</a>
-          </li>
-          <li class="side-tab" onclick="toggleTab('Approve',event, 'side-tab', 'tab')">
-            <a href="#">ඉදිරි කාලසටහන් අනුමත කිරීම</a>
-          </li>
-          <li class="side-tab" onclick="toggleTab('cancel',event, 'side-tab', 'tab')">
-            <a href="#">සායන අවලංගු කිරීම් දැනුම් දිම</a>
-          </li>
-          <li class="side-tab" onclick="toggleTab('detail',event,'side-tab', 'tab')">
-            <a href="#">පවුල් සෞඛ්‍ය සේවා නිලධාරිනියන්</a>
-          </li>
-
-        </ul>
-      </div>
-      <div class="col-md-10 tab" style="display: block;" id="Area">
-        <div class="tab-heading">
-          නිලධාරිනියන්ගෙ රාජකාරි ප්‍රදේශ
-        </div>
-        <hr>
-
-        <div class="sub">
-          <div class="row">
-            <div class="col-md-3">
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">R.P.A.P රාමනායක</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">දු.අ. 0705436789</h6>
-                  <div class="indicator">
-                    <div class="dot-active"></div> රාජකාරියට වාර්ථාකර ඇත
-                  </div>
-                  <p class="card-text pb-4">පෙතියාගොඩ/පතිරණ මාවත/සමගි මාවත</p>
-                  <a href="#" class="card-link">View details</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">D.A.B.D කොඩිකාර</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">දු.අ. 0701236789</h6>
-                  <div class="indicator">
-                    <div class="dot-deactive"></div> හදිසි නිවාඩු
-                  </div>
-                  <p class="card-text pb-4">මාසික සමුලුව MOH කාර්යාලය</p>
-                  <a href="#" class="card-link">View details</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-      <div class="col-md-10 tab" id="Approve">
-        <div class="tab-heading">
-          ඉදිරි කාලසටහන් අනුමත කිරීම.
-        </div>
-        <hr>
-
-        <div class="sub">
-          <h3 style="padding-bottom: 10px;">අනුමැතිය සදහා ඉදිරිපත් කර ඇති කාලසටහන්</h3>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">නම</th>
-                <th scope="col">හැදුනුම්පත් අංකය</th>
-                <th scope="col">අදාල මාසය</th>
-                <th scope="col">ඉදිරි කාලසටහන</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>R.P.A.P රාමනායක</td>
-                <td>903451234V</td>
-                <td>පෙබරවාරි</td>
-                <td>ප.සෞ.සේ.නි. පෙතියාගොඩ</td>
-                <td><a href="#">view details</a></td>
-
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>D.A.B.D කුමාරසිංහ</td>
-                <td>923412234V</td>
-                <td>පෙබරවාරි</td>
-                <td>ප.සෞ.සේ.නි. වනවාසල බටහිර</td>
-                <td><a href="#">view details</a></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>D.A.B.D කොඩිකාර</td>
-                <td>891351234V</td>
-                <td>පෙබරවාරි</td>
-                <td>ප.සෞ.සේ.නි. වනවාසල උතුර</td>
-                <td><a href="#">view details</a></td>
-
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-md-10 tab" id="cancel">
-        <div class="tab-heading">
-          සායන අවලංගුකිරීමේ නිවේදන නිකුත්කිරීම.
-        </div>
-        <hr>
-        <div class="sub">
-
-          <form class="needs-validation" novalidate style="font-size: small;">
-            <div class="form-row">
-              <div class="col-md-4 mb-3">
-                <label for="validationCustom01">දිනය</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="yyyy/mm/dd" required>
-                <div class="invalid-feedback">
-                  කරුනාකර දිනය ඇතුලත් කරන්න.
-                </div>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-md-12 mb-3">
-                <label for="validationCustom01">හේතුව</label>
-                <textarea class="form-control" id="validationCustom02" rows="3" required></textarea>
-                <div class="invalid-feedback">
-                  කරුනාකර හේතුව කෙටියෙන් සදහන් කරන්න.
-                </div>
-              </div>
-
-            </div>
-
-            <button class="btn btn-primary" type="submit">Submit form</button>
-          </form>
-
-        </div>
-
-      </div>
-      <div class="col-md-10 tab" id="detail">
-        <div class="tab-heading">
-          පවුල් සෞඛ්‍ය සේවා නිලධාරිනියන් ලියාපදිංචි කිරීම් හා තොරතුරු
-        </div>
-        <hr>
-        <div class="btn-group" id="tab-btn" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-secondary active"
-            onclick="toggleTab('midwifedetail',event, 'btn btn-secondary', 'sub-tab')">තොරතුරු</button>
-          <button type="button" class="btn btn-secondary"
-            onclick="toggleTab('midwiferegister',event, 'btn btn-secondary', 'sub-tab')">ලියාපදිංචි කිරිම්</button>
-        </div>
-        <div class="sub-tab" id="midwifedetail" style="display: block;" style="font-size: small;">
-          <nav class="navbar navbar-light" style="background-color: #d4d3cf;">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </nav>
-
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">නම</th>
-                <th scope="col">හැදුනුම්පත් අංකය</th>
-                <th scope="col">දුරකතන අංකය</th>
-                <th scope="col">සේවයේ නියුතුද/නැතිද යන වග</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>903451234V</td>
-                <td>0713451276</td>
-                <td>ඔව්</td>
-                <td><a href="#">view details</a></td>
-
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>923412234V</td>
-                <td>0773457123</td>
-                <td>ඔව්</td>
-                <td><a href="#">view details</a></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>891351234V</td>
-                <td>0707654253</td>
-                <td>නැත</td>
-                <td><a href="#">view details</a></td>
-
-              </tr>
-            </tbody>
-          </table>
-
-
-        </div>
-
-        <div class="sub-tab" id="midwiferegister" style="font-size: small;">
-          <form class="needs-validation" novalidate>
-            <div class="form-row">
-              <div class="col-md-8 mb-3">
-                <label for="validationCustom01">සම්පූර්ණ නම</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="Full name" required>
-                <div class="invalid-feedback">
-                  කරුනාකර සම්පූර්ණ නම ඇතුලත් කරන්න.
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <label for="validationCustom01">උපන් දිනය</label>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="yyyy/mm/dd" required>
-                <div class="invalid-feedback">
-                  කරුනාකර උපන්දිනය ඇතුලත් කරන්න.
-                </div>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-md-3 mb-3">
-                <label for="validationCustom01">ජාතික හැදුනුම්පත් අංකය</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="Id number" required>
-                <div class="invalid-feedback">
-                  කරුනාකර හැදුනුම්පත් අංකය ඇතුලත් කරන්න.
-                </div>
-              </div>
-
-            </div>
-            <div class="form-row">
-              <div class="col-md-12 mb-3">
-                <label for="validationCustom03">ලිපිනය</label>
-                <input type="text" class="form-control" id="validationCustom03" placeholder="Address" required>
-                <div class="invalid-feedback">
-                  කරුනාකර ලිපිනය ඇතුලත් කරන්න.
-                </div>
-              </div>
-            </div>
-
-            <button class="btn btn-primary" type="submit">Submit form</button>
-          </form>
-        </div>
-
-
-      </div>
-
-
-    </div>
-    <div class="row justify-content-between" style="background-color: #3d3d3d;">
-      <div class="col-md-6 footer-text ">
-        <h1>Medical Officer of Health</h1>
-        Medical officer of health or MOH is the leader of Medical Officer Of Health (MOOH) offices and under his
-        guidance Public Health Nurses, Public Health Mid-wives and Public Health Inspectors distribute preventive
-        services at the rural levels.
-      </div>
-      <div class="col-md-2 footer-icon">
-          <a href="#" class="fa fa-facebook"></a>
-          <a href="#" class="fa fa-twitter"></a>
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 footer-dashboard">
-
-        <center>Designed by <span style="color: aliceblue;">University of Moratuwa</span> | 2020 All Rights Reserved
-        </center>
-
-      </div>
-
-    </div>
-  </div>
-
-
-  <script src="medicalofficer.js"></script>
-  <script src="../../js/jquery-3.4.1.js"></script>
-  <script src="../../bootstrap/js/bootstrap.js"></script>
+    <script src="medicalofficer.js"></script>
+    <script src="../../js/jquery-3.4.1.js"></script>
+    <script src="../../bootstrap/js/bootstrap.js"></script>
 </body>
 
 </html>
