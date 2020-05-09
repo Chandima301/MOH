@@ -1,11 +1,11 @@
 <?php
 
-class Register extends Controller{
+class Login extends Controller{
     public function __construct($controller, $action){
         parent::__construct($controller, $action);
     }
 
-    public function loginAction(){
+    public function indexAction(){
         $this->view->render('login/index');
     }
 }
