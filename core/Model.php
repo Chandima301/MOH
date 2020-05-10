@@ -24,18 +24,28 @@ class Model {
         return $this->_db->get_columns($this->_table);
     }
 
-    public function search($params = []){
+    public function find($params = []){
         $results = [];
-        $resultsQuery = $this_db->search($this->_table, $params);
+        $resultsQuery = $this->_db->find($this->_table, $params);
         foreach($resultsQuery as $result){
             $obj = new $this->_modelName($this->_table);
-            foreach($result as $key => $val){
-                $obj->$key = $val;
-            }
+            $obj->populateObjData($result);
             $results[] = $obj;
         }
-
         return $results;
+    }
+
+    public function findFirst($params = []){
+        $resultsQuery = $this->_db->findFirst($this->_table, $params);
+        $result = new $this->_modelName($this->_table);
+        $result->populateObjData($resultsQuery);
+        return $result;
+    }
+
+    public function populateObjData($result){
+        foreach($result as $key => $val){
+            $this->$key = $val;
+        }
     }
 
     public function save(){

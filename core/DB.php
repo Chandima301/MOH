@@ -88,7 +88,7 @@ class DB{
         return false;
     }
 
-    public function search($table, $params=[]){
+    protected function _read($table, $params=[]){
 
         $conditionString = '';
         $bind = [];
@@ -132,9 +132,27 @@ class DB{
             if (!count($this->_result)) {
                 return false;
             }
-            return $this->results();
+            return true;
         }
         return false;
+    }
+
+    public function find($table, $params){
+        if($this->_read($table, $params)){
+            return $_result;
+        }
+        return false;
+    }
+
+    public function findFirst($table, $params){
+        if($this->_read($table, $params)){
+            return $this->first();
+        }
+        return false;
+    }
+
+    public function first(){
+        return (!empty($this->_result))? $this_result[0] : [];
     }
 
 
@@ -152,6 +170,10 @@ class DB{
 
     public function get_columns($table){
         return $this->query("SHOW COLUMNS FROM {$table}")->results();
+    }
+
+    public function lastID(){
+        return $this->_lastInsertID;
     }
 
 
