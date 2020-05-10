@@ -40,14 +40,6 @@ class DB{
         }
         return $this; 
     }
-
-    
-    
-    
-    
-    
-    
-    
     
     public function insert($table, $fields = []){
         $fieldString = '';
