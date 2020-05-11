@@ -1,11 +1,12 @@
 <?php
 
-class Mother extends Model{
-    private $_isLoggedIn, $_sessionName, $_cookieName;
+class User extends Model{
+    private $_isLoggedIn, $_sessionName, $_cookieName, $user;
     public static $currentLoggedInUser;
 
     public function __construct($user){ //$user can be idcardnumber or email address
-        $table = 'mothers';
+        $this->user = $user;
+        $table = 'User';
         parent::__construct($table);
         $this->_sessionName = CURRENT_USER_SESSION_NAME;
         $this->_cookieName = REMEMBER_ME_COOKIE_NAME;
@@ -26,7 +27,7 @@ class Mother extends Model{
     }
 
     public function findByName($name){
-        return $this->findFirst(['conditions'=>"name = ?", 'bind' =>[$name]]);
+        return $this->findFirst(['conditions'=>"idcardnum = ?", 'bind' =>[$name]]);
     }
 
     public function login($rememberMe = false){
