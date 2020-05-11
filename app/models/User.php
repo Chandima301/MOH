@@ -38,7 +38,7 @@ class User extends Model{
             Cookie::set($this->_cookieName, $hash, REMEMBER_ME_COOKIE_EXPIRY);
             $fields = ['session'=>$hash, 'user_agent'=>$user_agent, 'mother_id'];
             $this->_db->query("DELETE FROM mother_sessions WHERE user_id = ? AND user_agent = ?",[$this->id, $user_agent]);
-            $this->_db-insert('user_sessions', $fields);
+            $this->_db->insert('user_sessions', $fields);
         }
     }
 

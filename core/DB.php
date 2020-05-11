@@ -139,7 +139,7 @@ class DB{
 
     public function find($table, $params){
         if($this->_read($table, $params)){
-            return $_result;
+            return $this->results();
         }
         return false;
     }
