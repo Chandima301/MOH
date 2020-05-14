@@ -139,7 +139,7 @@ class DB{
 
     public function find($table, $params){
         if($this->_read($table, $params)){
-            return $_result;
+            return $this->results();
         }
         return false;
     }
@@ -152,7 +152,7 @@ class DB{
     }
 
     public function first(){
-        return (!empty($this->_result))? $this_result[0] : [];
+        return (!empty($this->_result))? $this->_result[0] : [];
     }
 
 

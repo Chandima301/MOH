@@ -9,8 +9,9 @@
     border-radius: 4px;
     background-color: transparent;
     border: 1px solid gray;
-    color: gray;
     padding: 10px;
+    color: gray;
+    text-decoration: none;
 }
 
 .btn-logout:hover{

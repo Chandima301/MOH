@@ -15,6 +15,7 @@ class Model {
     protected function _setTableColumns(){
         $columns = $this->get_columns();
         foreach ($columns as $column) {
+            $columnName = $column->Field;
             $this->_columnNames[] = $column->Field;
             $this->{$columnName} = null;
         }
@@ -38,7 +39,7 @@ class Model {
     public function findFirst($params = []){
         $resultsQuery = $this->_db->findFirst($this->_table, $params);
         $result = new $this->_modelName($this->_table);
-        $result->populateObjData($resultsQuery);
+        if($resultsQuery)$result->populateObjData($resultsQuery);
         return $result;
     }
 
@@ -55,8 +56,8 @@ class Model {
         }
         //detemine whether to update or insert
 
-        if(property_exists($this, $id) && $this->id != ''){
-            return $this->update($fields, 'id', $id);
+        if(property_exists($this, 'id') && $this->id != ''){
+            return $this->update($fields, 'id', $this->id);
         }else{
             return $this->insert($fields);
         }
