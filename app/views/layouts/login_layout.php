@@ -44,6 +44,8 @@
 
 
     <script src="<?= PROOT ?>js/main.js"></script>
+    <?=$this->script?>
+
 </body>
 
 </html>

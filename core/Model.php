@@ -56,8 +56,8 @@ class Model {
         }
         //detemine whether to update or insert
 
-        if(property_exists($this, $id) && $this->id != ''){
-            return $this->update($fields, 'id', $id);
+        if(property_exists($this, 'id') && $this->id != ''){
+            return $this->update($fields, 'id', $this->id);
         }else{
             return $this->insert($fields);
         }

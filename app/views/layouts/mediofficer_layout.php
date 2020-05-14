@@ -44,7 +44,7 @@
                     <a class="nav-link" href="#">Help</a>
                 </li>
             </ul>
-            <button class="btn-logout">Log out</button>
+            <a class="btn-logout" href="<?=PROOT?>login/logout">Log out</a>
         </div>
 
     </nav>

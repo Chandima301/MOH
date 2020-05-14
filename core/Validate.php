@@ -70,6 +70,10 @@ class Validate{
                 }
             }
         }
+        if(empty($this->_errors)){
+            $this->_passed = true;
+        }
+        return $this;
     }
 
     public function addError($error){
@@ -89,8 +93,18 @@ class Validate{
         return $this->_passed;
     }
 
-    public function display_errors(){
-        $html = '<ul class="bg-danger>"';
+    public function displayErrors(){
+        $html = '<ul>';
+        foreach($this->_errors as $error){
+            if(is_array($error)){
+                $html .= '<li>'.$error[0].'</li>';
+            }
+            else{
+                $html .= '<li>'.$error.'</li>';
+            }
+        }
+        $html .= '</ul>';
+        return $html;
     }
 
 }

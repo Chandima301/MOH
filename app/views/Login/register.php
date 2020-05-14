@@ -2,7 +2,7 @@
 <?php $this->end(); ?>
 <?php $this->start('body'); ?>
 
-<div class="client-login" id="registration-login">
+<div class="client-login"  style="display:block;" id="registration-login">
   <h1>
     <center>Registration</center>
   </h1>

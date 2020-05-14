@@ -3,8 +3,10 @@
 class View{
     protected $_head, $_body, $_siteTitle = SITE_TITLE , $_outputBuffer, $_layout = DEFAULT_LAYOUT;
     
-    public function __construct(){
+    public $script;
 
+    public function __construct(){
+        $this->script = '';
     }
 
     public function render($viewName){
