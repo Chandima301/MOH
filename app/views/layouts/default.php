@@ -23,17 +23,7 @@
 <body>
 
     <div class="background-login">
-        <div class="header-login">
-            <img class="national-bgd-login" src="<?= PROOT ?>img/National.png" alt="National">
-            <div>
-                <h2>
-                    <center>සෞඛ්‍ය වෛද්‍ය නිලධාරී කාර්යාලය-කැලණිය</center>
-                </h2>
-                <h2>
-                    <center>Office of the Medical Officer of Health-Kelaniya</center>
-                </h2>
-            </div>
-        </div>
+        
         <?= $this->content('body'); ?>
 
         <div class="footer-login">

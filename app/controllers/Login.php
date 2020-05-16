@@ -8,7 +8,7 @@ class Login extends Controller{
     }
 
     public function indexAction(){
-        $this->displayErrors = '';
+        $this->view->displayErrors = '';
         $this->view->render('login/index');
 
     }
@@ -45,6 +45,66 @@ class Login extends Controller{
     }
 
     public function registerAction(){
+        $validation = new Validate();
+        $posted_values = ['name'=>'', 'idcardnum'=>'', 'birthday'=>'','address'=>'', 'phone'=>'', 'email'=>'', 'pwd'=>'', 'confirm'=>''];
+        if($_POST){
+            $posted_values = posted_values($_POST);
+            $validation->check($_POST, [
+                'name'=> [
+                    'display'=>'Name',
+                    'required'=>true,
+                    'max'=>100
+                ],
+                'idcardnum'=> [
+                    'display'=>'ID card number',
+                    'required'=>true,
+                    'min'=>10,
+                    'unique'=>'user'
+
+                ],
+                'birthday'=> [
+                    'display'=>'Birthday',
+                    'required'=>true,
+                    'max'=>10
+                ],
+                'address' =>[
+                    'display'=>'address',
+                    'required'=>true,
+                    'max'=>250
+                ],
+                'phone'=>[
+                    'display'=>'Phone number',
+                    'required'=>true,
+                    'max'=>10,
+                    'is_numeric'=>true
+                ],
+                'email'=>[
+                    'display'=>'Email address',
+                    'required'=>true,
+                    'max'=>150,
+                    'valid_email'=>true,
+                    'unique'=>'user'
+                ],
+                'pwd' =>[
+                    'display'=>'Password',
+                    'required'=>true,
+                    'min'=>8
+                ],
+                'confirm'=>[
+                    'display'=>'Repeat-password',
+                    'required'=>true,
+                    'matches'=>'pwd'
+                ],
+            ]);
+            if($validation->passed()){
+                $newUser = new User();
+                $newUser->registerNewUser($_POST);
+                Router::redirect('');
+
+            }
+        }
+        $this->view->post = $posted_values;
+        $this->view->displayErrors = $validation->displayErrors();
         $this->view->render('login/register');
     }
 
