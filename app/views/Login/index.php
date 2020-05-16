@@ -74,13 +74,8 @@
 
 </div>
 
-<div class ='error-login alert alert-info mx-auto' id='error'>
-  <?=$this->displayErrors?>
+<div class='error-login alert alert-info mx-auto' id='error'>
+  <?= $this->displayErrors; ?>
 </div>
-
-
-
-
-
 
 <?php $this->end(); ?>

@@ -4,7 +4,7 @@ class User extends Model{
     private $_isLoggedIn, $_sessionName, $_cookieName, $user;
     public static $currentLoggedInUser;
 
-    public function __construct($user){ //$user can be idcardnumber or email address
+    public function __construct($user=''){ //$user can be id or email address
         $this->user = $user;
         $table = 'user';
         parent::__construct($table);
@@ -47,28 +47,23 @@ class User extends Model{
             $user_agent = Session::uagent_no_version();
             Cookie::set($this->_cookieName, $hash, REMEMBER_ME_COOKIE_EXPIRY);
             $fields = ['session'=>$hash, 'user_agent'=>$user_agent, 'user_id' => $this->id];
-            $this->_db->query("DELETE FROM user_sessions WHERE user_id = ? AND user_agent = ?",[$this->id, $user_agent]);
-            $this->_db->insert('user_sessions', $fields);
+            $this->_db->query("DELETE FROM user_session WHERE user_id = ? AND user_agent = ?",[$this->id, $user_agent]);
+            $this->_db->insert('user_session', $fields);
         }
     }
 
     public static function loginUserFromCookie(){
-        $user_session_model = new UserSession();
-        $user_session = $user_session_model->findFirst([
-            'conditions' => ['user_agent=?','session=?'],
-            'bind'=>[Session::uagent_no_version(), Cookie::get(REMEMBER_ME_COOKIE_NAME)]
-        ]);
-        
-        if($user_session->user_id != ''){
-            $user = new self((int)$user_session->user_id);
+        $userSession = UserSession::getFromCookie();
+        if($userSession->user_id != ''){
+            $user = new self((int)$userSession->user_id);
         }
-        $user->login();
+        if($user)$user->login();
         return $user;
     }
 
     public function logout(){
-        $user_agent = Session::uagent_no_version();
-        $this->_db->query("DELETE FROM user_session WHERE user_id = ? AND user_agent = ?",[$this->id, $user_agent]);
+        $userSession = UserSession::getFromCookie();
+        $userSession->delete();
         Session::delete(CURRENT_USER_SESSION_NAME);
         if(Cookie::exsits(REMEMBER_ME_COOKIE_NAME)){
             Cookie::delete(REMEMBER_ME_COOKIE_NAME);
@@ -76,6 +71,18 @@ class User extends Model{
         self::$currentLoggedInUser = null;
         return true;
            
+    }
+
+    public function registerNewUser($params){
+        $this->assign($params);
+        $this->deleted = 0;
+        $this->pwd = password_hash($this->pwd,PASSWORD_DEFAULT);
+        $this->save();
+    }
+
+    public function acls(){
+        if(empty($this->acl))return [];
+        return json_decode($this->acl, true);
     }
 
 }

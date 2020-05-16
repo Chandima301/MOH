@@ -33,7 +33,7 @@ class Validate{
 
                         case 'matches':
                             if($value != $source[$rule_value]){
-                                $matchDisplay = $item[$rule_value]['display'];
+                                $matchDisplay = $items[$rule_value]['display'];
                                 $this->addError(["{$matchDisplay} and {$display} must match.", $item]);
                             }
                             break;
@@ -94,7 +94,7 @@ class Validate{
     }
 
     public function displayErrors(){
-        $html = '<ul>';
+        $html = '<ul style="list-style-position:inside;">';
         foreach($this->_errors as $error){
             if(is_array($error)){
                 $html .= '<li>'.$error[0].'</li>';

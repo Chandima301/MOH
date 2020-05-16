@@ -1,0 +1,15 @@
+{
+    "Guest" : {
+        "denied" : {},
+        "Login" : ["index","login","register"],
+        "Restricted" : ["*"]
+    },
+    "LoggedIn" : {
+        "denied" : {
+            "Login" : ["index", "register"]
+        },
+        "Login" : ["logout"],
+        "Medicalofficer" : ["*"]
+        
+    }
+}
