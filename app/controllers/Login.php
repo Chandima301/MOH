@@ -8,6 +8,9 @@ class Login extends Controller{
     }
 
     public function indexAction(){
+        if(Session::exists(CURRENT_USER_SESSION_NAME)){
+            Router::redirect('medicalofficer/index');
+        }
         $this->view->displayErrors = '';
         $this->view->render('login/index');
 

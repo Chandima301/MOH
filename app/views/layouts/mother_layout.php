@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- main stylesheet -->
-    <link rel="stylesheet" href="<?= PROOT ?>css/medicalofficer.css">
+    <link rel="stylesheet" href="<?= PROOT ?>css/mother.css">
     <link rel="stylesheet" href="<?= PROOT ?>css/reset-stylesheet.css">
 
     <!-- JS -->
@@ -44,13 +44,13 @@
                     <a class="nav-link" href="#">Help</a>
                 </li>
             </ul>
-            <a class="btn-logout" href="<?=PROOT?>login/logout">Log out</a>
+            <span class="navbar-text pl-5">
+                <i class="fa fa-user-circle-o fa-lg pr-3" style="font-size: 20px;" aria-hidden="true"></i>Hi, <?= $this->name; ?>
+            </span>
+            <a class="btn-logout" href="<?= PROOT ?>login/logout">Log out</a>
         </div>
-
     </nav>
-    
     <div class="container-fluid" style="padding-top: 65px;">
-
 
         <?= $this->content('body'); ?>
 
@@ -78,10 +78,6 @@
 
         </div>
     </div>
-
-
-    <script src="<?= PROOT ?>js/medicalofficer.js"></script>
-
 </body>
 
 </html>

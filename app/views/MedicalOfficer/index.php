@@ -6,7 +6,8 @@
     <div class="col-md-2 sidebar">
         <img src="<?= PROOT ?>img/avatar2.png" alt="profile-pic" class="profile-img">
         <div class="name-tag">
-            පුශ්පා සොයිසා<br>
+            <?=$this->name;?>
+            <br>
             <span style="font-size: 15px;">(ම. සෞ. හෙද සොයුරිය)</span>
         </div>
         <hr>

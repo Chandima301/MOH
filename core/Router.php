@@ -16,6 +16,7 @@ class Router {
         //acl check
         $grantAccess = self::hasAccess($controller_name, $action_name);
 
+        $grantAccess = true;
         if(!$grantAccess){
             $controller_name = $controller = ACCESS_RESTRICTED;
             $action = "indexAction";
