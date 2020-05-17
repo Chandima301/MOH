@@ -9,7 +9,17 @@ class Login extends Controller{
 
     public function indexAction(){
         if(Session::exists(CURRENT_USER_SESSION_NAME)){
-            Router::redirect('medicalofficer/index');
+            switch(currentUser()->user_type){
+                case 'M':
+                    Router::redirect('mother/index');
+                    break;
+                case 'MO':
+                    Router::redirect('medicalofficer/index');
+                    break;
+                case 'MI':
+                    Router::redirect('midwife/index');
+                    break;
+            }
         }
         $this->view->displayErrors = '';
         $this->view->render('login/index');
@@ -35,7 +45,17 @@ class Login extends Controller{
                 if($user && password_verify(Input::get('password'),$user->pwd)){
                     $remember = (isset($_POST['remember_me']) && Input::get('remember_me')) ? true :false;
                     $user->login($remember);
-                    Router::redirect('medicalofficer/index');
+                    switch($user->user_type){
+                        case 'M':
+                            Router::redirect('mother/index');
+                            break;
+                        case 'MO':
+                            Router::redirect('medicalofficer/index');
+                            break;
+                        case 'MI':
+                            Router::redirect('midwife/index');
+                            break;
+                    }
                 }
                 else{
                     $validation->addError("ID card number or password is incorrect");

@@ -4,12 +4,25 @@
         "Login" : ["index","login","register"],
         "Restricted" : ["*"]
     },
-    "LoggedIn" : {
+    "LoggedInMO" : {
         "denied" : {
             "Login" : ["login","register"]
         },
         "Login" : ["index","logout"],
         "Medicalofficer" : ["*"]
-        
+    },
+    "LoggedInMI" : {
+        "denied" : {
+            "Login" : ["login","register"]
+        },
+        "Login" : ["index","logout"],
+        "Midwife" : ["*"]
+    },
+    "LoggedInM" : {
+        "denied" : {
+            "Login" : ["login","register"]
+        },
+        "Login" : ["index","logout"],
+        "Mother" : ["*"]
     }
 }

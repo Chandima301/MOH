@@ -81,6 +81,7 @@
 
 
     <script src="<?= PROOT ?>js/medicalofficer.js"></script>
+    <?= $this->script ?>
 
 </body>
 

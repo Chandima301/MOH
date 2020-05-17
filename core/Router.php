@@ -16,7 +16,6 @@ class Router {
         //acl check
         $grantAccess = self::hasAccess($controller_name, $action_name);
 
-        $grantAccess = true;
         if(!$grantAccess){
             $controller_name = $controller = ACCESS_RESTRICTED;
             $action = "indexAction";
@@ -55,7 +54,18 @@ class Router {
         $grantAccess = false;
         
         if(Session::exists(CURRENT_USER_SESSION_NAME)){
-            $current_user_acls[] = "LoggedIn";
+            switch(currentUser()->user_type){
+                case 'MO':
+                    $current_user_acls[] = "LoggedInMO";
+                    break;
+                case 'MI':
+                    $current_user_acls[] = "LoggedInMI";
+                    break;
+                case 'M':
+                    $current_user_acls[] = "LoggedInM";
+                    break;                          
+            }
+            
             foreach(currentUser()->acls() as $a){
                 $current_user_acls[] = $a;
             } 
