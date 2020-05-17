@@ -1,0 +1,228 @@
+.btn-logout{
+    position: absolute;
+    right: 50px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid gray;
+    color: gray;
+    padding: 10px;
+}
+
+.btn-logout:hover{
+    background-color: gray;
+    color: rgb(59, 59, 59);
+    transition: 0.3s;
+}
+
+.main{
+    background-color: rgb(78, 78, 78);
+}
+
+.main h1{
+    font-size: 30px;
+    color: honeydew;
+}
+
+.main p{
+    color: white;
+}
+
+.main hr{
+    height: 1px;
+    color: rgb(212, 212, 212);
+    background-color: rgb(224, 224, 224);
+}
+
+.page-content{
+    border: 2px solid rgb(109, 109, 109); 
+    background-color: rgb(255, 255, 255);
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom  : 10px;    
+}
+
+
+
+.tab-text{
+    border: 1px solid black;
+}
+
+.heading{
+    border: 1px solid black;
+    height: 35px;
+    padding-top: 5px;
+    background-color: rgb(177, 174, 174);
+    
+}
+
+.heading p{
+    color: black;
+    font-size: 18px;
+    
+}
+
+.not-heading-multi{
+    border: 1px solid black;
+    padding-top: 7px;
+    background-color: white;
+}
+
+.not-heading-multi p{
+    color: black;
+    font-size:  14px;
+}
+
+.not-heading{
+    border: 1px solid black;
+    height: 30px;
+    padding-top: 7px;
+    background-color: white;
+
+}
+
+.not-heading p{
+    color: black;
+    font-size: 14px;
+}
+
+.tab-val{
+    border: 1px solid black;
+}
+
+.tab-sum{
+    border: 1px solid black;
+}
+
+
+.sub-heading{
+    border: 1px solid black;
+    height: 30px;
+    padding-top: 7px;
+    background-color: white;
+
+}
+
+.sub-heading p{
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.heading-val{
+    border: 1px solid black;
+    height: 35px;
+    padding-top: 5px;
+    background-color: rgb(177, 174, 174);
+    text-align: center;
+}
+
+.heading-val p{
+    color: black;
+    font-size: 18px;
+}
+
+.not-heading-val{
+    border: 1px solid black;
+    height: 30px;
+    padding-top: 7px;
+    background-color: white;
+    text-align: center;
+}
+
+.not-heading-val p{
+    color: black;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+    .heading{
+        padding: 5px;
+    }
+    .heading p{
+        font-size: 10px;
+    }
+    .not-heading{
+        padding: 5px;
+    }
+    .not-heading p{
+        font-size: 10px;
+    }
+    .sub-heading{
+        padding: 5px;
+    }
+    .sub-heading p{
+        font-size: 10px;
+    }
+    .not-heading-multi{
+        padding: 5px;
+    }
+    .not-heading-multi p{
+        font-size: 10px;
+    }
+
+    .heading-val{
+        padding: 1px;
+    }
+    .heading-val p{
+        font-size: 10px;
+    }
+
+    .not-heading-val{
+        padding: 1px;
+    }
+    .not-heading-val p{
+        font-size: 10px;
+    }
+    .tab-sum{
+        display: none;
+    }
+
+
+}
+
+.footer-text{
+    color: grey;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    
+}
+.footer-text h1{
+    color: rgb(161, 160, 160);
+    font-size: 30px;
+}
+
+.footer-dashboard{
+    background-color: #4e4e4e;
+    color:rgb(154, 179, 179);
+    height: 50px;
+    padding-top: 20px;
+
+}
+
+.footer-icon{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+.icon {
+  padding: 20px;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin-left: 10px;
+  text-decoration:none;
+  color: gray;
+  
+}
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    transition: 0.3s;
+    opacity: 0.7;
+}

@@ -1,17 +1,15 @@
 <?php
 
-class Medicalofficer extends Controller{
+class Mother extends Controller{
     public function __construct($controller, $action){
         parent::__construct($controller, $action);
-        $this->view->setLayout('mediofficer_layout');
+        $this->view->setLayout('mother_layout');
     }
 
     public function indexAction(){
         $user = currentUser();
         $this->view->name = $user->name;
-        $this->view->render('medicalOfficer/index');
+        $this->view->render('mother/index');
     }
-
-
 
 }

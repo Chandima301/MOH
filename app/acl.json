@@ -6,9 +6,9 @@
     },
     "LoggedIn" : {
         "denied" : {
-            "Login" : ["index", "register"]
+            "Login" : ["login","register"]
         },
-        "Login" : ["logout"],
+        "Login" : ["index","logout"],
         "Medicalofficer" : ["*"]
         
     }

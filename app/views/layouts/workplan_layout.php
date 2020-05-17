@@ -12,13 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- main stylesheet -->
-    <link rel="stylesheet" href="<?= PROOT ?>css/medicalofficer.css">
+    <link rel="stylesheet" href="<?= PROOT ?>css/workplan.css">
     <link rel="stylesheet" href="<?= PROOT ?>css/reset-stylesheet.css">
-
-    <!-- JS -->
-    <script src="<?= PROOT ?>js/jquery-3.4.1.js"></script>
-    <script src="<?= PROOT ?>bootstrap/js/bootstrap.js"></script>
-
     <?= $this->content('head'); ?>
 
 </head>
@@ -44,13 +39,15 @@
                     <a class="nav-link" href="#">Help</a>
                 </li>
             </ul>
-            <a class="btn-logout" href="<?=PROOT?>login/logout">Log out</a>
+            <span class="navbar-text pl-5">
+                <i class="fa fa-user-circle-o fa-lg pr-3" style="font-size: 20px;" aria-hidden="true"></i>Hi, Prema Chandani
+            </span>
+            <button class="btn-logout">Log out</button>
         </div>
 
     </nav>
-    
-    <div class="container-fluid" style="padding-top: 65px;">
 
+    <div class="container-fluid" style="padding-top: 65px;">
 
         <?= $this->content('body'); ?>
 
@@ -79,9 +76,9 @@
         </div>
     </div>
 
-
     <script src="<?= PROOT ?>js/medicalofficer.js"></script>
-
+    <script src="<?= PROOT ?>js/jquery-3.4.1.js"></script>
+    <script src="<?= PROOT ?>bootstrap/js/bootstrap.js"></script>
 </body>
 
 </html>
