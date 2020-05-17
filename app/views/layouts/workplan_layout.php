@@ -40,9 +40,9 @@
                 </li>
             </ul>
             <span class="navbar-text pl-5">
-                <i class="fa fa-user-circle-o fa-lg pr-3" style="font-size: 20px;" aria-hidden="true"></i>Hi, Prema Chandani
+                <i class="fa fa-user-circle-o fa-lg pr-3" style="font-size: 20px;" aria-hidden="true"></i>Hi, <?= $this->name; ?>
             </span>
-            <button class="btn-logout">Log out</button>
+            <a class="btn-logout" href="<?=PROOT?>login/logout">Log out</a>
         </div>
 
     </nav>

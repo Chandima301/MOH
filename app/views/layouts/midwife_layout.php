@@ -52,12 +52,12 @@
                     <li class="nav-item dropdown">
                         <i class="fa fa-user-circle"></i>
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hello,<br>Prema Chandani
+                            Hello,<br><?= $this->name; ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="Dashboard.html" style="color: black;">Dashboard</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item nav-link logout" href="#" style="color: black;"> &emsp;Sign Out</a>
+                            <a class="dropdown-item nav-link logout" href="<?=PROOT?>login/logout" style="color: black;"> &emsp;Sign Out</a>
                         </div>
                     </li>
                 </ul>

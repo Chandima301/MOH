@@ -7,10 +7,15 @@ class Midwife extends Controller{
     }
 
     public function indexAction(){
+        $user = currentUser();
+        $this->view->name = $user->name;
         $this->view->render('midwife/index');
     }
 
     public function workplanAction(){
+        $user = currentUser();
+        $this->view->name = $user->name;
+        
         $this->view->setLayout('workplan_layout');
         $this->view->render('midwife/workplan');
     }
