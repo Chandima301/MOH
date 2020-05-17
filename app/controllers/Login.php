@@ -121,6 +121,7 @@ class Login extends Controller{
             ]);
             if($validation->passed()){
                 $newUser = new User();
+                $newUser->user_type = "M";
                 $newUser->registerNewUser($_POST);
                 Router::redirect('');
 
