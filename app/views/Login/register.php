@@ -41,7 +41,7 @@
     </div>
     <div class="form-row">
       <div class="col-md-12 mb-3">
-        <label for="birthday">ලිපිනය</label>
+        <label for="address">ලිපිනය</label>
         <input type="text" class="form-control" id="address" name="address" placeholder="Address" value="<?= $this->post['address'] ?>" required>
         <div class="invalid-feedback">
           කරුනාකර ලිපිනය ඇතුලත් කරන්න.

@@ -6,7 +6,7 @@
     <div class="col-md-2 sidebar">
         <img src="<?= PROOT ?>img/avatar2.png" alt="profile-pic" class="profile-img">
         <div class="name-tag">
-            <?=$this->name;?>
+            <?= $this->name; ?>
             <br>
             <span style="font-size: 15px;">(ම. සෞ. හෙද සොයුරිය)</span>
         </div>
@@ -212,42 +212,78 @@
         </div>
 
         <div class="sub-tab" id="midwiferegister" style="font-size: small;">
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" novalidate action="<?=PROOT?>medicalofficer/register" method="POST">
+                <div class='alert-danger alert-info mx-auto' style="margin-bottom: 10px;">
+                    <?= $this->displayErrors; ?>
+                </div>
                 <div class="form-row">
                     <div class="col-md-8 mb-3">
-                        <label for="validationCustom01">සම්පූර්ණ නම</label>
-                        <input type="text" class="form-control" id="validationCustom01" placeholder="Full name" required>
+                        <label for="name">සම්පූර්ණ නම</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full name" value="<?= $this->post['name'] ?>" required>
                         <div class="invalid-feedback">
                             කරුනාකර සම්පූර්ණ නම ඇතුලත් කරන්න.
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="validationCustom01">උපන් දිනය</label>
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="yyyy/mm/dd" required>
+                        <label for="birthday">උපන් දිනය</label>
+                        <input type="text" class="form-control" id="birthday" name="birthday" placeholder="yyyy/mm/dd" value="<?= $this->post['birthday'] ?>" required>
                         <div class="invalid-feedback">
                             කරුනාකර උපන්දිනය ඇතුලත් කරන්න.
                         </div>
                     </div>
                 </div>
                 <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="birthday">විද්‍යුත් තැපැල් ලිපිනය</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail address" value="<?= $this->post['email'] ?>" required>
+                        <div class="invalid-feedback">
+                            කරුනාකර විද්‍යුත් තැපැල් ලිපිනය ඇතුලත් කරන්න.
+                        </div>
+                    </div>
                     <div class="col-md-3 mb-3">
-                        <label for="validationCustom01">ජාතික හැදුනුම්පත් අංකය</label>
-                        <input type="text" class="form-control" id="validationCustom01" placeholder="Id number" required>
+                        <label for="idcardnum">ජාතික හැදුනුම්පත් අංකය</label>
+                        <input type="text" class="form-control" id="idcardnum" name="idcardnum" placeholder="Id number" value="<?= $this->post['idcardnum'] ?>" required>
                         <div class="invalid-feedback">
                             කරුනාකර හැදුනුම්පත් අංකය ඇතුලත් කරන්න.
                         </div>
                     </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="birthday">දුරකතන අංකය</label>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number" value="<?= $this->post['phone'] ?>" required>
+                        <div class="invalid-feedback">
+                            කරුනාකර දුරකතන අංකය ඇතුලත් කරන්න.
+                        </div>
+                    </div>
+
 
                 </div>
                 <div class="form-row">
                     <div class="col-md-12 mb-3">
-                        <label for="validationCustom03">ලිපිනය</label>
-                        <input type="text" class="form-control" id="validationCustom03" placeholder="Address" required>
+                        <label for="address">ලිපිනය</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Address" value="<?= $this->post['address'] ?>" required>
                         <div class="invalid-feedback">
                             කරුනාකර ලිපිනය ඇතුලත් කරන්න.
                         </div>
                     </div>
                 </div>
+
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">මුරපදය</label>
+                        <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" value="<?= $this->post['pwd'] ?>" required>
+                        <div class="invalid-feedback">
+                            කරුනාකර මුරපදයක් ඇතුලත් කරන්න.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">මුරපදය නැවත ඇතුලත් කරන්න</label>
+                        <input type="password" class="form-control" id="confirm" name="confirm" placeholder="Repeat-Password" value="<?= $this->post['confirm'] ?>" required>
+                        <div class="invalid-feedback">
+                            කරුනාකර මුරපදය නැවත ඇතුලත් කරන්න.
+                        </div>
+                    </div>
+                </div>
+
 
                 <button class="btn btn-primary" type="submit">Submit form</button>
             </form>
