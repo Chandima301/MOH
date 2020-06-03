@@ -1,13 +1,13 @@
 <?php
 
-class Medicalofficer extends Controller{
+class MedicalofficerController extends Controller{
     public function __construct($controller, $action){
         parent::__construct($controller, $action);
         $this->view->setLayout('mediofficer_layout');
     }
 
     public function indexAction(){
-        $user = currentUser();
+        $user = User::currentUser();
         $this->view->name = $user->name;
         $posted_values = ['name'=>'', 'idcardnum'=>'', 'birthday'=>'','address'=>'', 'phone'=>'', 'email'=>'', 'pwd'=>'', 'confirm'=>''];
         $this->view->post = $posted_values;
@@ -15,13 +15,13 @@ class Medicalofficer extends Controller{
     }
 
     public function registerAction(){
-        $user = currentUser();
+        $user = User::currentUser();
         $this->view->name = $user->name;
         
         $validation = new Validate();
         $posted_values = ['name'=>'', 'idcardnum'=>'', 'birthday'=>'','address'=>'', 'phone'=>'', 'email'=>'', 'pwd'=>'', 'confirm'=>''];
         if($_POST){
-            $posted_values = posted_values($_POST);
+            $posted_values = Helper::posted_values($_POST);
             $validation->check($_POST, [
                 'name'=> [
                     'display'=>'Name',

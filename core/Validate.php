@@ -10,10 +10,10 @@ class Validate{
     public function check($source, $items=[]){
         $this->_error = [];
         foreach($items as $item => $rules){
-            $item = Input::sanitize($item);
+            $item = Helper::sanitize($item);
             $display = $rules['display'];
             foreach($rules as $rule => $rule_value){
-                $value  = Input::sanitize(trim($source[$item]));
+                $value  = Helper::sanitize(trim($source[$item]));
 
                 if($rule === 'required' && empty($value)){
                     $this->addError("{$display} is required", $item);
