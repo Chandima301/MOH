@@ -44,15 +44,49 @@
                     <a class="nav-link" href="#">Help</a>
                 </li>
             </ul>
-            <a class="btn-logout" href="<?=PROOT?>login/logout">Log out</a>
+            <a class="btn-logout" href="<?= PROOT ?>login/logout">Log out</a>
         </div>
 
     </nav>
-    
+
     <div class="container-fluid" style="padding-top: 65px;">
 
 
-        <?= $this->content('body'); ?>
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <img src="<?= PROOT ?>img/avatar2.png" alt="profile-pic" class="profile-img">
+                <div class="name-tag">
+                    <?php if (User::currentUser()) : ?>
+                        <?= User::currentUser()->name; ?>
+                    <?php endif; ?>
+
+                    <br>
+                    <span style="font-size: 15px;">(ම. සෞ. හෙද සොයුරිය)</span>
+                </div>
+                <hr>
+                <ul class="sidebar-btn">
+                    <li class="side-tab <?= $this->btn_state['area'] ?>">
+                        <a href="<?= PROOT ?>medicalofficer/area">නිලධාරිනියන්ගෙ රාජකාරි ප්‍රදේශ</a>
+                    </li>
+                    <li class="side-tab <?= $this->btn_state['approve'] ?>">
+                        <a href="<?= PROOT ?>medicalofficer/approve">ඉදිරි කාලසටහන් අනුමත කිරීම</a>
+                    </li>
+                    <li class="side-tab <?= $this->btn_state['cancel'] ?>">
+                        <a href="<?= PROOT ?>medicalofficer/cancel">සායන අවලංගු කිරීම් දැනුම් දිම</a>
+                    </li>
+                    <li class="side-tab <?= $this->btn_state['details'] ?>">
+                        <a href="<?= PROOT ?>medicalofficer/details">පවුල් සෞඛ්‍ය සේවා නිලධාරිනියන්</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <?= $this->content('body'); ?>
+
+        </div>
+
+
+
 
         <div class="row justify-content-between" style="background-color: #3d3d3d;">
             <div class="col-md-6 footer-text ">
@@ -78,6 +112,7 @@
 
         </div>
     </div>
+
 
 
     <script src="<?= PROOT ?>js/medicalofficer.js"></script>

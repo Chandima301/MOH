@@ -13,6 +13,11 @@ function toggleTab(tab, evt, tabBtnClass, tabClass){
     evt.currentTarget.className += " active";
 }
 
+function view(id){
+  document.getElementById(id).style.display = "block";
+}
+
+
 (function() {
     'use strict';
     window.addEventListener('load', function() {

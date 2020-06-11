@@ -16,7 +16,7 @@ class Model {
         $columns = $this->get_columns();
         foreach ($columns as $column) {
             $columnName = $column->Field;
-            $this->_columnNames[] = $column->Field;
+            $this->_columnNames[] = $columnName;
             $this->{$columnName} = null;
         }
     }
@@ -25,9 +25,26 @@ class Model {
         return $this->_db->get_columns($this->_table);
     }
 
+    protected function _softDeleteParamsAdding($params){
+        if($this->_softDelete){
+            if(array_key_exists('conditions',$params)){
+                if(is_array($params['conditions'])){
+                    $params['conditions'][] = "deleted != 1";
+                }else{
+                    $params['conditions'] .= " AND deleted != 1";
+                }
+            }else{
+                $params['conditions'] = "deleted != 1";
+            }
+        }
+        return $params;
+    }
+
     public function find($params = []){
+        $params = $this->_softDeleteParamsAdding($params);
         $results = [];
         $resultsQuery = $this->_db->find($this->_table, $params);
+        if(!$resultsQuery) return [];
         foreach($resultsQuery as $result){
             $obj = new $this->_modelName($this->_table);
             $obj->populateObjData($result);
@@ -37,6 +54,7 @@ class Model {
     }
 
     public function findFirst($params = []){
+        $params = $this->_softDeleteParamsAdding($params);
         $resultsQuery = $this->_db->findFirst($this->_table, $params);
         $result = new $this->_modelName($this->_table);
         if($resultsQuery)$result->populateObjData($resultsQuery);
@@ -85,7 +103,7 @@ class Model {
         if(!empty($params)){
             foreach($params as $key => $val){
                 if(in_array($key, $this->_columnNames)){
-                    $this->$key = sanitize($val);
+                    $this->$key = Helper::sanitize($val);
                 }
             }
             return true;

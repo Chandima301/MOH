@@ -1,6 +1,6 @@
 <?php
 
-class Login extends Controller{
+class LoginController extends Controller{
     public function __construct($controller, $action){
         parent::__construct($controller, $action);
         $this->load_model('User');
@@ -9,7 +9,7 @@ class Login extends Controller{
 
     public function indexAction(){
         if(Session::exists(CURRENT_USER_SESSION_NAME)){
-            switch(currentUser()->user_type){
+            switch(User::currentUser()->user_type){
                 case 'M':
                     Router::redirect('mother/index');
                     break;
@@ -71,7 +71,7 @@ class Login extends Controller{
         $validation = new Validate();
         $posted_values = ['name'=>'', 'idcardnum'=>'', 'birthday'=>'','address'=>'', 'phone'=>'', 'email'=>'', 'pwd'=>'', 'confirm'=>''];
         if($_POST){
-            $posted_values = posted_values($_POST);
+            $posted_values = Helper::posted_values($_POST);
             $validation->check($_POST, [
                 'name'=> [
                     'display'=>'Name',
@@ -133,7 +133,7 @@ class Login extends Controller{
     }
 
     public function logoutAction(){
-        currentUser()->logout();
+        User::currentUser()->logout();
         Router::redirect('login/index');
     }
 }
