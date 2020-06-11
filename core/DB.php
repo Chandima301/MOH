@@ -96,6 +96,7 @@ class DB{
         $bind = [];
         $order = '';
         $limit = '';
+        $columns = '*';
         
         //conditions
         if (isset($params['conditions'])) {
@@ -128,8 +129,13 @@ class DB{
             $limit = ' LIMIT ' . $params['limit'];
         }
 
-        $sql = "SELECT * FROM {$table}{$conditionString}{$order}{$limit}";
-        
+        //columns
+        if (array_key_exists('columns', $params)) {
+            $columns = $params['columns'];
+        }
+
+
+        $sql = "SELECT {$columns} FROM {$table}{$conditionString}{$order}{$limit}";
         if ($this->query($sql, $bind)) {
             if (!count($this->_result)) {
                 return false;

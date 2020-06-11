@@ -16,7 +16,7 @@ class Model {
         $columns = $this->get_columns();
         foreach ($columns as $column) {
             $columnName = $column->Field;
-            $this->_columnNames[] = $column->Field;
+            $this->_columnNames[] = $columnName;
             $this->{$columnName} = null;
         }
     }
@@ -44,6 +44,7 @@ class Model {
         $params = $this->_softDeleteParamsAdding($params);
         $results = [];
         $resultsQuery = $this->_db->find($this->_table, $params);
+        if(!$resultsQuery) return [];
         foreach($resultsQuery as $result){
             $obj = new $this->_modelName($this->_table);
             $obj->populateObjData($result);

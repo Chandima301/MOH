@@ -108,7 +108,6 @@
 }
 
 .tab{
-    display: none;
     background-color: #fffbea;
     animation-name: fadeIn;
     animation-duration: 0.5s;
@@ -129,11 +128,11 @@
     height: 2px;
     color: rgb(133, 131, 110);
     background-color: rgb(133, 131, 110);
+
 }
 
 
 .sub-tab{
-    display: none;
     background-color: #f5f3ee;
     padding: 10px;
     border: 2px solid #b3aa85;
