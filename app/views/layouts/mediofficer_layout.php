@@ -25,17 +25,17 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="<?= PROOT ?>medicalofficer/index">
             <img src="<?= PROOT ?>img/National.png" width="40" height="40" class="d-inline-block align-top" alt="">
         </a>
-        <a class="navbar-brand" href="#">MOH Kelaniya</a>
+        <a class="navbar-brand" href="<?= PROOT ?>medicalofficer/index">MOH Office Kelaniya</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav pl-4">
                 <li class="nav-item active pl-2">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<?= PROOT ?>medicalofficer/index">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item pl-2">
                     <a class="nav-link" href="#">Contact</a>
@@ -51,17 +51,16 @@
 
     <div class="container-fluid" style="padding-top: 65px;">
 
-
         <div class="row">
             <div class="col-md-2 sidebar">
                 <img src="<?= PROOT ?>img/avatar2.png" alt="profile-pic" class="profile-img">
                 <div class="name-tag">
                     <?php if (User::currentUser()) : ?>
-                        <?= User::currentUser()->name; ?>
+                        <span style="font-size: 18px; text-shadow: 0px 5px 10px rgba(0, 0, 0, 1);"><?= User::currentUser()->name; ?></span>
                     <?php endif; ?>
 
                     <br>
-                    <span style="font-size: 15px;">(ම. සෞ. හෙද සොයුරිය)</span>
+                    <span style="font-size: 11px; text-shadow: 0px 5px 10px rgba(0, 0, 0, 1);">(ම. සෞ. හෙද සොයුරිය)</span>
                 </div>
                 <hr>
                 <ul class="sidebar-btn">

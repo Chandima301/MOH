@@ -1,6 +1,7 @@
 <?php
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(__FILE__));
+date_default_timezone_set('Asia/Colombo');
 
 // load configuration and autoload functions
 require_once(ROOT . DS . 'config' . DS . 'config.php');

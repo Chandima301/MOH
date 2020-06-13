@@ -87,7 +87,7 @@ class Model {
     }
 
     public function update($fields, $key, $keyvalue){
-        if(empty($fields) || $key == '' || $keyvalue) return false;
+        if(empty($fields) || $key == '' || $keyvalue == '') return false;
         return $this->_db->update($this->_table, $fields, $key, $keyvalue);
     }
 

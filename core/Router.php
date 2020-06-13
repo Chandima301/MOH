@@ -24,7 +24,7 @@ class Router {
 
         //params
         $queryParams = $url;
-
+        
         $controllerObject = new $controller($controller_name, $action);
         
         if (method_exists($controller, $action)) {

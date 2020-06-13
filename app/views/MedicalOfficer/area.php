@@ -8,7 +8,7 @@
         නිලධාරිනියන්ගෙ රාජකාරි ප්‍රදේශ
     </div>
     <hr>
-
+    <p class="pb-4" style="font-size: 20px;">Today is <?=date("Y/m/d")?></p>
     <div class="sub">
         <div class="row">
             <?php foreach($this->slots as $slot):?>
@@ -16,8 +16,8 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title"><?=$slot->name?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-envelope"></i> <?=$this->midwifes[$slot->idcardnum]->email?></h6>
-                        <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-phone"></i> <?=$this->midwifes[$slot->idcardnum]->phone?></h6>
+                        <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-envelope"></i> <?=$slot->email?></h6>
+                        <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-phone"></i> <?=$slot->phone?></h6>
                         <div class="indicator">
                             <div class="dot-active"></div> රාජකාරියට වාර්ථාකර ඇත
                         </div>

@@ -18,12 +18,6 @@ class MedicalofficerController extends Controller{
         $month = $date[0].'/'.$date[1];
         $day = $date[2];
         $slots = $this->TimeTableModel->getTimeTableSlotsByDay($month,$day);
-        $midwifes = [];
-        foreach($slots as $slot){
-            $midwifes[$slot->idcardnum] = $this->MedicalofficerModel->findByID($slot->idcardnum);
-        }
-
-        $this->view->midwifes = $midwifes; 
         $this->view->slots = $slots;
         $this->view->day = $day;
         $this->view->btn_state['area']= 'active';
@@ -32,22 +26,32 @@ class MedicalofficerController extends Controller{
     public function approveAction(){
         $this->view->btn_state['approve']= 'active';
         $timetables = $this->TimeTableModel->getPendingTimeTables();
+        $approvedRecently = $this->TimeTableModel->getRecentApprovedTimeTables();
         if(!$timetables){
             $this->view->script = "<script>view('nothingtoapprove');</script>";
         }
+        $this->view->approvedRecently = $approvedRecently;
         $this->view->timetables = $timetables;
         $this->view->render('medicalOfficer/approve');
     }
 
-    public function timetabledetailsAction($id){
+    public function timetabledetailsAction($id,$approval=''){
         $this->view->btn_state['approve']= 'active';
+        if($approval == 'approve'){
+            if($this->TimeTableModel->updateApproval($id,User::currentUser()->name)){
+                $this->view->script = "<script>view('approvesuccess');</script>";
+            }else{
+                $this->view->script = "<script>view('approveerror');</script>";
+            }
+        }
         $timetable = $this->TimeTableModel->findByID($id);
-        $midwife = $this->MedicalofficerModel->findByID($timetable->idcardnum);
         if(!$timetable){
 
         }
+        
+        
+        $this->view->id = $id;
         $this->view->timetable = $timetable;
-        $this->view->midwife = $midwife;
         $this->view->render('medicalOfficer/timetablepreview');
     }
 
