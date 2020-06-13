@@ -71,10 +71,12 @@ class DB{
             $fieldString .= ' ' . $field . ' = ?,';
             $values[] = $value; 
         }
+        $values[] = $keyvalue; 
         $fieldString = trim($fieldString);
         $fieldString = rtrim($fieldString, ',');
         
-        $sql = "UPDATE {$table} SET {$fieldString} WHERE {$key} = {$keyvalue}";
+        $sql = "UPDATE {$table} SET {$fieldString} WHERE {$key} = ?";
+
         if(!$this->query($sql, $values)->error()){
             return true;
         }
@@ -97,6 +99,7 @@ class DB{
         $order = '';
         $limit = '';
         $columns = '*';
+        $join = '';
         
         //conditions
         if (isset($params['conditions'])) {
@@ -134,8 +137,12 @@ class DB{
             $columns = $params['columns'];
         }
 
+        if(array_key_exists('join',$params)){
+            $join = ' '.$params['join'];
+        }
 
-        $sql = "SELECT {$columns} FROM {$table}{$conditionString}{$order}{$limit}";
+
+        $sql = "SELECT {$columns} FROM {$table}{$join}{$conditionString}{$order}{$limit}";
         if ($this->query($sql, $bind)) {
             if (!count($this->_result)) {
                 return false;

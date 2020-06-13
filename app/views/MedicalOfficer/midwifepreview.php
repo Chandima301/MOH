@@ -7,7 +7,6 @@
         පවුල් සෞඛ්‍ය සේවා නිලධාරිනියන් ලියාපදිංචි කිරීම් හා තොරතුරු
     </div>
     <hr>
-
     <div class="card border-dark mb-3">
         <div class="row no-gutters">
             <div class="col-md-2">
@@ -54,7 +53,7 @@
             <div class="col-md-12">
                 <div class="row row-cols-1 row-cols-md-4">
                     <?php foreach ($this->timetables as $timetable) : ?>
-                        <?php $type = 'secondary' ?>
+                        <?php $type = 'success' ?>
                         <?php $approval = '<p class="card-text"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Approved</p>' ?>
                         <?php if ($timetable->approved == 0) : ?>
                             <?php $type = 'danger'; ?>
@@ -67,7 +66,7 @@
                                     <h5 class="card-title">අදාල මාසය: <?= $timetable->month ?></h5>
                                     <?= $approval ?>
                                     <p class="card-text mt-3" style="font-size: 12px;">දිනය: <?= $timetable->date ?></p>
-                                    <a href="#" class="btn btn-primary mt-3">View details</a>
+                                    <a href="<?= PROOT ?>medicalofficer/timetabledetails/<?= $timetable->id; ?>" class="btn btn-primary mt-3">View details</a>
                                 </div>
                             </div>
                         </div>

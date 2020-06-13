@@ -41,5 +41,20 @@
             </tbody>
         </table>
     </div>
+    <h3 class="pt-5 pb-3">Approved Recently</h3>
+
+    <div class="list-group">
+        <?php foreach ($this->approvedRecently as $timetable) : ?>
+            <a href="<?= PROOT ?>medicalofficer/timetabledetails/<?= $timetable->id; ?>" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><?=$timetable->area?></h5>
+                    <small><?= Helper::time_elapsed_string($timetable->approveddate); ?></small>
+                </div>
+                <p class="mb-1" style="font-size: 12px;"><?=$timetable->name?> : <?=$timetable->idcardnum?> : <?=$timetable->month?></p>
+                <p style="font-size: 10px;">Approved by : <?=$timetable->approvedby?></p>
+            </a>
+        <?php endforeach; ?>
+        
+    </div>
 </div>
 <?php $this->end(); ?>
