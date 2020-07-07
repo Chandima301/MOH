@@ -8,7 +8,6 @@
         <h5>MOH(Medical Officer Of Health) Office Kelaniya</h5>
     </div>
     <hr>
-    
 
     <div class="sub">
         <div class="accordion" id="accordionExample">
@@ -58,6 +57,7 @@
         </div>
 
     </div>
+
 </div>
 
 <?php $this->end(); ?>
