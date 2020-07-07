@@ -1,6 +1,6 @@
 <?php
 
-class Controller extends Application{
+abstract class Controller extends Application{
     protected $_controller, $_action;
     public $view;
 
@@ -17,5 +17,6 @@ class Controller extends Application{
         }
     }
 
+    public abstract function indexAction();
 
 }

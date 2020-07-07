@@ -49,7 +49,20 @@
 
         </div>
 
+        
         <div class="row ml-4 mr-4">
+            
+            <div class="btn-group mb-3" style="width: 150px;">
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select the year
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">2018</a>
+                    <a class="dropdown-item" href="#">2019</a>
+                    <a class="dropdown-item" href="#">2020</a>
+                </div>
+            </div>
+
             <div class="col-md-12">
                 <div class="row row-cols-1 row-cols-md-4">
                     <?php foreach ($this->timetables as $timetable) : ?>
@@ -72,6 +85,14 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-4 mr-4 ml-4">
+            <div class="col-md-12">
+                <h5 class="card-title" style="font-size: 18px;">පැමිනීම</h5>
+                <hr style="height:0.5px; color:rgb(158, 158, 158);">
             </div>
 
         </div>

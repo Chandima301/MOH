@@ -17,6 +17,7 @@
 
     <!-- JS -->
     <script src="<?= PROOT ?>js/jquery-3.4.1.js"></script>
+    <script src="<?= PROOT ?>js/popper.min.js"></script>
     <script src="<?= PROOT ?>bootstrap/js/bootstrap.js"></script>
 
     <?= $this->content('head'); ?>
