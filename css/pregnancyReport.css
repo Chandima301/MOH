@@ -1,0 +1,28 @@
+.page-content{
+    border: 2px solid rgb(136, 129, 129); 
+    background-color: rgb(255, 255, 255);
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom  : 10px; 
+}
+.tab-text, .tab-value{
+    border: 2px solid black;
+}
+.not-heading{
+    border: 1px solid black;
+    height: 30px;
+    padding-top: 10px;
+    background-color: white;
+    color: black;
+    font-size: 12px;
+
+}
+.heading{
+    background-color:rgba(185, 182, 182, 0.945) ;
+    border: 1px solid black;
+    height: 35px;
+    padding-top: 10px;
+    color: black;
+    font-size: 18px;
+}

@@ -1,28 +1,31 @@
 {
-    "Guest" : {
-        "denied" : {},
-        "Login" : ["index","login","register"],
-        "Restricted" : ["*"]
+    "Guest": {
+        "denied": {},
+        "Login": ["index", "login", "register"],
+        "Restricted": ["*"]
     },
-    "LoggedInMO" : {
-        "denied" : {
-            "Login" : ["login","register"]
+    "LoggedInMO": {
+        "denied": {
+            "Login": ["login", "register"]
         },
-        "Login" : ["index","logout"],
-        "Medicalofficer" : ["*"]
+        "Login": ["index", "logout"],
+        "Medicalofficer": ["*"]
     },
-    "LoggedInMI" : {
-        "denied" : {
-            "Login" : ["login","register"]
+    "LoggedInMI": {
+        "denied": {
+            "Login": ["login", "register"]
         },
-        "Login" : ["index","logout"],
-        "Midwife" : ["*"]
+        "Login": ["index", "logout"],
+        "Preport": ["*"],
+        "Dwreport": ["*"],
+        "Workplan": ["*"],
+        "Midwife": ["*"]
     },
-    "LoggedInM" : {
-        "denied" : {
-            "Login" : ["login","register"]
+    "LoggedInM": {
+        "denied": {
+            "Login": ["login", "register"]
         },
-        "Login" : ["index","logout"],
-        "Mother" : ["*"]
+        "Login": ["index", "logout"],
+        "Mother": ["*"]
     }
 }

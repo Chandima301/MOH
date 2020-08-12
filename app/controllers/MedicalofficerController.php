@@ -4,19 +4,68 @@ class MedicalofficerController extends Controller{
     public function __construct($controller, $action){
         parent::__construct($controller, $action);
         $this->view->setLayout('mediofficer_layout');
-        $this->view->btn_state = ['area'=>'','approve'=>'','cancel'=>'','details'=>'', 'details-tab'=>'', 'register-tab'=>''];
+        $this->view->btn_state = ['area'=>'','approve'=>'','cancel'=>'','details'=>'', 'details-tab'=>'', 'register-tab'=>'', 'messages'=>'', 'notifications'=>''];
         $this->load_model('Medicalofficer');
         $this->load_model('TimeTable');
+        $this->load_model('Message');
+        $this->view->newMsgCount = $this->MessageModel->getNewMsgCount();
     }
 
     public function indexAction(){
         $this->view->render('medicalOfficer/index');
     }
 
+    public function messageAction($id=''){
+        $selectedChat = [];
+        $message = ["message"=>''];
+        if($_POST and $id != ''){
+            $message = Helper::posted_values($_POST);
+            if($this->MessageModel->sendMessage($id, $_POST['message'])){
+                $message = ["message"=>''];
+            }
+        }
+
+        if($id != ''){
+            $selectedChat = $this->MessageModel->getMessagesFromSender($id);
+        }
+        $chats = $this->MessageModel->getRecivedMessages();
+        $this->view->search_text = ["idcardnum"=>""];
+        $this->view->activeChat = $id;
+        $this->view->message = $message;
+        $this->view->selectedChat = $selectedChat;
+        $this->view->chats = $chats;
+        $this->view->users = [];
+        $this->view->btn_state['messages']= 'active';
+        $this->view->render('medicalOfficer/messages');
+    }
+
+    public function searchForMessageAction(){
+        $this->view->users = [];
+        $search_text = ["idcardnum"=>""];
+        if($_POST){
+            $search_text = Helper::posted_values($_POST);
+            $users = $this->MedicalofficerModel->getUserByID($_POST['idcardnum']);
+            if($users){
+                $search_text = ['idcardnum'=>''];
+                $this->view->users = $users;
+            }
+            else{    
+                $this->view->script = "<script>view('notfound');</script>";
+            }
+        }
+        $this->view->message = ["message"=>""];
+        $this->view->search_text = $search_text;
+        $this->view->selectedChat = [];
+        $this->view->chats = [];
+        $this->view->users = $users;
+        $this->view->btn_state['messages']= 'active';
+        $this->view->render('medicalOfficer/messages');
+    }
+
     public function areaAction(){
         $date = explode('/', date('Y/m/d'));
         $month = $date[0].'/'.$date[1];
-        $day = $date[2];
+        $day = (string)(int)$date[2];
         $slots = $this->TimeTableModel->getTimeTableSlotsByDay($month,$day);
         $this->view->slots = $slots;
         $this->view->day = $day;

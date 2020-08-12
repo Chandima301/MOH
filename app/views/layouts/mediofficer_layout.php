@@ -64,6 +64,23 @@
                     <span style="font-size: 11px; text-shadow: 0px 5px 10px rgba(0, 0, 0, 1);">(ම. සෞ. හෙද සොයුරිය)</span>
                 </div>
                 <hr>
+
+                <div class="d-flex justify-content-center">
+                    <a href="<?= PROOT ?>medicalofficer/message" class="notification <?= $this->btn_state['messages'] ?> mr-3">
+                        <p class="text-center"><span><i class="fa fa-comments fa-2x" aria-hidden="true"></i></span></p>
+                        <br>
+                        <p class="text-center"  style="font-size: 10px;">Messages</p>
+                        <span class="badge"><?=$this->newMsgCount;?></span>
+                    </a>
+
+                    <a href="#" class="notification">
+                        <p class="text-center"><span><i class="fa fa-bell fa-2x" aria-hidden="true"></i></span></p>
+                        <br>
+                        <p class="text-center" style="font-size: 10px;">Notifications</p>
+                        <span class="badge">3</span>
+                    </a>
+                </div>
+
                 <ul class="sidebar-btn">
                     <li class="side-tab <?= $this->btn_state['area'] ?>">
                         <a href="<?= PROOT ?>medicalofficer/area">නිලධාරිනියන්ගෙ රාජකාරි ප්‍රදේශ</a>

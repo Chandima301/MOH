@@ -1,9 +1,13 @@
 @keyframes fadeIn {
-    from {opacity:20%;}
-    to {opacity: 100%;}
+    from {
+        opacity: 20%;
+    }
+    to {
+        opacity: 100%;
+    }
 }
 
-.btn-logout{
+.btn-logout {
     position: absolute;
     right: 50px;
     border-radius: 4px;
@@ -14,27 +18,26 @@
     text-decoration: none;
 }
 
-.btn-logout:hover{
+.btn-logout:hover {
     background-color: gray;
     color: rgb(59, 59, 59);
     transition: 0.3s;
 }
 
-
-.sidebar{
-    height:auto;
+.sidebar {
+    height: auto;
     background-color: rgb(88, 88, 88);
     padding: 0;
     box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.596);
 }
-.sidebar hr{
+
+.sidebar hr {
     height: 1px;
     color: beige;
     background-color: beige;
 }
 
-
-.profile-img{
+.profile-img {
     height: 120px;
     width: 120px;
     display: block;
@@ -45,7 +48,7 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.596);
 }
 
-.name-tag{
+.name-tag {
     margin-top: 10px;
     width: 100%;
     height: 40px;
@@ -53,35 +56,33 @@
     color: beige;
 }
 
-.sidebar-btn{
+.sidebar-btn {
     padding-top: 10px;
     padding-bottom: 200px;
 }
 
-.sidebar-btn li{
-
+.sidebar-btn li {
     line-height: 20px;
     list-style: none;
     text-align: center;
     border: solid 1px #646464;
 }
 
-.sidebar-btn li a{
+.sidebar-btn li a {
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 13px;
     display: block;
     text-decoration: none;
     color: rgb(220, 241, 245);
-    
 }
 
-.sidebar-btn li:hover{
+.sidebar-btn li:hover {
     background-color: #646464;
     transition: 0.5s;
 }
 
-.sidebar-btn li.active{
+.sidebar-btn li.active {
     border: solid 1px #424242;
     background-color: #424242;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
@@ -93,7 +94,7 @@
     background-color: rgb(247, 16, 16);
     border-radius: 50%;
     display: inline-block;
-  }
+}
 
 .dot-active {
     height: 10px;
@@ -101,16 +102,16 @@
     background-color: rgb(10, 233, 48);
     border-radius: 50%;
     display: inline-block;
-  }
+}
 
-.indicator{
+.indicator {
     display: block;
     font-size: 12px;
     margin-bottom: 10px;
     color: gray;
 }
 
-.tab{
+.tab {
     background-color: #fffbea;
     animation-name: fadeIn;
     animation-duration: 0.5s;
@@ -118,89 +119,335 @@
     padding-bottom: 20px;
 }
 
-.tab-heading{
+.tab-heading {
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 25px;
     color: #583a3a;
     display: block;
-
 }
-.tab hr{
+
+.tab hr {
     margin-top: 0;
     height: 2px;
     color: rgb(133, 131, 110);
     background-color: rgb(133, 131, 110);
-
 }
 
-
-.sub-tab{
+.sub-tab {
     background-color: #f5f3ee;
     padding: 10px;
     border: 2px solid #b3aa85;
     animation-name: fadeIn;
     animation-duration: 0.2s;
 }
-.sub{
+
+.sub {
     background-color: #f5f3ee;
     padding: 10px;
     border: 2px solid #b3aa85;
 }
 
-
-#tab-btn button{
+#tab-btn button {
     background-color: #c0b99f;
     border: none;
 }
 
-#tab-btn button.active{
+#tab-btn button.active {
     background-color: #9b916a;
     border: none;
 }
 
-
-.footer-text{
+.footer-text {
     color: grey;
     padding-top: 20px;
     padding-left: 30px;
     padding-bottom: 20px;
-    
 }
-.footer-text h1{
+
+.footer-text h1 {
     color: rgb(161, 160, 160);
     font-size: 30px;
 }
 
-.footer-dashboard{
+.footer-dashboard {
     background-color: #4e4e4e;
-    color:rgb(154, 179, 179);
+    color: rgb(154, 179, 179);
     height: 50px;
     padding-top: 20px;
-
 }
 
-.footer-icon{
+.footer-icon {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-
-
 .icon {
-  padding: 20px;
-  font-size: 40px;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  margin-left: 10px;
-  text-decoration:none;
-  color: gray;
-  
+    padding: 20px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-left: 10px;
+    text-decoration: none;
+    color: gray;
 }
-  
-  /* Add a hover effect if you want */
-  .fa:hover {
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
     transition: 0.3s;
     opacity: 0.7;
-  }
+}
+
+.notification {
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    border: solid 1px #646464;
+    width: 100px;
+}
+
+.notification:hover {
+    background: #646464;
+    transition: 0.5s;
+    color: ivory;
+}
+
+.notification.active {
+    border: solid 1px #424242;
+    background-color: #424242;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
+}
+
+.notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
+
+
+/*Chat box*/
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+.inbox_people {
+    background: #f8f8f8 none repeat scroll 0 0;
+    float: left;
+    overflow: hidden;
+    width: 40%;
+    border-right: 1px solid #c4c4c4;
+}
+
+.inbox_msg {
+    border: 1px solid #c4c4c4;
+    clear: both;
+    overflow: hidden;
+}
+
+.top_spac {
+    margin: 20px 0 0;
+}
+
+.recent_heading {
+    float: left;
+    width: 40%;
+}
+
+.srch_bar {
+    display: inline-block;
+    text-align: right;
+    width: 60%;
+}
+
+.headind_srch {
+    padding: 10px 29px 10px 20px;
+    overflow: hidden;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.recent_heading h4 {
+    color: #583a3a;
+    font-size: 21px;
+    margin: auto;
+}
+
+.srch_bar input {
+    border: 1px solid #cdcdcd;
+    border-width: 0 0 1px 0;
+    width: 80%;
+    padding: 2px 0 4px 6px;
+    background: none;
+}
+
+.srch_bar .input-group-addon button {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    padding: 0;
+    color: #707070;
+    font-size: 18px;
+}
+
+.srch_bar .input-group-addon {
+    margin: 0 0 0 -27px;
+}
+
+.chat_ib h5 {
+    font-size: 15px;
+    color: #464646;
+    margin: 0 0 8px 0;
+}
+
+.chat_ib h5 span {
+    font-size: 13px;
+    float: right;
+}
+
+.chat_ib p {
+    font-size: 14px;
+    color: #989898;
+    margin: auto
+}
+
+.chat_img {
+    float: left;
+    width: 11%;
+}
+
+.chat_ib {
+    float: left;
+    padding: 0 0 0 15px;
+    width: 88%;
+}
+
+.chat_people {
+    overflow: hidden;
+    clear: both;
+}
+
+.chat_list {
+    border-bottom: 1px solid #c4c4c4;
+    margin: 0;
+    padding: 18px 16px 10px;
+}
+
+.inbox_chat {
+    height: 550px;
+    overflow-y: scroll;
+}
+
+.active_chat {
+    background: #ebebeb;
+}
+
+.incoming_msg_img {
+    display: inline-block;
+    width: 6%;
+}
+
+.received_msg {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 92%;
+}
+
+.received_withd_msg p {
+    background: #ebebeb none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #646464;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+
+.time_date {
+    color: #747474;
+    display: block;
+    font-size: 12px;
+    margin: 8px 0 0;
+}
+
+.received_withd_msg {
+    width: 57%;
+}
+
+.mesgs {
+    float: left;
+    padding: 30px 15px 0 25px;
+    width: 60%;
+}
+
+.sent_msg p {
+    background: #424242 none repeat scroll 0 0;
+    border-radius: 3px;
+    font-size: 14px;
+    margin: 0;
+    color: #fff;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+
+.outgoing_msg {
+    overflow: hidden;
+    margin: 26px 0 26px;
+}
+
+.sent_msg {
+    float: right;
+    width: 46%;
+}
+
+.input_msg_write input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #4c4c4c;
+    font-size: 15px;
+    min-height: 48px;
+    width: 100%;
+}
+
+.type_msg {
+    border-top: 1px solid #c4c4c4;
+    position: relative;
+}
+
+.msg_send_btn {
+    background: #424242 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    height: 33px;
+    position: absolute;
+    right: 0;
+    top: 11px;
+    width: 33px;
+}
+
+.messaging {
+    padding: 0 0 50px 0;
+}
+
+.msg_history {
+    height: 516px;
+    overflow-y: auto;
+}

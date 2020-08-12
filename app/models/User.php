@@ -84,5 +84,9 @@ class User extends Model{
         if(empty($this->acl))return [];
         return json_decode($this->acl, true);
     }
+    public function getAllusers(){
+        
+        return $this->find(['conditions'=>"user_type = ?", 'bind' =>['MI']]);
+    }
 
 }
