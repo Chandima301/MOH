@@ -121,6 +121,8 @@ class LoginController extends Controller{
             ]);
             if($validation->passed()){
                 $newUser = new User();
+                $newMother = new Mother();
+                $newMother->registerMother(["idcardnum"=>$_POST["idcardnum"],"name"=>$_POST["name"],"confirmation"=>0]);
                 $newUser->user_type = "M";
                 $newUser->registerNewUser($_POST);
                 Router::redirect('');

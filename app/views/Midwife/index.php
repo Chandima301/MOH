@@ -5,45 +5,55 @@
 
 <?php $this->start('body'); ?>
 <!--Selection menu-->
+<div class="background-home" style="padding-bottom: 300px;"> <!--increase the size of the picture-->
 <div class="selection-menu">
     <div class="Services mt-5">
         <h1>Midwife Area</h1>
         <h2> &emsp; <br> &emsp;</h2>
     </div>
     <div class="row">
-        <div class="col-md-3 text-center">
-            <div class="icon">
-                <i class="fa fa-address-card"></i>
+        <a href="<?=PROOT?>midwife/mother">
+            <div class="col-md-3 text-center">
+                <div class="icon icon-hover">
+                    <i class="fa fa-address-card"></i>
+                </div>
+                <a href="<?=PROOT?>midwife/mother" class="main-item">
+                    <h3>ගැබිනි මාතාවන්</h3>
+                </a>
             </div>
-            <a href="Mothers.html">
-                <h3>Mothers</h3>
-            </a>
-        </div>
-        <div class="col-md-3 text-center">
-            <div class="icon">
-                <i class="fa fa-desktop"></i>
+        </a>
+        <a href="<?=PROOT?>midwife/workplan">
+            <div class="col-md-3 text-center">
+                <div class="icon icon-hover">
+                    <i class="fa fa-desktop"></i>
+                </div>
+                <a href="<?=PROOT?>midwife/workplan" class="main-item">
+                    <h3>මගේ සැලැස්ම</h3>
+                </a>
             </div>
-            <a href="<?=PROOT?>midwife/workplan">
-                <h3>My Plan</h3>
-            </a>
-        </div>
-        <div class="col-md-3 text-center">
-            <div class="icon">
-                <i class="fa fa-barcode"></i>
+        </a>
+        <a href="<?=PROOT?>midwife/pregnancyReport">
+            <div class="col-md-3 text-center">
+                <div class="icon icon-hover">
+                    <i class="fa fa-barcode"></i>
+                </div>
+                <a href="<?=PROOT?>midwife/pregnancyReport" class="main-item">
+                    <h3>ගර්භනී වාර්තාව</h3>
+                </a>
             </div>
-            <a href="#">
-                <h3>Pregnancy Report</h3>
-            </a>
-        </div>
-        <div class="col-md-3 text-center">
-            <div class="icon">
-                <i class="fa fa-tablet"></i>
+        </a>
+        <a href="<?=PROOT?>midwife/dailyworkReport">
+            <div class="col-md-3 text-center">
+                <div class="icon icon-hover">
+                    <i class="fa fa-tablet"></i>
+                </div>
+                <a href="<?=PROOT?>midwife/dailyworkReport" class="main-item">
+                    <h3>දින වැඩ වාර්තාව</h3>
+                </a>
             </div>
-            <a href="#">
-                <h3>Daily Work</h3>
-            </a>
-        </div>
+        </a>
     </div>
+</div>
 </div>
 <!--//Selection menu-->
 

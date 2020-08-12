@@ -143,6 +143,7 @@ class DB{
 
 
         $sql = "SELECT {$columns} FROM {$table}{$join}{$conditionString}{$order}{$limit}";
+       // Helper::dnd($sql);
         if ($this->query($sql, $bind)) {
             if (!count($this->_result)) {
                 return false;
@@ -190,6 +191,59 @@ class DB{
     public function lastID(){
         return $this->_lastInsertID;
     }
+
+    public function update1($table, $fields = [], $conditions){
+        $fieldString = '';
+        $values = [];
+        $conditionString = '';
+        foreach($fields as $field => $value){
+            $fieldString .= ' ' . $field . ' = ?,';
+            $values[] = $value; 
+        }
+        foreach($conditions as $condition => $val){
+            $conditionString .= $condition . ' = ? AND ';
+            $values[] = $val;
+        }
+        $fieldString = trim($fieldString);
+        $fieldString = rtrim($fieldString, ',');
+
+        $conditionString = trim($conditionString);
+        $conditionString = rtrim($conditionString, ' AND');
+
+        $sql = "UPDATE {$table} SET {$fieldString} WHERE {$conditionString}";
+        if(!$this->query($sql, $values)->error()){
+            return true;
+        }
+        return false;
+
+    }
+
+    public function update2($table, $fields = [], $key, $keyvalue,$params=[]){
+        $fieldString = '';
+        $values = [];
+        foreach($fields as $field => $value){
+            if(is_numeric($field)){
+                $fieldString .= ' `' . $field . '` = ?,';
+            }else{
+            $fieldString .= ' ' . $field . ' = ?,';
+            }
+            $values[] = $value;
+        }
+        $fieldString = trim($fieldString);
+        $fieldString = rtrim($fieldString, ',');
+        $sql = "UPDATE {$table} SET {$fieldString} WHERE {$key} = {$keyvalue}";
+        if(!empty($params)){
+            foreach($params as $param =>$value){
+                $sql.=" AND {$param} = "."'".$value."'";
+            }
+        }
+        if(!$this->query($sql, $values)->error()){
+            return true;
+        }
+        return false;
+
+    }
+
 
 
 }

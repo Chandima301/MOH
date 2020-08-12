@@ -5,14 +5,32 @@ html{
     width: 100%;
 }
 
-body{
+.background-home{
+    padding-top: 150px !important;
     height: 100%;
-    background-position: center;
+    background-position: 0px 30px;
     color:#fff !important;
     width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('../img/Midwife.jpg') !important;
     background-size: cover !important;
-   }
+    padding-top: 25px;
+    min-height: 100vh;
+}
+
+
+.background-mother{
+    background-position: 0px 30px;
+    padding-top: 50px !important;
+    height: 500px;
+    background-position: center;
+    color:#fff !important;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('../img/Midwife-Mothers.jpg') !important;
+    background-size: cover !important;
+    padding-top: 25px;
+    position: relative;
+    min-height: 100vh;
+}
 
 h1 {
     text-align: center;
@@ -39,14 +57,33 @@ a:active {
     background-color: transparent;
     text-decoration: none;
 }
-a.logout,a:hover{
-    background: red;
+
+.nav-box:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+    background: #0069D9;
     transition: 0.4s;
     border-radius: 1.5rem;
 }
-
+/* navigation bar and footer color changer when pointing */
+.nav-boxlogout:hover {
+    color: red;
+    background-color: red !important;
+    transition: 0.4s;
+    border-radius: 1.5rem;
+}
+.main-item:hover {
+    background: #0069D9;
+    transition: 0.5s;
+}
 
 /* selection menu */
+.icon-hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
 .selection-menu{
     min-height: 100%;
 }
@@ -64,6 +101,7 @@ h1
     letter-spacing: 10px;
     padding-top: 100px;
 }
+/**
 .col-md-3{
     padding-top: 50px;
 }
@@ -71,15 +109,89 @@ h1
 {
     box-shadow: 5px 7px 9px -3px rgba(255,255,255,0.5);
     cursor: pointer;
-}
+}*/
 
 /* navigation bar */
+@media screen and (min-width: 1400px) {
+    .btn-logout {
+        margin-left: 650px;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid white;
+        padding: 10px;
+        color: gray;
+        text-decoration: none;
+    }
+    .btn-logout:hover{
+        background-color: yellow;
+        color: whiyellowte;
+        transition: 0.3s;
+    }
+    .btn-name {
+        margin-top: 0px;
+        position: absolute;
+        right: 230px;
+    }
+    .user-image {
+        position: absolute;
+        right: 350px;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .btn-logout {
+        margin-left: 150px;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid white;
+        padding: 10px;
+        color: gray;
+        text-decoration: none;
+    }
+    .btn-logout:hover{
+        background-color: yellow;
+        color: yellow;
+        transition: 0.3s;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .btn-logout {
+        margin-left: 10px;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid white;
+        padding: 10px;
+        color: gray;
+        text-decoration: none;
+    }
+    .btn-logout:hover{
+        background-color: yellow;
+        color: yellow;
+        transition: 0.3s;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .btn-logout {
+        
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid white;
+        padding: 10px;
+        color: gray;
+        text-decoration: none;
+    }
+    .btn-logout:hover{
+        background-color: yellow;
+        color: yellow;
+        transition: 0.3s;
+    }
+}
 .navbar-brand{
     font-weight: bold;
 }
 .nav-item{
     padding: 10px;
 }
+
 h1:after
 {
     content: '';
@@ -197,6 +309,7 @@ nav ul li a{
     .footer-section {
         width: 100%;
     }
+    
 }
 @media screen and (max-width: 800px) {
     .footer-section {
@@ -206,9 +319,11 @@ nav ul li a{
         display: block;
         width: 100%;
     }
+    
 }
 
 /* Button */
+/**
 *,
 *::before,
 *::after {
@@ -216,7 +331,7 @@ nav ul li a{
     padding: 0;
     box-sizing: border-box;
 }
-
+*/
 .button {
     margin: auto;
     width: 60%;
@@ -264,4 +379,268 @@ nav ul li a{
     color: #272838;
     background-color: #fff;
     border-color: #fff;
+}
+
+/*** mother page tables */
+.mother-tab {
+    border: solid 3px;
+    border-color: #007BFF;
+}
+
+.mother-table-box {
+    padding: 60px 20px 20px 20px;
+    color: red;
+    height: 400px auto; 
+}
+.mother-heading {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    font-size: 30px;
+    color: #CBE1EA;
+    display: block;
+    border-bottom: solid 2px;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.mother-table {
+    border: solid 1.2px;
+    border-color: black;
+    background-color: white;
+    min-height: 400px;
+    margin-top: 20px;
+}
+
+/*** registration page*/
+.registration {
+    padding: 150px 100px 150px 100px;
+    background-color: #F2F3F7;
+}
+.registration-heading {
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: black;
+    border-bottom: solid 2px;
+}
+
+.registration-form {
+    border: solid 2px;
+    border-color: #D0D2D4;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #E6E6E6;
+}
+
+.mother-view {
+    padding-top: 100px
+}
+
+.mother-view-tab-heading {
+    font-size: 20px;
+}
+
+.mother-view-allergy {
+    border: solid 1px;
+    border-radius: 10px;
+    border-color: #E7E7E7;
+    padding: 50px;
+    margin: 20px;
+}
+
+/**Dashboard */
+.sidebar{
+    height:auto;
+    background-color: #31353D;
+    padding: 0;
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.596);
+}
+.sidebar hr{
+    height: 1px;
+    color: beige;
+    background-color: beige;
+}
+
+
+.profile-img{
+    height: 120px;
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    margin-top: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.596);
+}
+
+.name-tag{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    color: beige;
+}
+
+.sidebar-btn{
+    padding-top: 10px;
+    padding-bottom: 200px;
+}
+
+.sidebar-btn li{
+    line-height: 30px;
+    list-style: none;
+    text-align: center;
+    border-top: solid 1px #646464;
+    border-bottom: solid 1px #646464;
+}
+
+.sidebar-btn li a{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 13px;
+    display: block;
+    text-decoration: none;
+    color: rgb(220, 241, 245);
+}
+
+.sidebar-btn li:hover{
+    background-color: #646464;
+    transition: 0.5s;
+}
+
+.sidebar-btn li.active{
+    border: solid 1px #424242;
+    background-color: #424242;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
+}
+
+.sidebar-header {
+    padding-left: 70px;
+    overflow: hidden;
+    padding-top: 0px;
+    margin-top: 20px;
+  }
+  
+.sidebar-header .user-pic {
+    float: left;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+.sidebar-header .user-pic img {
+object-fit: cover;
+height: 100%;
+width: 100%;
+}
+
+.sidebar-header .user-info {
+float: left;
+}
+
+.sidebar-header .user-info > span {
+display: block;
+}
+
+.sidebar-header .user-info .user-role {
+font-size: 12px;
+}
+
+.sidebar-header .user-info .user-status {
+font-size: 11px;
+margin-top: 4px;
+}
+
+.sidebar-header .user-info .user-status i {
+font-size: 8px;
+margin-right: 4px;
+color: #5cb85c;
+}
+
+
+.sub-tab{
+    background-color: #f5f3ee;
+    padding: 10px;
+    border: 2px solid #b3aa85;
+    animation-name: fadeIn;
+    animation-duration: 0.2s;
+}
+.sub{
+    background-color: #f5f3ee;
+    padding: 10px;
+    border: 2px solid #b3aa85;
+}
+
+
+#tab-btn button{
+    background-color: #c0b99f;
+    border: none;
+}
+
+#tab-btn button.active{
+    background-color: #9b916a;
+    border: none;
+}
+
+.dashboard {
+    min-height: 10px;
+    margin-top: 100px;
+}
+
+/**responsive quote carousel**/
+
+.sq-crousal4 .carousel-indicators li::before {
+    width: 15px;
+    height: 15px;
+    background: #444;
+    border-radius: 50%;	
+    border: solid 2px #AAACAE;
+    transition: all 1s ease 0s;
+    box-shadow: 6px 6px 8px #E9E0E0 inset;
+}
+.sq-crousal4 .carousel-indicators li.active::before {
+    background: #1870ed;
+    box-shadow: 2px 3px 2px #e5edf8 inset;
+    border-color: #1870ed;
+}
+.sq-crousal4 .carousel-indicators {
+    bottom: -40px;
+}
+.sq-crousal4 li {
+    width: 20px;
+}
+.sq-crousal4 .fa-chevron-left {
+    font-size: 45px;
+    color: #444;
+    left: -30px;
+    position: relative;top: -17px;
+}
+.sq-crousal4 .fa-chevron-right {
+    font-size: 45px;
+    color: #444;
+    right: -30px;
+    position: relative;
+    top: -17px;
+}
+
+/**update details page */
+.update-midwife {
+    padding: 40px 50px 40px 50px;
+}
+.update-midwife-heading {
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: black;
+    border-bottom: solid 2px;
+}
+
+.update-midwife-form {
+    min-height: 570px;
+    border: solid 2px;
+    border-color: #D0D2D4;
+    padding: 30px;
+    background-color: #E6E6E6;
 }
