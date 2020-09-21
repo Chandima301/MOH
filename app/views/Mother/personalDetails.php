@@ -23,12 +23,12 @@
                     <h3> 2. පෞද්ගලික / පවුල් තොරතුරු</h3>
                 </div>
                   <?php if(!$this->editMode){ ?>
-                            <form action="<?=PROOT?>mother/edit/personalDetails" method="post">
+                            <form action="<?=PROOT?><?=$this->controller;?>/edit/personalDetails" method="post">
                                 <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                             </form>
                   <?php }?>
 
-                <form action="<?=PROOT?>mother/save/personalDetails" method="post" style="margin: 30px;">
+                <form action="<?=PROOT?><?=$this->controller;?>/save/personalDetails" method="post" style="margin: 30px;">
                   <div class='col-sm-6 alert alert-success mx-auto' id='success' style="display: none;">
                       <p>තොරතුරු සටහන්කිරීම සාර්ථකයි.</p>
                   </div>

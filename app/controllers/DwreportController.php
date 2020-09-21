@@ -29,7 +29,8 @@ class DwreportController extends Controller{
 
     public function createReportsAction($sh){
         $newDwReport =new dailyworkReport();
-        $newDwReport->updateDatabase2(Helper::posted_values($_POST),["period"=>date('Y-m',strtotime("first day of next month"))]);
+        $newDwReport->updateDatabase2(Helper::posted_values($_POST),["id"=>$this->user->id,"period"=>date('Y-m',strtotime("first day of next month"))]);
+        //helper::dnd($newDwReport);
         $this->view->report =$newDwReport;
         $this->view->render('Midwife/Dwreport/nextmonth');
     }
@@ -60,6 +61,7 @@ class DwreportController extends Controller{
     public function submitToApprovedAction(){
         if(isset($_POST["submitToApprovedButton"])){
           $new_data =new dailyworkReport();
+          $new_data->lockANDfindFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,strtotime("first day of next month")]]);
           $new_data->updateDatabase2(["id"=>$this->user->id,"period"=>date('Y-m',strtotime("first day of next month")),"submit_to_approval"=>'1'],["period"=>date('Y-m',strtotime("first day of next month"))]);
 
             

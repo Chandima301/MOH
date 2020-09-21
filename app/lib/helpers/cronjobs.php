@@ -1,4 +1,12 @@
 <?php
+require 'E:\Program Files\xammp\htdocs\MOH\core\Model.php';
+require 'E:\Program Files\xammp\htdocs\MOH\core\Report.php';
+require 'E:\Program Files\xammp\htdocs\MOH\app\models\dailyworkReport.php';
+require 'E:\Program Files\xammp\htdocs\MOH\config\config.php';
+require 'E:\Program Files\xammp\htdocs\MOH\core\DB.php';
+require 'E:\Program Files\xammp\htdocs\MOH\app\models\User.php';
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 

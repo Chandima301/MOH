@@ -22,11 +22,11 @@
                 <div>
                     <h3> 5. වර්තමාන ගර්භනී ඉතිහාසය</h3>
                     <?php if(!$this->editMode){ ?>
-                              <form action="<?=PROOT?>mother/edit/presentObsHistory" method="post">
+                              <form action="<?=PROOT?><?=$this->controller;?>/edit/presentObsHistory" method="post">
                                   <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                               </form>
                     <?php }?>
-                    <form action="<?=PROOT?>mother/save/presentObsHistory" method="post" style="margin: 30px;">
+                    <form action="<?=PROOT?><?=$this->controller;?>/save/presentObsHistory" method="post" style="margin: 30px;">
                       <div class='col-sm-6 alert alert-success mx-auto' id='success' style="display: none;">
                           <p>තොරතුරු සටහන්කිරීම සාර්ථකයි.</p>
                       </div>

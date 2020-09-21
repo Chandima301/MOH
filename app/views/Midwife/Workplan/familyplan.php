@@ -287,212 +287,212 @@ $this->start('body');?>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="1" value="<?=$date->{'1'}?>"></div>
+                                                type="number" name="1" value="<?=$date->{'1'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="2" value="<?=$date->{'2'}?>"></div>
+                                                type="number" name="2" value="<?=$date->{'2'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="3" value="<?=$date->{'3'}?>"></div>
+                                                type="number" name="3" value="<?=$date->{'3'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="4" value="<?=$date->{'4'}?>"></div>
+                                                type="number" name="4" value="<?=$date->{'4'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="5" value="<?=$date->{'5'}?>"></div>
+                                                type="number" name="5" value="<?=$date->{'5'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="6" value="<?=$date->{'6'}?>"></div>
+                                                type="number" name="6" value="<?=$date->{'6'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="7" value="<?=$date->{'7'}?>"></div>
+                                                type="number" name="7" value="<?=$date->{'7'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="8" value="<?=$date->{'8'}?>"></div>
+                                                type="number" name="8" value="<?=$date->{'8'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="9" value="<?=$date->{'9'}?>"></div>
+                                                type="number" name="9" value="<?=$date->{'9'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="10" value="<?=$date->{'10'}?>"></div>
+                                                type="number" name="10" value="<?=$date->{'10'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="11" value="<?=$date->{'11'}?>"></div>
+                                                type="number" name="11" value="<?=$date->{'11'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="12" value="<?=$date->{'12'}?>"></div>
+                                                type="number" name="12" value="<?=$date->{'12'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="13" value="<?=$date->{'13'}?>"></div>
+                                                type="number" name="13" value="<?=$date->{'13'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="14" value="<?=$date->{'14'}?>"></div>
+                                                type="number" name="14" value="<?=$date->{'14'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="15" value="<?=$date->{'15'}?>"></div>
+                                                type="number" name="15" value="<?=$date->{'15'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="16" value="<?=$date->{'16'}?>"></div>
+                                                type="number" name="16" value="<?=$date->{'16'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="17" value="<?=$date->{'17'}?>"></div>
+                                                type="number" name="17" value="<?=$date->{'17'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="18" value="<?=$date->{'18'}?>"></div>
+                                                type="number" name="18" value="<?=$date->{'18'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="19" value="<?=$date->{'19'}?>"></div>
+                                                type="number" name="19" value="<?=$date->{'19'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="20" value="<?=$date->{'20'}?>"></div>
+                                                type="number" name="20" value="<?=$date->{'20'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="21" value="<?=$date->{'21'}?>"></div>
+                                                type="number" name="21" value="<?=$date->{'21'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="22" value="<?=$date->{'22'}?>"></div>
+                                                type="number" name="22" value="<?=$date->{'22'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="23" value="<?=$date->{'23'}?>"></div>
+                                                type="number" name="23" value="<?=$date->{'23'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="24" value="<?=$date->{'24'}?>"></div>
+                                                type="number" name="24" value="<?=$date->{'24'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="25" value="<?=$date->{'25'}?>"></div>
+                                                type="number" name="25" value="<?=$date->{'25'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="26" value="<?=$date->{'26'}?>"></div>
+                                                type="number" name="26" value="<?=$date->{'26'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="27" value="<?=$date->{'27'}?>"></div>
+                                                type="number" name="27" value="<?=$date->{'27'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="28" value="<?=$date->{'28'}?>"></div>
+                                                type="number" name="28" value="<?=$date->{'28'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="29" value="<?=$date->{'29'}?>"></div>
+                                                type="number" name="29" value="<?=$date->{'29'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="30" value="<?=$date->{'30'}?>"></div>
+                                                type="number" name="30" value="<?=$date->{'30'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="31" value="<?=$date->{'31'}?>"></div>
+                                                type="number" name="31" value="<?=$date->{'31'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="32" value="<?=$date->{'32'}?>"></div>
+                                                type="number" name="32" value="<?=$date->{'32'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="33" value="<?=$date->{'33'}?>"></div>
+                                                type="number" name="33" value="<?=$date->{'33'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="34" value="<?=$date->{'34'}?>"></div>
+                                                type="number" name="34" value="<?=$date->{'34'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="35" value="<?=$date->{'35'}?>"></div>
+                                                type="number" name="35" value="<?=$date->{'35'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="36" value="<?=$date->{'36'}?>"></div>
+                                                type="number" name="36" value="<?=$date->{'36'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="27" value="<?=$date->{'37'}?>"></div>
+                                                type="number" name="27" value="<?=$date->{'37'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="28" value="<?=$date->{'38'}?>"></div>
+                                                type="number" name="28" value="<?=$date->{'38'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="29" value="<?=$date->{'39'}?>"></div>
+                                                type="number" name="29" value="<?=$date->{'39'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="30" value="<?=$date->{'40'}?>"></div>
+                                                type="number" name="30" value="<?=$date->{'40'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="31" value="<?=$date->{'41'}?>"></div>
+                                                type="number" name="31" value="<?=$date->{'41'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="32" value="<?=$date->{'42'}?>"></div>
+                                                type="number" name="32" value="<?=$date->{'42'}?>"></div>
                                     </div>
 
                                 </div>
@@ -734,212 +734,212 @@ $this->start('body');?>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'1'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'2'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'3'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'4'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'5'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'6'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'7'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'8'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'9'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'10'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'11'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'12'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'13'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'14'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'15'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'16'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'17'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'18'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'19'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'20'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'21'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'22'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'23'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'24'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'25'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'26'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'27'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'28'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'29'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'30'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'31'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'32'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'33'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'34'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'35'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'36'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'37'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'38'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'39'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'40'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'41'}?></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val">
-                                            <p></p>
+                                            <p><?=$this->month_sum->{'42'}?></p>
                                         </div>
                                     </div>
                                 </div>

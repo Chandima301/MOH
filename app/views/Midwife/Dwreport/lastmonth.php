@@ -18,7 +18,7 @@
         else{ ?>
     <div class="row justify-content-center">
         <div class="col-sm-12 col-md-10 mt-5 page-content">
-            <?php  foreach($this->report->data as $key => $value){          
+            <?php  foreach($this->report as $key => $value){          
                             if($key=="id" || $key=="period" || $key=="submit_to_approval" || $key=="approved" ) continue; 
                             if($key=="comments" && !$this->report->{"approved"}) continue;
                             if($key=="comments" && $this->report->{"approved"}) {?> <div class="row"

@@ -23,11 +23,11 @@
                     <h3> 3. පවුලේ රෝග ඉතිහාසය</h3>
                 </div>
                 <?php if(!$this->editMode){ ?>
-                          <form action="<?=PROOT?>mother/edit/familyHistory" method="post">
+                          <form action="<?=PROOT?><?=$this->controller;?>/edit/familyHistory" method="post">
                               <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                           </form>
                 <?php }?>
-                    <form action="<?=PROOT?>mother/save/familyHistory" method="post" style="margin: 30px;">
+                    <form action="<?=PROOT?><?=$this->controller;?>/save/familyHistory" method="post" style="margin: 30px;">
                       <div class='col-sm-6 alert alert-success mx-auto' id='success' style="display: none;">
                           <p>තොරතුරු සටහන්කිරීම සාර්ථකයි.</p>
                       </div>

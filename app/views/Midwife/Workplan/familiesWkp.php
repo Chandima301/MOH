@@ -84,22 +84,22 @@ $this->start('body');?>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61;float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="1" value="<?=$date->{'1'}?>"></div>
+                                                type="number" name="1" value="<?=$date->{'1'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61;float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="2" value="<?=$date->{'2'}?>"></div>
+                                                type="number" name="2" value="<?=$date->{'2'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61;float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="3" value="<?=$date->{'3'}?>"></div>
+                                                type="number" name="3" value="<?=$date->{'3'}?>"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                 style="width:61;float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                type="text" name="4" value="<?=$date->{'4'}?>"></div>
+                                                type="number" name="4" value="<?=$date->{'4'}?>"></div>
                                     </div>
                                 </div>
 

@@ -102,27 +102,27 @@ $this->start('body');?>
                                         <div class="row">
                                             <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                     style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                    type="text" name="1" value="<?=$date->{'1'}?>"></div>
+                                                    type="number" name="1" value="<?=$date->{'1'}?>"></div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                     style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                    type="text" name="2" value="<?=$date->{'2'}?>"></div>
+                                                    type="number" name="2" value="<?=$date->{'2'}?>"></div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                     style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                    type="text" name="3" value="<?=$date->{'3'}?>"></div>
+                                                    type="number" name="3" value="<?=$date->{'3'}?>"></div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                     style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                    type="text" name="4" value="<?=$date->{'4'}?>"></div>
+                                                    type="number" name="4" value="<?=$date->{'4'}?>"></div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 not-heading-val" style="padding: 0px"><input
                                                     style="width:61px; float:left; color:red; padding-left:20px; background-color:lightblue"
-                                                    type="text" name="5" value="<?=$date->{'5'}?>"></div>
+                                                    type="number" name="5" value="<?=$date->{'5'}?>"></div>
                                         </div>
                                     </div>
 
@@ -178,27 +178,27 @@ $this->start('body');?>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 not-heading-val">
-                                                <p></p>
+                                               <p><?=$this->month_sum->{'1'}?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 not-heading-val">
-                                                <p></p>
+                                               <p><?=$this->month_sum->{'2'}?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 not-heading-val">
-                                                <p></p>
+                                               <p><?=$this->month_sum->{'3'}?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 not-heading-val">
-                                                <p></p>
+                                               <p><?=$this->month_sum->{'4'}?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 not-heading-val">
-                                                <p></p>
+                                               <p><?=$this->month_sum->{'5'}?></p>
                                             </div>
                                         </div>
                                     </div>
