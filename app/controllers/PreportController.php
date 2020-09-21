@@ -6,7 +6,7 @@ class PreportController extends Controller{
         $this->view->setLayout('pregnancyReport_layout');
         $this->user = User::currentUser();
         $this->view->name = $this->user->name;
-        $this->view->btn_state=['registerDetails'=>'', 'personalDetails'=>'','familyHistory'=>'','surgicalHistory'=>'','presentObsHistory'=>'','pastObsHistory'=>'','clinicCare1'=>'','clinicCare2'=>'','immunization'=>'','weightgraph'=>'','emergancyPlan'=>'','iCEmaterial'=>'','preClinic'=>''];
+        $this->view->btn_state=['registerDetails'=>'', 'personalDetails'=>'','familyHistory'=>'','surgicalHistory'=>'','presentObsHistory'=>'','pastObsHistory'=>'','clinicCare1'=>'','clinicCare2'=>'','immunization'=>'','weightChart'=>'','emergancyPlan'=>'','iCEmaterial'=>'','preClinic'=>''];
         $this->view->editMode= isset($_SESSION['editMode']) ? $_SESSION['editMode'] : 0 ;
         $this->view->controller = 'preport';
     
@@ -63,9 +63,59 @@ class PreportController extends Controller{
     }
 
     public function viewDetailsAction($param){
+        $this->view->btn_state['registerDetails']="active";
         $_SESSION["motherid"]=$param;
         $this->reportViewAction();
     }
+
+
+    public function clinicCare1Action($param = "clinicCare1")
+    {
+    if (isset($param)) {
+      if (isset($_POST["editButton"])) {
+        $_SESSION["editMode"] = 1;
+        $this->view->editMode = 1;
+      }
+      else if (isset($_POST["saveButton"])) {
+        $_SESSION["editMode"] = 0;
+        $this->view->editMode = 0;
+        unset($_POST["saveButton"]);
+        $new_data = new $param($param);
+        $new_data->updateMultipleRows(Helper::posted_values($_POST),["0","1","2","3","4","5","6","7","8","9"],['idcardnum'=>User::currentUser()->idcardnum]);
+      }
+      $columns = new $param($param);
+      $this->view->columns = $columns->getFromDatabase(User::currentUser()->idcardnum);
+      $this->view->setLayout('pregnancyReport_layout2');
+      $this->view->render('mother/clinicCare1');
+    }
+
+
+
+  }
+
+
+  public function weightChartAction($param = "weightChart")
+    {
+      if (isset($param)) {
+        if (isset($_POST["editButton"])) {
+          $_SESSION["editMode"] = 1;
+          $this->view->editMode = 1;
+        }
+        else if (isset($_POST["saveButton"])) {
+          $_SESSION["editMode"] = 0;
+          $this->view->editMode = 0;
+          unset($_POST["saveButton"]);
+          $new_data = new $param($param);
+          $new_data->updateMultipleRows(Helper::posted_values($_POST),["weight","height","week"],['idcardnum'=>User::currentUser()->idcardnum]);
+        }
+        $weightChart = new $param($param);
+        $this->view->charts = $weightChart->getFromDatabase(User::currentUser()->idcardnum);
+        $this->view->setLayout('pregnancyReport_layout2');
+        $this->view->render('mother/weightChart');
+      }
+    }
+
+
 
 
 

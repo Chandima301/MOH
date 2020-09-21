@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?= PROOT ?>css/reset-stylesheet.css">
     <link rel="stylesheet" href="<?= PROOT ?>css/pregnancyReport.css">
     <link rel="stylesheet" href="<?= PROOT ?>css/DailyWorkReport.css">
+    <link rel="stylesheet" href="<?= PROOT ?>css/background.css">
 
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +25,11 @@
     <!-- JS -->
     <script src="<?= PROOT ?>js/jquery-3.4.1.js"></script>
     <script src="<?= PROOT ?>bootstrap/js/bootstrap.js"></script>
-
+    <script>
+        function loadNewWindow(url){
+            window.open(url);
+        }
+    </script>
 
 
 </head>
@@ -36,39 +41,48 @@
             <img src="<?= PROOT ?>img/National.png" width="40" height="40" class="d-inline-block align-top"
                 alt="Sri Lanka National Symbol">
         </a>
-        <a class="navbar-brand" href="#">Office Of The Medical Officer Of
-            Health<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Kelaniya</a>
+        <a class="navbar-brand" href="#">MOH OFFICE<br>&emsp;Kelaniya</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <header>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav pl-4">
-                    <li class="nav-item active pl-5">
-                        <a class="nav-link" href="<?=PROOT?>/midwife">HOME <span class="sr-only">(current)</span></a>
+                <ul class="navbar-nav pl-2">
+                    <li class="nav-item active pl-2">
+                        <a class="nav-link nav-box" href="<?= PROOT ?>midwife/index">HOME <span
+                                class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item pl-5">
-                        <a class="nav-link" href="#">
-                            <img src="<?= PROOT ?>img/Language.png" width="40" height="40"
-                                class="d-inline-block align-top" alt="Sri Lanka National Flag">
-                            සිංහල</a>
+                    <li class="nav-item pl-2">
+                        <a class="nav-link nav-box" href="<?= PROOT ?>midwife/dashboard">Dashboard</a>
                     </li>
-                    <li class="nav-item pl-5">
-                        <a class="nav-link" href="#contact">CONTACT</a>
+                    <li class="nav-item pl-2">
+                        <a class="nav-link nav-box" href="#contact">CONTACT</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <i class="fa fa-user-circle"></i>
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hello,<br><?= $this->name; ?>
+                    <li class="nav-item pl-2">
+                        <a href="<?= PROOT ?>midwife/message">
+                            <button type="button" class="btn btn-primary btn-msg">
+                                <i class="fa fa-comments fa-lg"></i>
+                                <span class="badge badge-danger">40</span>
+                            </button>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="Dashboard.html" style="color: black;">Dashboard</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item nav-link logout" href="<?=PROOT?>login/logout"
-                                style="color: black;"> &emsp;Sign Out</a>
-                        </div>
+                    </li>
+                    <?php
+                    if($this->period <date('Y-m')){  ?>
+                    <li class="nav-item pl-2">
+                        <a class="nav-link nav-box" href="#" onclick="loadNewWindow('<?=PROOT?>workplan/getMonthReport')">මාසික වාර්තාව බලන්න</a>
+                    </li>
+                    <?php  }  ?>
+                    <li class="nav-item pl-5 user-image">
+                        <!--<img src="<?= PROOT ?>img/Midwife-icon7.png" width="40" height="40" class="d-inline-block align-top" alt="Sri Lanka National Flag"></a>-->
+                    </li>
+                    <li class="nav-item pl-2">
+                        <a class="nav-link active disabled btn-name" href="#"><i class="fa fa-user-circle"></i>
+                            Hello,<br><?= $this->name; ?></a>
+                    </li>
+                    <li class="nav-item pl-2">
+                        <a href="<?= PROOT ?>login/logout" class="btn btn-danger btn-logout btn-lg active nav-boxlogout"
+                            role="button" aria-pressed="true">Log Out</a>
                     </li>
                 </ul>
             </div>

@@ -23,11 +23,11 @@
                 <div>
                     <h3> 7. සායනික සං‍රක්ෂණය 2</h3>
                     <?php if(!$this->editMode){ ?>
-                              <form action="<?=PROOT?>mother/edit/clinicCare2" method="post">
+                              <form action="<?=PROOT?><?=$this->controller;?>/edit/clinicCare2" method="post">
                                   <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                               </form>
                     <?php }?>
-                    <form action="<?=PROOT?>mother/save/clinicCare2" method="post" style="margin: 30px;">
+                    <form action="<?=PROOT?><?=$this->controller;?>/save/clinicCare2" method="post" style="margin: 30px;">
                       <div class='col-sm-6 alert alert-success mx-auto' id='success' style="display: none;">
                           <p>තොරතුරු සටහන්කිරීම සාර්ථකයි.</p>
                       </div>

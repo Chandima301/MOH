@@ -1,0 +1,1 @@
+"E:\Program Files\xammp\php\php.exe" -f "E:\Program Files\xammp\htdocs\MOH\app\lib\helpers\cronjobs.php"

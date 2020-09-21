@@ -23,11 +23,11 @@
             <div>
                 <h3> 9. බර වැඩිවීමේ සටහන</h3>
                 <?php if (!$this->editMode) : ?>
-                    <form action="<?= PROOT ?>mother/weightChart" method="post">
+                    <form action="<?= PROOT ?><?=$this->controller;?>/weightChart" method="post">
                         <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                     </form>
                 <?php endif; ?>
-                <form action="<?= PROOT ?>mother/weightChart" method="post" style="margin: 30px;">
+                <form action="<?= PROOT ?><?=$this->controller;?>/weightChart" method="post" style="margin: 30px;">
                     <div class="form-group row" style="font-weight: bold;">
                         <table class="table tb table-bordered">
                             <tbody>

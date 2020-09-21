@@ -2,7 +2,7 @@
 class Model { 
 
     protected $_db, $_table, $_modelName, $_softDelete = false, $_columnNames = [];
-
+    
     public $id;
 
     public function __construct($table){
@@ -64,6 +64,7 @@ class Model {
     public function populateObjData($result){
         foreach($result as $key => $val){
             $this->$key = $val;
+            
         }
     }
 
@@ -170,6 +171,14 @@ class Model {
             return $this->update(['deleted'=>1],'id',$id);
         }
         return $this->_db->delete($this->_table, 'id', $id);
+    }
+
+    public function lockANDfindFirst($params = []){
+        $params = $this->_softDeleteParamsAdding($params);
+        $resultsQuery = $this->_db->lockANDfindFirst($this->_table, $params);
+        $result = new $this->_modelName($this->_table);
+        if($resultsQuery)$result->populateObjData($resultsQuery);
+        return $result;
     }
 
 }

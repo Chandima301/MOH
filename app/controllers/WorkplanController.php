@@ -81,22 +81,88 @@ class WorkplanController extends Controller{
     public function savetoSum($param){
         $month_sum =new $param();
         $month_sum =$month_sum->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        
         $today =new $param();
         $today =$today->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,date('Y-m-j')]]);
         $data=[];
     
         foreach($_POST as $key => $value){
-            if(is_numeric($key)){
+            if(is_numeric($value)){
                 if((int)$value!=$today->$key ){
-                   
+                   if(isset($today->$key)) {
+                    $today->$key=0;
+                   }
+                   if(isset($month_sum->$key)) {
+                    $month_sum->$key=0;
+                   }
                 $data[$key]=((int)$value-$today->$key) + $month_sum->$key;
         }
         }
         }
+       // helper::dnd($data);
         $data["id"]=$this->user->id;
+        $data["period"]=$this->period;
         $month_sum->updateDatabase2(Helper::posted_values($data),["period"=>$this->period]);
 
     
+    }
+    public function getMonthReportAction(){
+        $fwk =new familiesWkp();
+        $fwk=$fwk->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->fwk=$fwk;
+       
+
+        $mp =new maternitypreservation();
+        $mp =$mp->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->mp=$mp;
+
+        $mtpr =new mtpr();
+        $mtpr =$mtpr->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->mtpr=$mtpr;
+
+        $mtfpj =new mtfpj();
+        $mtfpj =$mtfpj->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->mtfpj=$mtfpj;
+
+        $pR =new preganacyResult();
+        $pR =$pR->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->pR=$pR;
+
+        $lpp =new latepreganacypreservation();
+        $lpp =$lpp->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->lpp=$lpp;
+
+        $bp =new babypreservation();
+        $bp =$bp->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->bp=$bp;
+
+        $bp15 =new babypreservation1to5();
+        $bp15 =$bp15->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->bp15=$bp15;
+
+        $bct =new babyandteenpreservation();
+        $bct =$bct->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->bct=$bct;
+
+        $fpl =new familyplan();
+        $fpl =$fpl->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->fpl=$fpl;
+
+        $gh =new genderhelth();
+        $gh =$gh->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->gh=$gh;
+
+        $oacti =new otheractivities();
+        $oacti =$oacti->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->oacti=$oacti;
+
+        $supaten =new supervisionattendance();
+        $supaten =$supaten->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $this->view->supaten=$supaten;
+        
+        $this->view->setLayout('monthlyplan');
+        $this->view->render('Midwife/Workplan/workplan');
+
     }
 
 

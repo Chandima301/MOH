@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="<?= PROOT ?>css/medicalofficer.css">
     <link rel="stylesheet" href="<?= PROOT ?>css/reset-stylesheet.css">
     <link rel="stylesheet" href="<?= PROOT ?>css/pregnancy.css">
+    <link rel="stylesheet" href="<?= PROOT ?>css/message.css">
+    
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
@@ -31,48 +33,45 @@
     <!--navigation bar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="<?= PROOT ?>img/National.png" width="40" height="40" class="d-inline-block align-top"
-                alt="Sri Lanka National Symbol">
+            <img src="<?= PROOT ?>img/National.png" width="40" height="40" class="d-inline-block align-top" alt="Sri Lanka National Symbol">
         </a>
-        <a class="navbar-brand" href="#">Office Of The Medical Officer Of
-            Health<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Kelaniya</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">MOH OFFICE<br>&emsp;Kelaniya</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <header>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav pl-4">
-                    <li class="nav-item active pl-5">
-                        <a class="nav-link" href="<?=PROOT?>/midwife">HOME <span class="sr-only">(current)</span></a>
+                <ul class="navbar-nav pl-2">
+                    <li class="nav-item active pl-2">
+                        <a class="nav-link nav-box" href="<?= PROOT ?>midwife/index">HOME <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item pl-5">
-                        <a class="nav-link" href="#">
-                            <img src="<?= PROOT ?>img/Language.png" width="40" height="40"
-                                class="d-inline-block align-top" alt="Sri Lanka National Flag">
-                            සිංහල</a>
+                    <li class="nav-item pl-2">
+                        <a class="nav-link nav-box" href="<?= PROOT ?>midwife/dashboard">Dashboard</a>
                     </li>
-                    <li class="nav-item pl-5">
-                        <a class="nav-link" href="#contact">CONTACT</a>
+                    <li class="nav-item pl-2">
+                        <a class="nav-link nav-box" href="#contact">CONTACT</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <i class="fa fa-user-circle"></i>
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hello,<br><?= $this->name; ?>
+                    <li class="nav-item pl-2">
+                        <a href="<?= PROOT ?>midwife/message">
+                            <button type="button" class="btn btn-primary btn-msg">
+                                <i class="fa fa-comments fa-lg"></i>
+                                <span class="badge badge-danger">40</span>
+                            </button>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="Dashboard.html" style="color: black;">Dashboard</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item nav-link logout" href="<?=PROOT?>login/logout"
-                                style="color: black;"> &emsp;Sign Out</a>
-                        </div>
+                    </li>
+                    <li class="nav-item pl-5 user-image">
+                        <!--<img src="<?= PROOT ?>img/Midwife-icon7.png" width="40" height="40" class="d-inline-block align-top" alt="Sri Lanka National Flag"></a>-->
+                    </li>
+                    <li class="nav-item pl-2">
+                        <a class="nav-link active disabled btn-name" href="#"><i class="fa fa-user-circle"></i> Hello,<br><?= $this->name; ?></a>
+                    </li>
+                    <li class="nav-item pl-2">
+                        <a href="<?= PROOT ?>login/logout" class="btn btn-danger btn-logout btn-lg active nav-boxlogout" role="button" aria-pressed="true">Log Out</a>
                     </li>
                 </ul>
             </div>
         </header>
     </nav>
-
     <!--end of the menu bar-->
 
 
@@ -83,11 +82,11 @@
         <div class="row" style="height:100vh">
             <!-- slide bar -->
             <div class="col-md-2 sidebar">
-                <button type="button" class="btn btn-warning" style="margin:10px 10px;position:fixed;"><a
+                <button type="button" class="btn btn-warning" style="margin:10px 10px;"><a
                         href="<?=PROOT?>preport" style="all:unset;text-decoration: none;">තේරීමේ පිටුවට
                         පිවිසෙන්න</a></button>
 
-                <ul class="sidebar-btn" style="margin:60px 10px 0px 10px">
+                <ul class="sidebar-btn" style="margin:10px 10px 0px 10px">
                     <li class="side-tab <?=$this->btn_state['registerDetails'];?>">
                         <a href="<?=PROOT?>preport/reportView/registerDetails">1.ලියාපදිංචි තොරතුරු</a>
                     </li>
@@ -107,7 +106,7 @@
                         <a href="<?=PROOT?>preport/reportView/pastObsHistory">6.පෙර ගර්භ ඉතිහාසය</a>
                     </li>
                     <li class="side-tab <?=$this->btn_state['clinicCare1'];?>">
-                        <a href="<?=PROOT?>preport/reportView/clinicCare1">7.සායනික සං‍රක්ෂණය 1</a>
+                        <a href="<?=PROOT?>preport/clinicCare1/clinicCare1">7.සායනික සං‍රක්ෂණය 1</a>
                     </li>
                     <li class="side-tab <?=$this->btn_state['clinicCare2'];?>">
                         <a href="<?=PROOT?>preport/reportView/clinicCare2">8.සායනික සං‍රක්ෂණය 2</a>
@@ -115,8 +114,8 @@
                     <li class="side-tab <?=$this->btn_state['immunization'];?>">
                         <a href="<?=PROOT?>preport/reportView/immunization">9.ප්‍රතිශක්තිකරණය</a>
                     </li>
-                    <li class="side-tab <?=$this->btn_state['weightgraph'];?>">
-                        <a href="<?=PROOT?>preport/reportView/weightgraph">10.බර වැඩිවීමේ සටහන</a>
+                    <li class="side-tab <?=$this->btn_state['weightChart'];?>">
+                        <a href="<?=PROOT?>preport/weightChart/weightChart">10.බර වැඩිවීමේ සටහන</a>
                     </li>
                     <li class="side-tab <?=$this->btn_state['emergancyPlan'];?>">
                         <a href="<?=PROOT?>preport/reportView/emergancyPlan">11.හදිසි අවස්ථාවන් සදහා සැලසුම්</a>

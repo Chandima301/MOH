@@ -21,11 +21,11 @@
                 <div>
                     <h3> 8. පිටගැස්ම ධුලකාභ ප්‍රතිශක්තිකරණය</h3>
                     <?php if(!$this->editMode){ ?>
-                              <form action="<?=PROOT?>mother/edit/immunization" method="post">
+                              <form action="<?=PROOT?><?=$this->controller;?>/edit/immunization" method="post">
                                   <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                               </form>
                     <?php }?>
-                    <form action="<?=PROOT?>mother/save/immunization" method="post" style="margin: 30px;">
+                    <form action="<?=PROOT?><?=$this->controller;?>/save/immunization" method="post" style="margin: 30px;">
                       <div class='col-sm-6 alert alert-success mx-auto' id='success' style="display: none;">
                           <p>තොරතුරු සටහන්කිරීම සාර්ථකයි.</p>
                       </div>

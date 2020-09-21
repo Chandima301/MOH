@@ -22,11 +22,11 @@
             <div>
                 <h3> 7. සායනික සං‍රක්ෂණය 1</h3>
                 <?php if (!$this->editMode) : ?>
-                    <form action="<?= PROOT ?>mother/clinicCare1" method="post">
+                    <form action="<?= PROOT ?><?=$this->controller;?>/clinicCare1" method="post">
                         <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                     </form>
                 <?php endif; ?>
-                <form action="<?= PROOT ?>mother/clinicCare1" method="post" style="margin: 30px;">
+                <form action="<?= PROOT ?><?=$this->controller;?>/clinicCare1" method="post" style="margin: 30px;">
                     <div class="form-group row" style="font-weight: bold;">
                         <table class="table tb table-bordered">
                             <tbody>

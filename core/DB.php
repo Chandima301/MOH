@@ -1,5 +1,4 @@
 <?php
-
 class DB{
     private static $_instance = null;
     private $_pdo, $_query, $_error = false, $_result, $_count = 0, $_lastInsertID = null;
@@ -242,6 +241,81 @@ class DB{
         }
         return false;
 
+    }
+    protected function _lockANDread($table, $params=[]){
+
+        $conditionString = '';
+        $bind = [];
+        $order = '';
+        $limit = '';
+        $columns = '*';
+        $join = '';
+        
+        //conditions
+        if (isset($params['conditions'])) {
+            if (is_array($params['conditions'])) {
+                foreach ($params['conditions'] as $condition) {
+                    $conditionString .= ' ' . $condition . ' AND';
+                }
+                $conditionString = trim($conditionString);
+                $conditionString = rtrim($conditionString , ' AND');
+            } else {
+                $conditionString = $params['conditions'];
+            }
+            if ($conditionString != '') {
+                $conditionString = ' WHERE ' . $conditionString;
+            }				
+        }
+
+        //bind
+        if (array_key_exists('bind', $params)) {
+            $bind = $params['bind'];
+        }
+
+        //order
+        if (array_key_exists('order', $params)) {
+            $order = ' ORDER BY ' . $params['order'];
+        }
+
+        //limit
+        if (array_key_exists('limit', $params)) {
+            $limit = ' LIMIT ' . $params['limit'];
+        }
+
+        //columns
+        if (array_key_exists('columns', $params)) {
+            $columns = $params['columns'];
+        }
+
+        if(array_key_exists('join',$params)){
+            $join = ' '.$params['join'];
+        }
+
+
+        $sql = "SELECT {$columns} FROM {$table}{$join}{$conditionString}{$order}{$limit} FOR UPDATE";
+       // Helper::dnd($sql);
+        if ($this->query($sql, $bind)) {
+            if (!count($this->_result)) {
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public function lockANDfind($table, $params){
+        if($this->_lockANDread($table, $params)){
+            return $this->results();
+        }
+        return false;
+    }
+
+
+    public function lockANDfindFirst($table, $params){
+        if($this->_lockANDread($table, $params)){
+            return $this->first();
+        }
+        return false;
     }
 
 

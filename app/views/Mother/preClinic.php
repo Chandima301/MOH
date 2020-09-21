@@ -24,11 +24,11 @@
                     <h3> 12. පූර්ව ප්‍රසව සැසි සදහා පැමිණීම</h3>
                 </div>
                 <?php if(!$this->editMode){ ?>
-                          <form action="<?=PROOT?>mother/edit/preClinic" method="post">
+                          <form action="<?=PROOT?><?=$this->controller;?>/edit/preClinic" method="post">
                               <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                           </form>
                 <?php }?>
-                <form action="<?=PROOT?>mother/save/preClinic" method="post" style="margin: 30px;">
+                <form action="<?=PROOT?><?=$this->controller;?>/save/preClinic" method="post" style="margin: 30px;">
                   <div class='col-sm-6 alert alert-success mx-auto' id='success' style="display: none;">
                       <p>තොරතුරු සටහන්කිරීම සාර්ථකයි.</p>
                   </div>

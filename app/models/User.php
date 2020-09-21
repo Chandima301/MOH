@@ -1,5 +1,4 @@
 <?php
-
 class User extends Model{
     private $_isLoggedIn, $_sessionName, $_cookieName, $user;
     public static $currentLoggedInUser;

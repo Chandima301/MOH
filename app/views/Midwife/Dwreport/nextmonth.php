@@ -27,6 +27,7 @@
         </div>
         <div class="col-12" style="margin: 30px auto;">
             <form action="<?=PROOT?>Dwreport/createReports/nextmonth" method="post">
+                <input type="hidden" name="id" value="<?=User::currentUser()->id?>">
                 <button type="submit" class="btn btn-primary btn-lg" name="period"
                     value="<?=date('Y-m',strtotime("first day of next month")); ?>">අලුත් වාර්තාව සකස් කරන්න</button>
             </form>
@@ -39,8 +40,8 @@
             <div class="col-sm-12 col-md-10 mt-5 page-content">
                 <input type="hidden" name="id" value="<?=User::currentUser()->id?>">
                 <input type="hidden" name="period" value="<?=date('Y-m',strtotime("first day of next month"));?>">
-                <?php   foreach($this->report->data as $key => $value){ 
-                        
+                <?php  foreach($this->report as $key => $value){ 
+
                         if($key=="id" || $key=="period" || $key=="submit_to_approval" || $key=="approved" ) continue;
                         if($key=="comments") continue;
                         if(!$this->editMode){
@@ -85,7 +86,7 @@
     </form>
 
     <div class="row justify-content-center mt-5">
-        <?php if(!$this->editMode){
+        <?php if(!$this->editMode && isset($this->report->id)){
                    
                    ?>
 
@@ -98,7 +99,7 @@
 
 
 
-        <?php if(!$this->editMode && !$this->report->submit_to_approval){
+        <?php if(!$this->editMode && !$this->report->submit_to_approval && isset($this->report->id)){
         
         ?>
 

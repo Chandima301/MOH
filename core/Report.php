@@ -20,6 +20,7 @@ class Report extends Model{
         $this->assign($params);
         $this->save1($params,$conditions);
     }
+    
 
 
 }

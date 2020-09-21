@@ -23,11 +23,11 @@
                 <div>
                     <h3> 4. කායික / ශල්‍ය ඉතිහාසය</h3>
                     <?php if(!$this->editMode){ ?>
-                              <form action="<?=PROOT?>mother/edit/surgicalHistory" method="post">
+                              <form action="<?=PROOT?><?=$this->controller;?>/edit/surgicalHistory" method="post">
                                   <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                               </form>
                     <?php }?>
-                    <form action="<?=PROOT?>mother/save/surgicalHistory" method="post" style="margin: 30px;">
+                    <form action="<?=PROOT?><?=$this->controller;?>/save/surgicalHistory" method="post" style="margin: 30px;">
                       <div class='col-sm-6 alert alert-success mx-auto' id='success' style="display: none;">
                           <p>තොරතුරු සටහන්කිරීම සාර්ථකයි.</p>
                       </div>
