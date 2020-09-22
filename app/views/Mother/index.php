@@ -169,14 +169,14 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
           <a class="dropdown-item" href="<?= PROOT ?>/mother/immunization">ප්‍රතිශක්තිකරණය</a>
-          <a class="dropdown-item" href="#">බර වැඩිවීමේ සටහන</a>
+          <a class="dropdown-item" href="<?= PROOT ?>/mother/weightChart">බර වැඩිවීේ සටහන</a>
         </div>
       </div>
       </p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
       <img src="<?= PROOT ?>/img/pregnant-history.png" alt="profile-pic" class="profile-img">
-      <h2>තොරතුරු හා පවුල් සැලසුම්</h2>
+      <h2>තොරතුරු හා පවුල් සැලසුම</h2>
       <p>
         හදිසි අවස්ථාවන් සදහා සැලසුම්<br>
         පවුල් සැලසුම් <br>

@@ -6,16 +6,16 @@
     <div class="head">
                 <h1 style="text-align: center; padding: 20px;">ගර්භනී සටහන් පොත</h1>
 
-                <ul class="list-group tb list-group-horizontal-lg">
-                    <li class="list-group-item">රුධිර ඝනය</li>
-                    <li class="list-group-item"><input type="text" class="form-control" id="presentData5" value=""></li>
-                    <li class="list-group-item">ශරීර ස්කන්ධ දර්ශකය</li>
-                    <li class="list-group-item"><input type="text" class="form-control" id="presentData5" value=""></li>
-                    <li class="list-group-item">උස (සෙ.මි)</li>
-                    <li class="list-group-item"><input type="text" class="form-control" id="presentData5" value=""></li>
-                    <li class="list-group-item">අසාත්මිකතා</li>
-                    <li class="list-group-item"><input type="text" class="form-control" id="presentData5" value=""></li>
-                </ul>
+                            <ul class="list-group tb list-group-horizontal-lg">
+                                <li class="list-group-item">රුධිර ඝනය</li>
+                                <li class="list-group-item col-sm-2"><p><?=$this->MotherTable->blood_group?></p></li>
+                                <li class="list-group-item">ශරීර ස්කන්ධ දර්ශකය</li>
+                                <li class="list-group-item col-sm-2"><p><?=$this->MotherTable->mass_index?></p></li>
+                                <li class="list-group-item">උස (සෙ.මි)</li>
+                                <li class="list-group-item col-sm-2"><p><?=$this->MotherTable->height?></p></li>
+                                <li class="list-group-item">අසාත්මිකතා</li>
+                                <li class="list-group-item col-sm-2"><p><?=$this->MotherTable->allergies?></p></li>
+                            </ul>
             </div>
             <div class="presentinfo" style="margin-top: 50px; border: solid black; padding: 40px; margin: 40px;">
                 <div>
@@ -121,5 +121,5 @@
                     </form>
                 </div>
             </div>
-   
+
     <?php $this->end(); ?>
