@@ -186,6 +186,8 @@ class MotherController extends Controller{
       $this->view->btn_state['1']= 'show';
       $this->view->btn_state['1-1']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -198,6 +200,8 @@ class MotherController extends Controller{
       $this->view->btn_state['1']= 'show';
       $this->view->btn_state['1-2']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -210,6 +214,8 @@ class MotherController extends Controller{
       $this->view->btn_state['2']= 'show';
       $this->view->btn_state['2-1']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -222,6 +228,8 @@ class MotherController extends Controller{
       $this->view->btn_state['2']= 'show';
       $this->view->btn_state['2-2']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -234,6 +242,8 @@ class MotherController extends Controller{
       $this->view->btn_state['3']= 'show';
       $this->view->btn_state['3-1']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -246,6 +256,8 @@ class MotherController extends Controller{
       $this->view->btn_state['3']= 'show';
       $this->view->btn_state['3-2']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -257,6 +269,8 @@ class MotherController extends Controller{
     public function clinicCare1Action($param = "clinicCare1")
   {
     if (isset($param)) {
+      $MotherTable = new Mother();
+      $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
       if (isset($_POST["editButton"])) {
         $_SESSION["editMode"] = 1;
         $this->view->editMode = 1;
@@ -281,6 +295,8 @@ class MotherController extends Controller{
       $this->view->btn_state['4']= 'show';
       $this->view->btn_state['4-2']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -293,6 +309,8 @@ class MotherController extends Controller{
       $this->view->btn_state['5']= 'show';
       $this->view->btn_state['5-1']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -304,6 +322,8 @@ class MotherController extends Controller{
     public function weightChartAction($param = "weightChart")
     {
       if (isset($param)) {
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
         if (isset($_POST["editButton"])) {
           $_SESSION["editMode"] = 1;
           $this->view->editMode = 1;
@@ -326,6 +346,8 @@ class MotherController extends Controller{
       $this->view->btn_state['6']= 'show';
       $this->view->btn_state['6-1']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -338,6 +360,10 @@ class MotherController extends Controller{
       $this->view->btn_state['6']= 'show';
       $this->view->btn_state['6-2']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -350,6 +376,8 @@ class MotherController extends Controller{
       $this->view->btn_state['6']= 'show';
       $this->view->btn_state['6-3']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -362,6 +390,8 @@ class MotherController extends Controller{
       $this->view->btn_state['7']= 'show';
       $this->view->btn_state['7-1']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
@@ -386,6 +416,8 @@ class MotherController extends Controller{
       $this->view->btn_state['9']= 'show';
       $this->view->btn_state['9-1']= 'active';
       if(isset($param)){
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $this->view->setLayout('pregReport_layout');
