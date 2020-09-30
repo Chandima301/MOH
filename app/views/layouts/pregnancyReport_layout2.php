@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="<?= PROOT ?>css/reset-stylesheet.css">
     <link rel="stylesheet" href="<?= PROOT ?>css/pregnancy.css">
     <link rel="stylesheet" href="<?= PROOT ?>css/message.css">
-    
+
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
@@ -115,7 +115,7 @@
                         <a href="<?=PROOT?>preport/reportView/immunization">9.ප්‍රතිශක්තිකරණය</a>
                     </li>
                     <li class="side-tab <?=$this->btn_state['weightChart'];?>">
-                        <a href="<?=PROOT?>preport/weightChart/weightChart">10.බර වැඩිවීමේ සටහන</a>
+                        <a href="<?=PROOT?>preport/reportView/weightChart">10.බර වැඩිවීමේ සටහන</a>
                     </li>
                     <li class="side-tab <?=$this->btn_state['emergancyPlan'];?>">
                         <a href="<?=PROOT?>preport/reportView/emergancyPlan">11.හදිසි අවස්ථාවන් සදහා සැලසුම්</a>

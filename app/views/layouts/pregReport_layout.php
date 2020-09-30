@@ -201,7 +201,7 @@
                                         <a href="<?= PROOT ?>mother/immunization">8. ප්‍රතිශක්තිකරණය</a>
                                     </li>
                                     <li class="side-tab <?= $this->btn_state['5-2'] ?>">
-                                        <a href="<?= PROOT ?>mother/clinicCare2">9. බර වැඩිවීමේ සටහන</a>
+                                        <a href="<?= PROOT ?>mother/weightChart">9. බර වැඩිවීමේ සටහන</a>
                                     </li>
                                 </ul>
                             </div>
