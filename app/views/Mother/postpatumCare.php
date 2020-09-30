@@ -394,7 +394,7 @@
                     </div>
                 </div>
                 <?php if($this->editMode) {?>
-                  <button type="submit" name="saveButton" class="btn btn-primary save ">save</button>
+                  <button type="submit" name="saveButton" class="btn btn-primary">save</button>
                 <?php } ?>
             </form>
         </div>

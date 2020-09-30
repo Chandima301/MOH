@@ -70,7 +70,7 @@ function notifyMother()
         if ($user->id) {
             $ICEreport = new ICEmaterial();
             $ICEreport = $ICEreport->findFirst(["conditions" => ["id =?"],"bind" =>[$user->id]]);
-            $nextClinic = $ICEreport->{28}
+            $nextClinic = $ICEreport->{28};
             $nextDate = explode('/',$nextClinic);
             $nextMonth = $nextDate[0];
             $nextDay = (string)(int)$nextDate[1];
