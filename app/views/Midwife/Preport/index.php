@@ -31,8 +31,9 @@ $this->start("body"); ?>
                 foreach($this->allData as $mother){
                 ?>
                     <tr>
-                        <th scope="row"><?= $x++ ?></th>
+                        
                         <?php if($mother->id){ ?>
+                        <th scope="row"><?= $x++ ?></th>
                         <td><?= $mother->name ?></td>
                         <td><?= $mother->idcardnum ?></td>
                         <td><?= $mother->phone ?></td>
@@ -40,12 +41,15 @@ $this->start("body"); ?>
                                 <p style="color: blue;">view details</p>
                             </a></td>
                         <?php } else{ ?>
-                        <td>invalid id number</td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="#">
-                                <p style="color: blue;">view details</p>
-                            </a></td>
+
+                        <div class="alert alert-danger"><center>ඇතුලත් කල අංකය වැරදී</h4></center></div>
+                        <td>1</td>
+                        <td>____</td>
+                        <td>_______________</td>
+                        <td>_______________</td>
+                        <td>_____________________________</td>
+                        
+                          
                     </tr>
                     <?php }}} ?>
 

@@ -6,7 +6,7 @@ class DwreportController extends Controller{
         $this->view->setLayout('dailyworkReport_layout');
         $this->user =User::currentUser();
         $this->view->name = $this->user->name;
-        $this->view->editMode= isset($_SESSION['editMode']) ? $_SESSION['editMode'] : 0 ;
+        $this->view->editMode= isset($_SESSION['editMode_dw']) ? $_SESSION['editMode_dw'] : 0 ;
 
 
     }
@@ -37,7 +37,7 @@ class DwreportController extends Controller{
 
     public function editModeAction($param=null){
         if(isset($_POST["editButton"])){
-            $_SESSION["editMode"]=1;
+            $_SESSION["editMode_dw"]=1;
             $this->view->editMode=1;
             $newDwReport =new dailyworkReport();
             $newDwReport->updateDatabase2(["id"=>$this->user->id,"period"=>date('Y-m',strtotime("first day of next month")),"submit_to_approval"=>'0'],["period"=>date('Y-m',strtotime("first day of next month"))]);
@@ -49,7 +49,7 @@ class DwreportController extends Controller{
 
     public function saveModeAction($param=null){
         if(isset($_POST["saveButton"])){
-            $_SESSION["editMode"]=0;
+            $_SESSION["editMode_dw"]=0;
             $this->view->editMode=0;
             $new_data =new dailyworkReport();
             $new_data->updateDatabase2(Helper::posted_values($_POST),["period"=>date('Y-m',strtotime("first day of next month"))]);

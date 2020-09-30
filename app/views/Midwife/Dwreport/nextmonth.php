@@ -36,44 +36,65 @@
     </div>
     <?php }else{ ?>
     <form action="<?=PROOT?>Dwreport/saveMode" method="post" style="display:block;width:100%">
+    <input type="hidden" name="id" value="<?=User::currentUser()->id?>">
+    <input type="hidden" name="period" value="<?=date('Y-m',strtotime("first day of next month"));?>">
         <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-10 mt-5 page-content">
-                <input type="hidden" name="id" value="<?=User::currentUser()->id?>">
-                <input type="hidden" name="period" value="<?=date('Y-m',strtotime("first day of next month"));?>">
-                <?php  foreach($this->report as $key => $value){ 
-
-                        if($key=="id" || $key=="period" || $key=="submit_to_approval" || $key=="approved" ) continue;
-                        if($key=="comments") continue;
-                        if(!$this->editMode){
-                        ?>
-
-
-                <div class="row" style="padding: 0 20px;">
-                    <div class="col-2 not-heading"><?=str_replace('_', ' ', $key);?></div>
-                    <div class="col-10 not-heading"><?=$value?></div>
-                </div>
-
-                <?php }
+            <div class="col-sm-12 col-md-9 mt-5 page-content" style="padding: 5px 20px;">
+                <div class="row">
+                    <div class="col-2 tab-text">
+                        <div class="row" >
+                            <div class="col-12 not-heading" style=" height:45px; background-color: rgb(177, 174, 174);">
+                               <h3>මාසයේ දින</h3>
+                            </div>
+                        </div>
                         
-                        else{ ?>
-                <div class="row" style="padding: 0 20px;">
-                    <div class="col-2 not-heading"><?=str_replace('_', ' ', $key);?></div>
-                    <div class="col-10 not-heading" style="padding :0px;"><input
-                            style="width: 100%; height:100%; color:red; padding-left:20px" type="text" name="<?=$key?>"
-                            value="<?=$value?>"></div>
+                        <?php $numOfDates=cal_days_in_month(CAL_GREGORIAN,date('m',strtotime("first day of next month")),date('Y',strtotime("first day of next month"))); for($x=1; $x<=$numOfDates; $x++){ ?> 
+                        <div class="row" >
+                            <div class="col-12 not-heading" style="text-align:center; background-color: rgb(177, 174, 174);">
+                               දිනය <?=$x;?>
+                            </div>
+                        </div>
+                        <?php } ?>
+                        
+                    </div>
+
+
+
+                    <div class="col-10">
+                        <div class="row">
+                        <div class="col-12 tab-sum">
+                                <div class="row" >
+                                    <div class="col-12 not-heading" style="text-align:center; height:45px; background-color: rgb(177, 174, 174);">
+                                        <h3>සායන පැවැත්වෙන ස්ථානය</h3>
+                                    </div>
+                                </div>
+                                <?php $numOfDates=cal_days_in_month(CAL_GREGORIAN,date('m',strtotime("first day of next month")),date('Y',strtotime("first day of next month"))); for($x=1; $x<=$numOfDates; $x++){
+                                    if(!$this->editMode) {?> 
+                                    <div class="row" >
+                                        <div class="col-12 not-heading" style="text-align:center;">
+                                            <?= $this->report->{$x};?>
+                                        </div>
+                                    </div>
+                                <?php } else{ ?>
+                                    <div class="row" >
+                                        <div class="col-12 not-heading" style="text-align:center;padding: 0px">
+                                        <input style="width: 100%; height:100%; color:red; padding-left:20px" type="text" name="<?=$x;?>"value="<?=$this->report->{$x}?>">
+                                        </div>
+                                    </div> 
+                              <?php  }} ?>
+
+
+                        </div>
+                        </div>
+                    </div>
                 </div>
-
-
-
-
-                <?php }
-        } 
-        
-        }?>
-
             </div>
+            </div>
+      <?php  }?>
 
-        </div>
+           
+
+        
         <?php
         
         if($this->editMode) {?>

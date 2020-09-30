@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="<?= PROOT ?>css/reset-stylesheet.css">
     <link rel="stylesheet" href="<?= PROOT ?>css/pregnancyReport.css">
     <link rel="stylesheet" href="<?= PROOT ?>css/background.css">
+    <link rel="stylesheet" href="<?= PROOT ?>css/DailyWorkReport.css">
+
+    
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
