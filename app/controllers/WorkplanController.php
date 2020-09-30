@@ -7,7 +7,7 @@ class WorkplanController extends Controller{
         $this->user = User::currentUser();
         $this->view->name = $this->user->name;
         $this->view->btn_state=['familiesWkp'=>'', 'maternitypreservation'=>'','mtpr'=>'','mtfpj'=>'','preganacyResult'=>'','latepreganacypreservation'=>'','babypreservation'=>'','babypreservation1to5'=>'','babyandteenpreservation1to5'=>'','familyplan'=>'','genderhelth'=>''];
-        $this->view->editMode= isset($_SESSION['editMode']) ? $_SESSION['editMode'] : 0 ;
+        $this->view->editMode= isset($_SESSION['editMode_w']) ? $_SESSION['editMode_w'] : 0 ;
         $this->period= isset($_SESSION['period']) ? $_SESSION['period'] : date('Y-m') ;
         $this->view->period =$this->period;
 
@@ -52,7 +52,7 @@ class WorkplanController extends Controller{
     }
     public function editModeAction($param=null){
         if(isset($_POST["editButton"])){
-            $_SESSION["editMode"]=1;
+            $_SESSION["editMode_w"]=1;
             $this->view->editMode=1;
             
         }
@@ -60,7 +60,7 @@ class WorkplanController extends Controller{
     }
     public function saveModeAction($param){
         if(isset($_POST["saveButton"])){
-            $_SESSION["editMode"]=0;
+            $_SESSION["editMode_w"]=0;
             $this->view->editMode=0;
             $this->savetoSum($param);
             $newDate =new $param(); // dnd(posted_values($_POST));
@@ -71,6 +71,8 @@ class WorkplanController extends Controller{
         $this->reportViewAction($param);
     }
     public function seeMonthReportsAction($param){
+        $_SESSION['editMode_w'] = 0 ;
+        $this->view->editMode=0;
         if($_POST["period"]){
             $this->period=$_POST["period"];
             $_SESSION["period"]=$this->period;

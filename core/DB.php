@@ -9,7 +9,7 @@ class DB{
             $this->_pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->_pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
         } catch(PDOException $e){
-            die($e->getMessage);
+            die($e->getMessage());
         }
 
     }
