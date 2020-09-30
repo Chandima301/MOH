@@ -174,8 +174,76 @@ class MotherController extends Controller{
 
     public function reportViewAction($param){
       if(isset($param)){
+          if($param == "registerDetails"){
+            $this->view->btn_state['1']= 'show';
+            $this->view->btn_state['1-1']= 'active';
+          }
+          elseif ($param == "personalDetails") {
+            $this->view->btn_state['1']= 'show';
+            $this->view->btn_state['1-2']= 'active';
+          }
+          elseif ($param == "familyHistory") {
+            $this->view->btn_state['2']= 'show';
+            $this->view->btn_state['2-1']= 'active';
+          }
+          elseif ($param == "surgicalHistory") {
+            $this->view->btn_state['2']= 'show';
+            $this->view->btn_state['2-2']= 'active';
+          }
+          elseif ($param == "presentObsHistory") {
+            $this->view->btn_state['3']= 'show';
+            $this->view->btn_state['3-1']= 'active';
+          }
+          elseif ($param == "pastObsHistory") {
+            $this->view->btn_state['3']= 'show';
+            $this->view->btn_state['3-2']= 'active';
+          }
+          elseif ($param == "clinicCare1") {
+            $this->view->btn_state['4']= 'show';
+            $this->view->btn_state['4-1']= 'active';
+          }
+          elseif ($param == "clinicCare2") {
+            $this->view->btn_state['4']= 'show';
+            $this->view->btn_state['4-2']= 'active';
+          }
+          elseif ($param == "immunization") {
+            $this->view->btn_state['5']= 'show';
+            $this->view->btn_state['5-1']= 'active';
+          }
+          elseif ($param == "weightChart") {
+            $this->view->btn_state['5']= 'show';
+            $this->view->btn_state['5-2']= 'active';
+          }
+          elseif ($param == "emergancyPlan") {
+            $this->view->btn_state['6']= 'show';
+            $this->view->btn_state['6-1']= 'active';
+          }
+          elseif ($param == "iCEmaterial") {
+            $this->view->btn_state['6']= 'show';
+            $this->view->btn_state['6-2']= 'active';
+          }
+          elseif ($param == "preClinic") {
+            $this->view->btn_state['6']= 'show';
+            $this->view->btn_state['6-3']= 'active';
+          }
+          elseif ($param == "hospitalClinc") {
+            $this->view->btn_state['7']= 'show';
+            $this->view->btn_state['7-1']= 'active';
+          }
+          elseif ($param == "postnatalCare") {
+            $this->view->btn_state['8']= 'show';
+            $this->view->btn_state['8-1']= 'active';
+          }
+          elseif ($param == "postpatumCare") {
+            $this->view->btn_state['9']= 'show';
+            $this->view->btn_state['9-1']= 'active';
+          }
+
+
           $Mother = new $param($param);
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
+          $MotherTable = new Mother();
+          $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
           $this->view->setLayout('pregReport_layout');
           $this->view->render('mother/'.$param);
         }
@@ -268,7 +336,9 @@ class MotherController extends Controller{
     // 7-1
     public function clinicCare1Action($param = "clinicCare1")
   {
-    if (isset($param)) {
+      $this->view->btn_state['4']= 'show';
+      $this->view->btn_state['4-1']= 'active';
+      if (isset($param)) {
       $MotherTable = new Mother();
       $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
       if (isset($_POST["editButton"])) {
@@ -321,6 +391,8 @@ class MotherController extends Controller{
     // 9
     public function weightChartAction($param = "weightChart")
     {
+      $this->view->btn_state['5']= 'show';
+      $this->view->btn_state['5-2']= 'active';
       if (isset($param)) {
           $MotherTable = new Mother();
           $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);

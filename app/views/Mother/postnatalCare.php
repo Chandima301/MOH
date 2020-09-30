@@ -3,7 +3,7 @@
 <?php $this->start('body'); ?>
 
 <main role="main">
-<div class="marketing mb-5" style="border: solid black; margin-top: 50px; padding:15px">
+  <div class="marketing mb-5" style="border: solid black; margin-top: 50px; padding:15px">
           <?php if(!$this->editMode){ ?>
                     <form action="<?=PROOT?>mother/edit/postnatalCare" method="post">
                         <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
@@ -223,21 +223,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="form-group row" style="font-weight: bold; ">
-                    <label for="">විශේෂ සටහන්</label>
-                </div>
-                <div class="form-group row" style="font-weight: bold; ">
-                  <?php if($this->editMode){?>
-                    <textarea class="form-control" id="risk" rows="8" cols="150" name="27"><?=$this->Mother->{'27'}?></textarea>
-                  <?php } else{ ?>
-                    <p><?=$this->Mother->{'27'}?></p>
-                  <?php  } ?>
-                </div>
                 <?php if($this->editMode) {?>
-                  <button type="submit" name="saveButton" class="btn btn-primary save ">save</button>
+                  <button type="submit" name="saveButton" class="btn btn-primary">save</button>
                 <?php } ?>
             </form>
-
+          </div>
         </div>
     </main>
     <?php $this->end(); ?>
