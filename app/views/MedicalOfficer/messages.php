@@ -3,7 +3,7 @@
 <?php $this->start('body'); ?>
 
 <div class="col-md-10 tab" style="display: block;" id="Messages">
-    <h3 class="tab-heading">Messaging</h3>
+    <h3 class="tab-heading">Messages</h3>
     <hr>
     <div class="messaging">
         <div class="inbox_msg">

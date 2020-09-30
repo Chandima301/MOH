@@ -142,7 +142,7 @@ class DB{
 
 
         $sql = "SELECT {$columns} FROM {$table}{$join}{$conditionString}{$order}{$limit}";
-       // Helper::dnd($sql);
+        
         if ($this->query($sql, $bind)) {
             if (!count($this->_result)) {
                 return false;

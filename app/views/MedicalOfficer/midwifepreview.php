@@ -10,7 +10,7 @@
     <div class="card border-dark mb-3">
         <div class="row no-gutters">
             <div class="col-md-2">
-                <img src="<?= PROOT ?>img/nouser.gif" class="rounded-circle float-left mt-5 ml-5" style="height: 100px; width:100px;" alt="no user">
+                <img src="<?= PROOT ?>img/Midwife-icon7.png" class="rounded-circle float-left mt-5 ml-5" style="height: 100px; width:100px;" alt="no user">
             </div>
             <div class="col-md-10">
                 <div class="row">
@@ -52,16 +52,6 @@
         
         <div class="row ml-4 mr-4">
             
-            <div class="btn-group mb-3" style="width: 150px;">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Select the year
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">2018</a>
-                    <a class="dropdown-item" href="#">2019</a>
-                    <a class="dropdown-item" href="#">2020</a>
-                </div>
-            </div>
 
             <div class="col-md-12">
                 <div class="row row-cols-1 row-cols-md-4">
@@ -89,13 +79,6 @@
 
         </div>
 
-        <div class="row mt-4 mr-4 ml-4">
-            <div class="col-md-12">
-                <h5 class="card-title" style="font-size: 18px;">පැමිනීම</h5>
-                <hr style="height:0.5px; color:rgb(158, 158, 158);">
-            </div>
-
-        </div>
     </div>
 </div>
 <?php $this->end(); ?>
