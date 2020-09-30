@@ -96,10 +96,11 @@ class User extends Model
 
         return json_decode($this->acl, true);
     }
-    public function getAllusers($para)
-    {
 
-        return $this->find(['conditions' => "user_type = ?", 'bind' => [$para]]);
+    public function getAllusers($type){
+        
+        return $this->find(['conditions'=>"user_type = ?", 'bind' =>[$type]]);
+
     }
 
 }

@@ -46,18 +46,22 @@ function sendMail($to, $subject, $msg)
     } else {
         echo "Email sent successfully";
     }
+
+    function noticeArea(){
+        $users =new User();
+        $users =$users->getAllusers("MI");
+        foreach( $users as $user){
+            if($user->id){
+                var_dump($user->name);
+                $newDailyworkReport =new dailyworkReport();
+                $newDailyworkReport=$newDailyworkReport->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$user->id,strtotime("first day of last month")]]);
+                $coulmn=date('j');
+                $msg="අද දින සායන පැවැත්වීමට නියමිත ප්‍රදේශය ".$newDailyworkReport->{$coulmn};
+                sendMail($user->email, "Daily Work Report Announcement",$msg);
+
 }
-function noticeArea()
-{
-    $users = new User();
-    $users = $users->getAllusers("MI");
-    foreach ($users as $user) {
-        if ($user->id) {
-            $newDailyworkReport = new dailyworkReport();
-            $newDailyworkReport = $newDailyworkReport->findFirst(["conditions" => ["id =?", "period=?"], "bind" => [$user->id, strtotime("first day of last month")]]);
-            $coulmn = "දිනය_" . date('j');
-            $msg = "අද දින සායන පැවැත්වීමට නියමිත ප්‍රඩ්ගෙශය " . $newDailyworkReport->{$coulmn};
-            sendMail($user->email, "දින වැඩ වාර්තාව", $msg);
+
+
 
         }
     }
@@ -82,6 +86,7 @@ function notifyMother()
             }
         }
     }
+    
 
 }
 

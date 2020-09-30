@@ -12,7 +12,7 @@ class PreportController extends Controller{
     
     }
     public function indexAction(){
-        $this->view->allData =(new User('user'))->getAllusers(); 
+        $this->view->allData =(new User('user'))->getAllusers("M"); 
         $this->view->render('Midwife/Preport/index');
     }
     public function selectedDataShowAction(){
@@ -20,7 +20,7 @@ class PreportController extends Controller{
             $id=$_POST["idcardnum"];
             if(isset($id)){
             $findMother =new User();
-            $findMother =$findMother->findFirst(["conditions"=>["idcardnum = ?", "user_type = ?"] , "bind"=>[$id, "MI"]]);
+            $findMother =$findMother->findFirst(["conditions"=>["idcardnum = ?", "user_type = ?"] , "bind"=>[$id, "M"]]);
             $this->view->allData =[$findMother];
             
             }
