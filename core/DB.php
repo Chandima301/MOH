@@ -148,7 +148,10 @@ class DB{
 
 
         $sql = "SELECT {$columns} FROM {$table}{$join}{$conditionString}{$order}{$limit}";
+
+        
        //Query method is called to access database
+
         if ($this->query($sql, $bind)) {
             if (!count($this->_result)) {
                 return false;

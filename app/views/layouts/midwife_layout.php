@@ -54,7 +54,7 @@
                         <a href="<?= PROOT ?>midwife/message">
                             <button type="button" class="btn btn-primary btn-msg">
                                 <i class="fa fa-comments fa-lg"></i>
-                                <span class="badge badge-danger">40</span>
+                                <span class="badge badge-danger"><?= $this->newMsgCount ?></span>
                             </button>
                         </a>
                     </li>
@@ -62,7 +62,7 @@
                         <!--<img src="<?= PROOT ?>img/Midwife-icon7.png" width="40" height="40" class="d-inline-block align-top" alt="Sri Lanka National Flag"></a>-->
                     </li>
                     <li class="nav-item pl-2">
-                        <a class="nav-link active disabled btn-name" href="#"><i class="fa fa-user-circle"></i> Hello,<br><?= $this->name; ?></a>
+                        <a class="nav-link active disabled btn-name" href="#"><i class="fa fa-user-circle"></i> Hello,<br><?= User::currentUser()->name?></a>
                     </li>
                     <li class="nav-item pl-2">
                         <a href="<?= PROOT ?>login/logout" class="btn btn-danger btn-logout btn-lg active nav-boxlogout" role="button" aria-pressed="true">Log Out</a>
