@@ -10,6 +10,11 @@ class MotherController extends Controller{
         //Helper::dnd($this->view->editMode);
         $this->view->controller = 'mother';
         $this->view->btn_state = ['1'=>'','1-1'=>'','1-2'=>'','2'=>'','2-1'=>'','2-2'=>'','3'=>'','3-1'=>'','3-2'=>'','4'=>'','4-1'=>'','4-2'=>'', '5'=>'', '5-1'=>'', '5-2'=>'', '6'=>'', '6-1'=>'', '6-2'=>'', '6-3'=>'', '7'=>'', '7-1'=>'', '8'=>'', '8-1'=>'','9'=>'','9-1'=>''];
+        
+        $this->load_model('Message');
+        $this->load_model('User');
+        $this->view->newMsgCount = $this->MessageModel->getNewMsgCount();
+       
     }
 
     public function indexAction(){
@@ -496,6 +501,53 @@ class MotherController extends Controller{
           $this->view->setLayout('pregReport_layout');
           $this->view->render('mother/postpatumCare');
         }
+    }
+
+    public function messageAction($id = ''){
+      $selectedChat = [];
+        $message = ["message" => ''];
+        if ($_POST and $id != '') {
+            $message = Helper::posted_values($_POST);
+            if ($this->MessageModel->sendMessage($id, $_POST['message'])) {
+                $message = ["message" => ''];
+            }
+        }
+
+        if ($id != '') {
+            $selectedChat = $this->MessageModel->getMessagesFromSender($id);
+        }
+        $chats = $this->MessageModel->getRecivedMessages();
+        $this->view->search_text = ["idcardnum" => ""];
+        $this->view->activeChat = $id;
+        $this->view->message = $message;
+        $this->view->selectedChat = $selectedChat;
+        $this->view->chats = $chats;
+        $this->view->users = [];
+        $this->view->btn_state['messages'] = 'active';
+        $this->view->render('mother/messages');
+    }
+    
+    public function searchForMessageAction()
+    {
+        $this->view->users = [];
+        $search_text = ["idcardnum" => ""];
+        if ($_POST) {
+            $search_text = Helper::posted_values($_POST);
+            $users = $this->UserModel->getUserByID($_POST['idcardnum']);
+            if ($users) {
+                $search_text = ['idcardnum' => ''];
+                $this->view->users = $users;
+            } else {
+                $this->view->script = "<script>view('notfound');</script>";
+            }
+        }
+        $this->view->message = ["message" => ""];
+        $this->view->search_text = $search_text;
+        $this->view->selectedChat = [];
+        $this->view->chats = [];
+        $this->view->users = $users;
+        $this->view->btn_state['messages'] = 'active';
+        $this->view->render('mother/messages');
     }
 
 

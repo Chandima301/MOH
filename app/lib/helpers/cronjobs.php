@@ -1,12 +1,12 @@
 <?php
-// for this part, change location of files............
-require 'C:\Users\ASUS\xampp\htdocs\MOH\core\Model.php';
-require 'C:\Users\ASUS\xampp\htdocs\MOH\core\Report.php';
-require 'C:\Users\ASUS\xampp\htdocs\MOH\app\models\dailyworkReport.php';
-require 'C:\Users\ASUS\xampp\htdocs\MOH\config\config.php';
-require 'C:\Users\ASUS\xampp\htdocs\MOH\core\DB.php';
-require 'C:\Users\ASUS\xampp\htdocs\MOH\app\models\User.php';
-require 'C:\Users\ASUS\xampp\htdocs\MOH\app\models\ICEmaterial.php';
+
+require 'C:\xammp\htdocs\MOH\core\Model.php';
+require 'C:\xammp\htdocs\MOH\core\Report.php';
+require 'C:\xammp\htdocs\MOH\app\models\dailyworkReport.php';
+require 'C:\xammp\htdocs\MOH\config\config.php';
+require 'C:\xammp\htdocs\MOH\core\DB.php';
+require 'C:\xammp\htdocs\MOH\app\models\User.php';
+require '';
 
 
 use PHPMailer\PHPMailer\PHPMailer;

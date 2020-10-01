@@ -8,7 +8,7 @@
 <div class="background-home" style="padding-bottom: 300px;"> <!--increase the size of the picture-->
 <div class="selection-menu">
     <div class="Services mt-5">
-        <h1>Midwife Area</h1>
+        <h1 class="indexHead">Midwife Area</h1>
         <h2> &emsp; <br> &emsp;</h2>
     </div>
     <div class="row">
