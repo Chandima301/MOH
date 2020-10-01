@@ -20,4 +20,8 @@ class Mother extends Model {
         return $this->findFirst(['conditions' => 'idcardnum = ?', 'bind' => [$id]]);
     }
 
+    public function getByUniqueID($id) {
+        return $this->findFirst(['conditions' => 'id = ?', 'bind' => [$id]]);
+    }
+
 }

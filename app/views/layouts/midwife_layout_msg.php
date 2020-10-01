@@ -110,12 +110,16 @@
             <div class="footer-section contact-form">
                 <h2 id="contact" style="color: cornflowerblue;">Contact Medical Officer</h2>
                 <br>
-                <form action="<?= PROOT?>midwife/contactOfficer/" method="post">
-                    <input type="text" name="reason" id="reason" class="text-input contact-input" placeholder="Enter Your Reason"  required>
-                    <input type="text" name="message" id="message" class="text-input contact-input" placeholder="Enter Your Message........"  required>
-                    <button style="color:yellow;" type="submit" class="btn btn-big contact-btn">
+                <form action="<?= PROOT?>midwife/index" method="post">
+                    <input type="text" name="email" class="text-input contact-input" placeholder="Enter Your Reason" value="<?= $this->post['reason'] ?>" readonly>
+                    <input type="text" name="message" class="text-input contact-input" placeholder="Enter Your Message......." value="<?= $this->post['message'] ?>" readonly>
+                    <button style="color:green;" type="submit" class="btn btn-outline-success contact-btn active" disabled>
+                        <i class="fa fa-check-circle"></i>
+                        Successfully sent
+                    </button>
+                    <button style="color:red;" type="submit" class="btn btn-big contact-btn">
                         <i class="fa fa-envelope"></i>
-                        Send
+                        Back
                     </button>
                     <h2>&emsp;</h2>
                 </form>

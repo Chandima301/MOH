@@ -31,8 +31,11 @@ class Midwife extends User {
         ]);
     }
 
-    public function getByID($id) {
+    public function getByID($id) { 
         return $this->findFirst(['conditions' => 'idcardnum = ?', 'bind' => [$id]]);
+    }
+    public function getMO() {
+        return $this->findFirst(['conditions' => 'user_type = ?', 'bind' => ['MO']]);
     }
 
 }
