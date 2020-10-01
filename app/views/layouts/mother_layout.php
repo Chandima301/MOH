@@ -38,11 +38,13 @@
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
+
     }
   </style>
   <!-- Custom styles for this template -->
   <link href="<?= PROOT ?>/css/Mother_css.css" rel="stylesheet">
 </head>
+
 
 <body style="background-color: rgb(198, 220, 253); ">
   <header>

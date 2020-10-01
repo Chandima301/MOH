@@ -4,6 +4,7 @@ class LoginController extends Controller{
     public function __construct($controller, $action){
         parent::__construct($controller, $action);
         $this->load_model('User');
+        $this->load_model('Mother');
         $this->view->setLayout('login_layout');
     }
 
@@ -45,9 +46,15 @@ class LoginController extends Controller{
                 if($user && password_verify(Input::get('password'),$user->pwd)){
                     $remember = (isset($_POST['remember_me']) && Input::get('remember_me')) ? true :false;
                     $user->login($remember);
+                    $mother = $this->MotherModel->getByID($_POST['idcardnum']);
                     switch($user->user_type){
                         case 'M':
-                            Router::redirect('mother/index');
+                            if($mother->confirmation == 1) {
+                                Router::redirect('mother/index');
+                            }
+                            else {
+                                $validation->addError("Your account is not confirmed yet");
+                            }
                             break;
                         case 'MO':
                             Router::redirect('medicalofficer/index');

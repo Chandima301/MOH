@@ -249,6 +249,7 @@ class MotherController extends Controller{
           $this->view->Mother = $Mother->getFromDatabase(User::currentUser()->id);
           $MotherTable = new Mother();
           $this->view->MotherTable = $MotherTable->getByID(User::currentUser()->idcardnum);
+          //Helper::dnd($this->view->MotherTable);
           $this->view->setLayout('pregReport_layout');
           $this->view->render('mother/'.$param);
         }

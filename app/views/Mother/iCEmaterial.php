@@ -10,13 +10,21 @@
 
             <ul class="list-group tb list-group-horizontal-lg">
                 <li class="list-group-item">රුධිර ඝනය</li>
-                <li class="list-group-item col-sm-2"><p><?=$this->MotherTable->blood_group?></p></li>
+                <li class="list-group-item col-sm-2">
+                    <p><?=$this->MotherTable->blood_group?></p>
+                </li>
                 <li class="list-group-item">ශරීර ස්කන්ධ දර්ශකය</li>
-                <li class="list-group-item col-sm-2"><p><?=$this->MotherTable->mass_index?></p></li>
+                <li class="list-group-item col-sm-2">
+                    <p><?=$this->MotherTable->mass_index?></p>
+                </li>
                 <li class="list-group-item">උස (සෙ.මි)</li>
-                <li class="list-group-item col-sm-2"><p><?=$this->MotherTable->height?></p></li>
+                <li class="list-group-item col-sm-2">
+                    <p><?=$this->MotherTable->height?></p>
+                </li>
                 <li class="list-group-item">අසාත්මිකතා</li>
-                <li class="list-group-item col-sm-2"><p><?=$this->MotherTable->allergies?></p></li>
+                <li class="list-group-item col-sm-2">
+                    <p><?=$this->MotherTable->allergies?></p>
+                </li>
             </ul>
         </div>
         <div class="reginfo" style="margin-top: 50px; border: solid black; padding: 40px; margin: 40px;">
@@ -107,7 +115,7 @@
                                     <tr>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="5"
-                                                value="<?=$this->Mother->{'5'}?>"></td>
+                                                value="<?=$this->Mother->{'5'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'5'}?></p>
@@ -115,7 +123,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="6"
-                                                value="<?=$this->Mother->{'6'}?>"></td>
+                                                value="<?=$this->Mother->{'6'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'6'}?></p>
@@ -123,7 +131,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="7"
-                                                value="<?=$this->Mother->{'7'}?>"></td>
+                                                value="<?=$this->Mother->{'7'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'7'}?></p>
@@ -131,7 +139,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="8"
-                                                value="<?=$this->Mother->{'8'}?>"></td>
+                                                value="<?=$this->Mother->{'8'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'8'}?></p>
@@ -141,7 +149,7 @@
                                     <tr>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="11"
-                                                value="<?=$this->Mother->{'11'}?>"></td>
+                                                value="<?=$this->Mother->{'11'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'11'}?></p>
@@ -149,7 +157,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="12"
-                                                value="<?=$this->Mother->{'12'}?>"></td>
+                                                value="<?=$this->Mother->{'12'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'12'}?></p>
@@ -157,7 +165,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="13"
-                                                value="<?=$this->Mother->{'13'}?>"></td>
+                                                value="<?=$this->Mother->{'13'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'13'}?></p>
@@ -165,7 +173,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="14"
-                                                value="<?=$this->Mother->{'14'}?>"></td>
+                                                value="<?=$this->Mother->{'14'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'14'}?></p>
@@ -187,7 +195,7 @@
                                     <tr>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="17"
-                                                value="<?=$this->Mother->{'17'}?>"></td>
+                                                value="<?=$this->Mother->{'17'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'17'}?></p>
@@ -195,7 +203,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="18"
-                                                value="<?=$this->Mother->{'18'}?>"></td>
+                                                value="<?=$this->Mother->{'18'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'18'}?></p>
@@ -203,7 +211,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="19"
-                                                value="<?=$this->Mother->{'19'}?>"></td>
+                                                value="<?=$this->Mother->{'19'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'19'}?></p>
@@ -211,7 +219,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="20"
-                                                value="<?=$this->Mother->{'20'}?>"></td>
+                                                value="<?=$this->Mother->{'20'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'20'}?></p>
@@ -222,7 +230,7 @@
                                     <tr>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="23"
-                                                value="<?=$this->Mother->{'23'}?>"></td>
+                                                value="<?=$this->Mother->{'23'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'23'}?></p>
@@ -230,7 +238,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="24"
-                                                value="<?=$this->Mother->{'24'}?>"></td>
+                                                value="<?=$this->Mother->{'24'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'24'}?></p>
@@ -238,7 +246,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="25"
-                                                value="<?=$this->Mother->{'25'}?>"></td>
+                                                value="<?=$this->Mother->{'25'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'25'}?></p>
@@ -246,7 +254,7 @@
                                         <?php }?>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="26"
-                                                value="<?=$this->Mother->{'26'}?>"></td>
+                                                value="<?=$this->Mother->{'26'}?>" placeholder="mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'26'}?></p>
@@ -261,7 +269,9 @@
                     <div class="col-sm-1"></div>
                     <div class="col-sm-1">
                         <div class="form-group row">
+
                             <table class="table tb table-bordered " style="margin-bottom: 10px">
+
                                 <thead>
                                     <tr>
                                         <th colspan="6">දිනය</th>
@@ -271,7 +281,7 @@
                                     <tr>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="27"
-                                                value="<?=$this->Mother->{'27'}?>"></td>
+                                                value="<?=$this->Mother->{'27'}?>" placeholder="yyyy/mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'27'}?></p>
@@ -292,7 +302,7 @@
                                     <tr>
                                         <?php if ($this->editMode) {?>
                                         <td><input type="text" class="form-control" name="28"
-                                                value="<?=$this->Mother->{'28'}?>"></td>
+                                                value="<?=$this->Mother->{'28'}?>" placeholder="yyyy/mm/dd"></td>
                                         <?php } else {?>
                                         <td>
                                             <p><?=$this->Mother->{'28'}?></p>
