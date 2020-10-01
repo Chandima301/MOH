@@ -261,7 +261,7 @@
                     <div class="col-sm-1"></div>
                     <div class="col-sm-1">
                         <div class="form-group row">
-                            <table class="table tb table-bordered " style="bottom-margin = 10px">
+                            <table class="table tb table-bordered " style="margin-bottom: 10px">
                                 <thead>
                                     <tr>
                                         <th colspan="6">දිනය</th>

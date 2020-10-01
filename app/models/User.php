@@ -1,8 +1,14 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
 class User extends Model
 {
     private $_isLoggedIn, $_sessionName, $_cookieName, $user;
     public static $currentLoggedInUser;
+    protected $mediator;
 
     public function __construct($user = '')
     { //$user can be id or email address
@@ -77,7 +83,6 @@ class User extends Model
         }
         self::$currentLoggedInUser = null;
         return true;
-
     }
 
     public function registerNewUser($params)
@@ -97,10 +102,64 @@ class User extends Model
         return json_decode($this->acl, true);
     }
 
-    public function getAllusers($type){
-        
-        return $this->find(['conditions'=>"user_type = ?", 'bind' =>[$type]]);
+    public function getAllusers($type)
+    {
 
+        return $this->find(['conditions' => "user_type = ?", 'bind' => [$type]]);
     }
 
+    public function setMediator($mediator)
+    {
+        $this->mediator = $mediator;
+    }
+
+    public function send($msg)
+    {
+        return $this->mediator->sendMessage($msg, $this);
+    }
+
+    public function receive($msg)
+    {
+        $mail = new PHPMailer(true);
+        
+
+        try {
+            //Server settings
+            //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output                     // Enable verbose debug output
+            $mail->isSMTP();                                            // Send using SMTP
+            $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+            $mail->Username   = 'medicalofficerofhealthkelaniya@gmail.com';                     // SMTP username
+            $mail->Password   = '@Password123';                               // SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+            //Recipients
+            $mail->setFrom('medicalofficerofhealthkelaniya@gmail.com', 'Medical Officer');
+            $mail->addAddress($this->email, $this->name);     // Add a recipient
+            //$mail->addAddress('ellen@example.com');               // Name is optional
+            //$mail->addReplyTo('info@example.com', 'Information');
+            //$mail->addCC('cc@example.com');
+            //$mail->addBCC('bcc@example.com');
+
+            // Attachments
+            //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+            //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+            // Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'MOH Office Kelaniya';
+            $mail->Body    = $msg;
+            $mail->AltBody = '';
+
+            $mail->send();
+            return "Message has been sent to $this->name";
+        } catch (Exception $e) {
+            echo "Message could not be sent to $this->name. Mailer Error: {$mail->ErrorInfo}";
+        }
+    }
+
+    public function getUserByID($id){
+        return $this->find(['conditions'=>["idcardnum = ?"], 'bind' =>[$id]]);
+    }
 }

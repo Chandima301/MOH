@@ -1,10 +1,10 @@
 <?php
-require 'E:\Program Files\xammp\htdocs\MOH\core\Model.php';
-require 'E:\Program Files\xammp\htdocs\MOH\core\Report.php';
-require 'E:\Program Files\xammp\htdocs\MOH\app\models\dailyworkReport.php';
-require 'E:\Program Files\xammp\htdocs\MOH\config\config.php';
-require 'E:\Program Files\xammp\htdocs\MOH\core\DB.php';
-require 'E:\Program Files\xammp\htdocs\MOH\app\models\User.php';
+require 'C:\xammp\htdocs\MOH\core\Model.php';
+require 'C:\xammp\htdocs\MOH\core\Report.php';
+require 'C:\xammp\htdocs\MOH\app\models\dailyworkReport.php';
+require 'C:\xammp\htdocs\MOH\config\config.php';
+require 'C:\xammp\htdocs\MOH\core\DB.php';
+require 'C:\xammp\htdocs\MOH\app\models\User.php';
 require '';
 
 use PHPMailer\PHPMailer\PHPMailer;

@@ -1,23 +1,25 @@
-
-.clearfix{
-    overflow:auto;
+.clearfix {
+    overflow: auto;
 }
-html, body{
+
+html,
+body {
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0px;
     background-color: rgb(112, 121, 129);
+    overflow: auto;
+}
 
-    overflow:auto;
+.loged {
+    color: white;
+    position: absolute;
+    font-size: 125%;
+    right: 200px;
 }
-.loged{
-  color:white;
-  position: absolute;
-  font-size: 125%;
-  right: 200px;
-}
-.btn-logout{
+
+.btn-logout {
     position: absolute;
     right: 50px;
     border-radius: 4px;
@@ -28,28 +30,29 @@ html, body{
     text-decoration: none;
 }
 
-.btn-logout:hover{
+.btn-logout:hover {
     background-color: gray;
     color: rgb(59, 59, 59);
     transition: 0.3s;
 }
 
-.slideBar{
+.slideBar {
     height: 600px;
     background-color: rgb(85, 87, 90);
 }
+
 slider {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
     display: block;
-    width:900px;
+    width: 900px;
     height: 500px;
     overflow: hidden;
     position: relative;
     background-size: auto;
     margin: auto;
-   }
+}
 
-   slider > * {
+slider>* {
     position: absolute;
     display: block;
     width: 100%;
@@ -57,58 +60,70 @@ slider {
     background: #1f1f1f;
     animation: slide 12s infinite;
     overflow: hidden;
-   }
-
-   slide:nth-child(1){
-    left: 0%;
-    animation-delay: -1s;
-
-    background-size: cover;
-    background-position: center;
-   }
-
-   slide:nth-child(2){
-    animation-delay: 2s;
-
-    background-size: cover;
-    background-position: center;
-   }
-
-   slide:nth-child(3){
-    animation-delay: 5s;
-
-    background-size: cover;
-    background-position: center;
-   }
-
-   slide:nth-child(4){
-    left: 0%;
-    animation-delay: 8s;
-
-    background-size: cover;
-    background-position: center;
-   }
-
-@keyframes slide {
-    0% { left: 100%; width: 100%; }
-    5% { left: 0%; }
-    25% { left: 0%; }
-    30% { left: -100%; width: 100%; }
-    30.0001% { left: -100%; width: 0%; }
-    100% { left: 100%; width: 0%; }
 }
 
-.slideBar a p{
+slide:nth-child(1) {
+    left: 0%;
+    animation-delay: -1s;
+    background-size: cover;
+    background-position: center;
+}
+
+slide:nth-child(2) {
+    animation-delay: 2s;
+    background-size: cover;
+    background-position: center;
+}
+
+slide:nth-child(3) {
+    animation-delay: 5s;
+    background-size: cover;
+    background-position: center;
+}
+
+slide:nth-child(4) {
+    left: 0%;
+    animation-delay: 8s;
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes slide {
+    0% {
+        left: 100%;
+        width: 100%;
+    }
+    5% {
+        left: 0%;
+    }
+    25% {
+        left: 0%;
+    }
+    30% {
+        left: -100%;
+        width: 100%;
+    }
+    30.0001% {
+        left: -100%;
+        width: 0%;
+    }
+    100% {
+        left: 100%;
+        width: 0%;
+    }
+}
+
+.slideBar a p {
     color: black;
     text-align-last: center;
     text-align: center;
 }
 
-.center{
+.center {
     background-color: rgb(112, 121, 129);
-
 }
-.months ul{
+
+.months ul {
     list-style: none;
     padding: 0%;
     margin: 0%;
@@ -121,91 +136,93 @@ slider {
     padding: 10px;
     margin: 10px;
 }
-.list{
+
+.list {
     margin-top: 20px;
-
 }
+
 .first {
-    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("<?= PROOT ?>img/31.jpeg");
-}
-.first h1{
-    font-size: 300%;
-    color: lightgray;
-    margin: 5%;
-
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("<?= PROOT ?>img/31.jpeg");
 }
 
-.second{
-    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("<?= PROOT ?>img/21.jpg");
-}
-.second h1{
+.first h1 {
     font-size: 300%;
     color: lightgray;
     margin: 5%;
 }
 
-.flt{
+.second {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("<?= PROOT ?>img/21.jpg");
+}
+
+.second h1 {
+    font-size: 300%;
+    color: lightgray;
+    margin: 5%;
+}
+
+.flt {
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("<?= PROOT ?>img/32.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("<?= PROOT ?>img/32.jpg");
     width: 100%;
     height: 300px;
-
 }
 
-.flt footer{
+.flt footer {
     padding-top: 250px;
     text-align: center;
     margin: auto;
     font-size: 150%;
     color: lightgray;
 }
-.flt footer img{
-    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+
+.flt footer img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
 
-
-.footer-text{
+.footer-text {
     color: grey;
     padding-top: 20px;
     padding-left: 30px;
     padding-bottom: 20px;
-    
 }
-.footer-text h1{
+
+.footer-text h1 {
     color: rgb(161, 160, 160);
     font-size: 30px;
 }
 
-.footer-dashboard{
+.footer-dashboard {
     background-color: #4e4e4e;
-    color:rgb(154, 179, 179);
+    color: rgb(154, 179, 179);
     height: 50px;
     padding-top: 20px;
-
 }
 
-.footer-icon{
+.footer-icon {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
+
 /* footer */
 
 .icon {
-  padding: 20px;
-  font-size: 40px;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  margin-left: 10px;
-  text-decoration:none;
-  color: gray;
-  
+    padding: 20px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-left: 10px;
+    text-decoration: none;
+    color: gray;
 }
-  
-  /* Add a hover effect if you want */
-  .fa:hover {
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
     transition: 0.3s;
     opacity: 0.7;
-  }
+}

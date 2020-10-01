@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card border-dark mb-3">
-                    <img src="<?= PROOT ?>img/nouser.gif" class="rounded-circle float-left m-3" style="height: 80px; width:80px;" alt="no user">
+                    <img src="<?= PROOT ?>img/Midwife-icon7.png" class="rounded-circle float-left m-3" style="height: 80px; width:80px;" alt="no user">
                     <div class="card-body">
                         <h5 class="card-title" style="font-size: 20px"><?= $this->timetable->name; ?></h5>
                         <p class="card-text"><?= $this->timetable->address; ?></p>
