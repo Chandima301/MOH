@@ -35,4 +35,8 @@ class Midwife extends User {
         return $this->findFirst(['conditions' => 'idcardnum = ?', 'bind' => [$id]]);
     }
 
+    public function getUserByID($id){
+        return $this->find(['conditions'=>["idcardnum = ?"], 'bind' =>[$id]]);
+    }
+
 }

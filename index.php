@@ -6,6 +6,14 @@ date_default_timezone_set('Asia/Colombo');
 // load configuration and autoload functions
 require_once(ROOT . DS . 'config' . DS . 'config.php');
 
+//PHPMailer
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require(ROOT. DS . 'app' . DS . 'lib' . DS .'helpers' . DS . 'PHPMailer' . DS . 'src' . DS . 'Exception.php');
+require(ROOT. DS . 'app' . DS . 'lib' . DS .'helpers' . DS . 'PHPMailer' . DS . 'src' . DS . 'PHPMailer.php');
+require(ROOT. DS . 'app' . DS . 'lib' . DS .'helpers' . DS . 'PHPMailer' . DS . 'src' . DS . 'SMTP.php');
+
 //Autoload classes
 function autoload($className){
     if(file_exists(ROOT . DS . 'core' . DS . $className . '.php')) {

@@ -12,4 +12,11 @@ class Medicalofficer extends User{
     public function getMidwifeByID($id){
         return $this->find(['conditions'=>["idcardnum = ?", "user_type = ?"], 'bind' =>[$id, 'MI']]);
     }
+
+    public function getMothersForGivenClinicDate($date){
+        return $this->find(['conditions' => 'icematerial.`28` = ?'
+        , 'bind' => [$date]
+        , 'join' => 'INNER JOIN icematerial ON user.id = icematerial.id'
+        ]);
+}
 }

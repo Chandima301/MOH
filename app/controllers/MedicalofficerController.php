@@ -10,6 +10,7 @@ class MedicalofficerController extends Controller
         $this->load_model('Medicalofficer');
         $this->load_model('TimeTable');
         $this->load_model('Message');
+        $this->load_model('Mother');
         $this->view->newMsgCount = $this->MessageModel->getNewMsgCount();
     }
 
@@ -25,9 +26,15 @@ class MedicalofficerController extends Controller
         }
 
         $this->view->notifications = $notifications;
-
+        if(!$notifications){
+            $this->view->script = "<script>view('nonotifications');</script>";
+        }
+       
+        $this->view->monthlydata = $this->MotherModel->getApprovedMothersCountMonthly();
+        //Helper::dnd($this->view->monthlydata);
         $this->view->render('medicalOfficer/index');
-    }
+        
+       }
 
     public function messageAction($id = '')
     {
@@ -141,9 +148,34 @@ class MedicalofficerController extends Controller
 
     public function cancelAction()
     {
+        $logs = [];
+        $posted_values = ['date' => '', 'message'=>''];
+        if($_POST){
+            $posted_values = Helper::posted_values($_POST);
+            $mediator = new Emailmediator();
+            $mothers = $this->MedicalofficerModel->getMothersForGivenClinicDate($_POST['date']);
+            foreach($mothers as $mother){
+                $mother->setMediator($mediator);
+                $mediator->addUser($mother);
+            }
+            User::currentUser()->setMediator($mediator);
+            $mediator->addUser(User::currentUser());
+            
+            $logs = User::currentUser()->send($_POST['message']);
+            if($logs){
+                $this->view->script = "<script>view('logs');</script>";
+            }
+
+        }
+
+        $this->view->logs = $logs;
+        $this->posted_values = $posted_values;
+        
         $this->view->btn_state['cancel'] = 'active';
         $this->view->render('medicalOfficer/cancel');
+
     }
+
     public function detailsAction()
     {
         $this->view->btn_state['details'] = 'active';

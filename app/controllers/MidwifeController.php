@@ -7,6 +7,8 @@ class MidwifeController extends Controller{
         $this->view->btn_state = ['area'=>'','approve'=>'','cancel'=>'','details'=>'', 'details-tab'=>'', 'register-tab'=>''];
         $this->load_model('Midwife'); //We have MidwifeModel object of midwife model class
         $this->load_model('Mother');
+        $this->load_model('Message');
+        $this->view->newMsgCount = $this->MessageModel->getNewMsgCount();
     }
     /**Home page actions*/
     public function indexAction(){
@@ -15,9 +17,50 @@ class MidwifeController extends Controller{
         $this->view->render('midwife/index');
     }
 
-    public function messageAction() {
-        $user = User::currentUser();
-        $this->view->name = $user->name;
+    public function messageAction($id = '')
+    {   
+        $selectedChat = [];
+        $message = ["message" => ''];
+        if ($_POST and $id != '') {
+            $message = Helper::posted_values($_POST);
+            if ($this->MessageModel->sendMessage($id, $_POST['message'])) {
+                $message = ["message" => ''];
+            }
+        }
+
+        if ($id != '') {
+            $selectedChat = $this->MessageModel->getMessagesFromSender($id);
+        }
+        $chats = $this->MessageModel->getRecivedMessages();
+        $this->view->search_text = ["idcardnum" => ""];
+        $this->view->activeChat = $id;
+        $this->view->message = $message;
+        $this->view->selectedChat = $selectedChat;
+        $this->view->chats = $chats;
+        $this->view->users = [];
+        $this->view->render('midwife/message');
+    }
+
+    public function searchForMessageAction()
+    {
+        $this->view->users = [];
+        $search_text = ["idcardnum" => ""];
+        if ($_POST) {
+            $search_text = Helper::posted_values($_POST);
+            $users = $this->MidwifeModel->getUserByID($_POST['idcardnum']);
+            if ($users) {
+                $search_text = ['idcardnum' => ''];
+                $this->view->users = $users;
+            } else {
+                $this->view->script = "<script>view('notfound');</script>";
+            }
+        }
+        $this->view->message = ["message" => ""];
+        $this->view->search_text = $search_text;
+        $this->view->selectedChat = [];
+        $this->view->chats = [];
+        $this->view->users = $users;
+        $this->view->btn_state['messages'] = 'active';
         $this->view->render('midwife/message');
     }
 
