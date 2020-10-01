@@ -60,7 +60,7 @@ class MidwifeController extends Controller{
                 $unconfirmedMothers = $this->MidwifeModel->getUnconfirmedMothers();
                 $this->view->unconfirmedMothers = $unconfirmedMothers;
             }
-            else{    
+            else{
                 $this->view->script = "<script>view('notfound');</script>";
                 $this->view->confirmedMothers = $this->MidwifeModel->getConfirmedMothers();
                 $this->view->unconfirmedMothers = $this->MidwifeModel->getUnconfirmedMothers();
@@ -71,7 +71,7 @@ class MidwifeController extends Controller{
         $this->view->search_text = $search_text;
         $this->view->render('midwife/mother');
     }
-    
+
     //requests table in mother page
     public function requestAction() {
         $user = User::currentUser();
@@ -102,7 +102,7 @@ class MidwifeController extends Controller{
                 $confirmedMothers = $this->MidwifeModel->getConfirmedMothers();
                 $this->view->confirmedMothers = $confirmedMothers;
             }
-            else{    
+            else{
                 $this->view->script = "<script>view('notfound');</script>";
                 $this->view->confirmedMothers = $this->MidwifeModel->getConfirmedMothers();
                 $this->view->unconfirmedMothers = $this->MidwifeModel->getUnconfirmedMothers();
@@ -175,9 +175,9 @@ class MidwifeController extends Controller{
                 'confirm' => [
                     'display' => 'Confirm Password',
                     'required' => true,
-                    'matches' => 'pwd' 
+                    'matches' => 'pwd'
                 ]
-            ]); 
+            ]);
         }
 
         if($validation->passed()) {
@@ -201,7 +201,7 @@ class MidwifeController extends Controller{
         $this->view->name = $user->name;
         $this->view->render('midwife/register');
     }
-    
+
     //view details link in the 1st table in mother page
     public function viewDetailsAction($id) {
         $user = User::currentUser();
@@ -220,7 +220,7 @@ class MidwifeController extends Controller{
         $mother = $this->MidwifeModel->getByID($id);
         $motherExtra = $this->MotherModel->getById($id);
         $databaseValues = ['name'=>$mother->name, 'birthday'=>$mother->birthday, 'idcardnum'=>$mother->idcardnum, 'phone'=>$mother->phone,
-                            'address'=>$mother->address, 'email'=>$mother->email, 'blood_group'=>$motherExtra->blood_group, 
+                            'address'=>$mother->address, 'email'=>$mother->email, 'blood_group'=>$motherExtra->blood_group,
                             'height'=>$motherExtra->height, 'mass_index'=>$motherExtra->mass_index, 'allergies'=>$motherExtra->allergies];
         $databaseValues = Helper::posted_values($databaseValues);
         $this->view->post = $databaseValues;
@@ -293,9 +293,9 @@ class MidwifeController extends Controller{
                 ],
                 'confirm' => [
                     'display' => 'Confirm Password',
-                    'matches' => 'pwd' 
+                    'matches' => 'pwd'
                 ]
-            ]); 
+            ]);
             //Helper::dnd($id);
         }
         if($validation->passed()) {
@@ -314,7 +314,7 @@ class MidwifeController extends Controller{
             $this->view->mother = $mother;
             $this->view->motherExtra = $motherExtra;
             $databaseValues = ['name'=>$mother->name, 'birthday'=>$mother->birthday, 'idcardnum'=>$mother->idcardnum, 'phone'=>$mother->phone,
-                            'address'=>$mother->address, 'email'=>$mother->email, 'blood_group'=>$motherExtra->blood_group, 
+                            'address'=>$mother->address, 'email'=>$mother->email, 'blood_group'=>$motherExtra->blood_group,
                             'height'=>$motherExtra->height, 'mass_index'=>$motherExtra->mass_index, 'allergies'=>$motherExtra->allergies, 'pwd'=>$_POST['pwd']];
             $databaseValues = Helper::posted_values($databaseValues);
             $this->view->post = $databaseValues;
@@ -325,7 +325,7 @@ class MidwifeController extends Controller{
             $this->view->displayErrors = $validation->displayErrors();
             $this->view->button = 'Update';
             $databaseValues = ['name'=>$mother->name, 'birthday'=>$mother->birthday, 'idcardnum'=>$mother->idcardnum, 'phone'=>$mother->phone,
-                            'address'=>$mother->address, 'email'=>$mother->email, 'blood_group'=>$motherExtra->blood_group, 
+                            'address'=>$mother->address, 'email'=>$mother->email, 'blood_group'=>$motherExtra->blood_group,
                             'height'=>$motherExtra->height, 'mass_index'=>$motherExtra->mass_index, 'allergies'=>$motherExtra->allergies, 'pwd'=>$_POST['pwd']];
             $databaseValues = Helper::posted_values($databaseValues);
             $this->view->post = $databaseValues;
@@ -394,30 +394,31 @@ class MidwifeController extends Controller{
             if($_POST['allergies']=='') {
                 $_POST['allergies'] = 'No';
             }
+            $_POST['approvedate'] = date("Y-m"); //approved date
             $_POST['id'] = $motherExtra->id; //Id of mother in the mother table
             $newMother->addNewMother($_POST);
             $this->view->script = "<script>view('success');</script>";
             $this->view->mother = $mother;
             $this->view->motherExtra = $motherExtra;
             $databaseValues = ['name'=>$mother->name, 'birthday'=>$mother->birthday, 'idcardnum'=>$mother->idcardnum, 'phone'=>$mother->phone,
-                            'address'=>$mother->address, 'email'=>$mother->email, 'blood_group'=>$motherExtra->blood_group, 
+                            'address'=>$mother->address, 'email'=>$mother->email, 'blood_group'=>$motherExtra->blood_group,
                             'height'=>$motherExtra->height, 'mass_index'=>$motherExtra->mass_index, 'allergies'=>$motherExtra->allergies];
             $databaseValues = Helper::posted_values($databaseValues);
             $this->view->post = $databaseValues;
-            $this->view->render('midwife/afterUpdate'); 
+            $this->view->render('midwife/afterUpdate');
         }
         else {
             $this->view->header = 'තොරතුරු සහතික කිර්‍රිම';
             $this->view->displayErrors = $validation->displayErrors();
             $this->view->button = 'Confirm';
             $databaseValues = ['name'=>$mother->name, 'birthday'=>$mother->birthday, 'idcardnum'=>$mother->idcardnum, 'phone'=>$mother->phone,
-                            'address'=>$mother->address, 'email'=>$mother->email, 'blood_group'=>$motherExtra->blood_group, 
+                            'address'=>$mother->address, 'email'=>$mother->email, 'blood_group'=>$motherExtra->blood_group,
                             'height'=>$motherExtra->height, 'mass_index'=>$motherExtra->mass_index, 'allergies'=>$motherExtra->allergies];
             $databaseValues = Helper::posted_values($databaseValues);
             $this->view->post = $databaseValues;
-            $this->view->render('midwife/confirm'); 
+            $this->view->render('midwife/confirm');
         }
-     
+
     }
 
     /**Dashboard */
@@ -540,16 +541,16 @@ class MidwifeController extends Controller{
         $this->view->displayErrors = $validation->displayErrors();
         $this->view->render('midwife/password');
     }
-	
-    
+
+
 
     public function pregnancyReportAction($param=null){
         Router::redirect('preport/index');
-                    
+
     }
     public function dailyworkReportAction($param=null){
         Router::redirect('dwreport/index');
-                    
+
     }
     public function workplanAction(){
         Router::redirect('Workplan/index');
