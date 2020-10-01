@@ -58,9 +58,11 @@ function noticeArea()
             $newDailyworkReport = new dailyworkReport();
             $newDailyworkReport = $newDailyworkReport->findFirst(["conditions" => ["id =?", "period=?"], "bind" => [$user->id, strtotime("first day of last month")]]);
             $coulmn = date('j');
+            if( $newDailyworkReport->{$coulmn}){
             $msg = "අද දින සායන පැවැත්වීමට නියමිත ප්‍රදේශය " . $newDailyworkReport->{$coulmn};
             sendMail($user->email, "Daily Work Report Announcement", $msg);
         }
+     }
     }
 }
 
