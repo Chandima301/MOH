@@ -32,6 +32,11 @@ class User extends Model
         return $this->findFirst(['conditions' => "idcardnum = ?", 'bind' => [$id]]);
     }
 
+    public function findByAutoIncID($id)
+    {
+        return $this->findFirst(['conditions' => "id = ?", 'bind' => [$id]]);
+    }
+
     public static function currentUser()
     {
         if (!isset(self::$currentLoggedInUser) && Session::exists(CURRENT_USER_SESSION_NAME)) {
