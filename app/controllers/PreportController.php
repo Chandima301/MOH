@@ -36,6 +36,9 @@ class PreportController extends Controller{
             $this->view->btn_state[$param]='active';
             $Mother = new $param($param);
             $this->view->Mother = $Mother->getFromDatabase($_SESSION['motherid']);
+            $MotherTable = new Mother();
+            $this->view->MotherTable = $MotherTable->getByID($MotherTable->getByUniqueID($_SESSION['motherid'])->idcardnum);
+            //Helper::dnd($MotherTable->getByUniqueID($_SESSION['motherid']));
             $this->view->render('Mother/'.$param);
 
         }

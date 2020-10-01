@@ -10,7 +10,7 @@
             <div class="name-tag">
                 <div class="sidebar-header" style="padding-top: 50px; color: white; text-align: justify;">
                     <div class="user-pic">
-                        <img class="img-responsive img-rounded" src="<?= PROOT ?>img/Midwife-icon4.png" alt="User picture">
+                        <img class="img-responsive img-rounded" src="<?= PROOT ?>img/Midwife-icon10.png" alt="User picture">
                     </div>
                     <div class="user-info">
                         <?php if (User::currentUser()) : ?>

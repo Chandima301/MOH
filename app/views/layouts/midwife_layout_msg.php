@@ -54,7 +54,7 @@
                         <a href="<?= PROOT ?>midwife/message">
                             <button type="button" class="btn btn-primary btn-msg">
                                 <i class="fa fa-comments fa-lg"></i>
-                                <span class="badge badge-danger"><?= $this->newMsgCount ?></span>
+                                <span class="badge badge-danger">40</span>
                             </button>
                         </a>
                     </li>
@@ -62,7 +62,7 @@
                         <!--<img src="<?= PROOT ?>img/Midwife-icon7.png" width="40" height="40" class="d-inline-block align-top" alt="Sri Lanka National Flag"></a>-->
                     </li>
                     <li class="nav-item pl-2">
-                        <a class="nav-link active disabled btn-name" href="#"><i class="fa fa-user-circle"></i> Hello,<br><?= User::currentUser()->name?></a>
+                        <a class="nav-link active disabled btn-name" href="#"><i class="fa fa-user-circle"></i> Hello,<br><?= $this->name; ?></a>
                     </li>
                     <li class="nav-item pl-2">
                         <a href="<?= PROOT ?>login/logout" class="btn btn-danger btn-logout btn-lg active nav-boxlogout" role="button" aria-pressed="true">Log Out</a>
@@ -110,12 +110,16 @@
             <div class="footer-section contact-form">
                 <h2 id="contact" style="color: cornflowerblue;">Contact Medical Officer</h2>
                 <br>
-                <form action="<?= PROOT?>midwife/contactOfficer/" method="post">
-                    <input type="text" name="reason" id="reason" class="text-input contact-input" placeholder="Enter Your Reason"  required>
-                    <input type="text" name="message" id="message" class="text-input contact-input" placeholder="Enter Your Message........"  required>
-                    <button style="color:yellow;" type="submit" class="btn btn-big contact-btn">
+                <form action="<?= PROOT?>midwife/index" method="post">
+                    <input type="text" name="email" class="text-input contact-input" placeholder="Enter Your Reason" value="<?= $this->post['reason'] ?>" readonly>
+                    <input type="text" name="message" class="text-input contact-input" placeholder="Enter Your Message......." value="<?= $this->post['message'] ?>" readonly>
+                    <button style="color:green;" type="submit" class="btn btn-outline-success contact-btn active" disabled>
+                        <i class="fa fa-check-circle"></i>
+                        Successfully sent
+                    </button>
+                    <button style="color:red;" type="submit" class="btn btn-big contact-btn">
                         <i class="fa fa-envelope"></i>
-                        Send
+                        Back
                     </button>
                     <h2>&emsp;</h2>
                 </form>

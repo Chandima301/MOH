@@ -1,6 +1,7 @@
 <?php
 
-abstract class Controller extends Application{
+//Template Design Pattern
+abstract class Controller extends Application{  //Abstract class
     protected $_controller, $_action;
     public $view;
 
@@ -17,6 +18,6 @@ abstract class Controller extends Application{
         }
     }
 
-    public abstract function indexAction();
+    public abstract function indexAction(); //Abstract method
 
 }
