@@ -1,4 +1,5 @@
 <?php
+
 require 'C:\xammp\htdocs\MOH\core\Model.php';
 require 'C:\xammp\htdocs\MOH\core\Report.php';
 require 'C:\xammp\htdocs\MOH\app\models\dailyworkReport.php';
@@ -6,6 +7,7 @@ require 'C:\xammp\htdocs\MOH\config\config.php';
 require 'C:\xammp\htdocs\MOH\core\DB.php';
 require 'C:\xammp\htdocs\MOH\app\models\User.php';
 require '';
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -30,13 +32,13 @@ function sendMail($to, $subject, $msg)
     $mail->SMTPSecure = "tls";
     $mail->Port = 587;
     $mail->Host = "smtp.gmail.com";
-    $mail->Username = "udayangana98@gmail.com";
-    $mail->Password = "40715493";
+    $mail->Username = "medicalofficerofhealthkelaniya@gmail.com";
+    $mail->Password = "@Password123";
 
     $mail->IsHTML(true);
     $mail->AddAddress($to);
-    $mail->SetFrom("udayangana98@gmail.com");
-    $mail->AddReplyTo("udayangana98@gmail.com");
+    $mail->SetFrom("medicalofficerofhealthkelaniya@gmail.com");
+    $mail->AddReplyTo("medicalofficerofhealthkelaniya@gmail.com");
     $mail->Subject = $subject;
     $content = "<b>" . $msg . "</b>";
 
@@ -89,4 +91,4 @@ function notifyMother()
 }
 
 noticeArea();
-notifyMother();
+//notifyMother();
