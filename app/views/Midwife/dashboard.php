@@ -16,7 +16,7 @@
             <div class="name-tag">
                 <div class="sidebar-header" style="padding-top: 50px; color: white; text-align: justify;">
                     <div class="user-pic">
-                        <img class="img-responsive img-rounded" src="<?= PROOT ?>img/Midwife-icon4.png" alt="User picture">
+                        <img class="img-responsive img-rounded" src="<?= PROOT ?>img/Midwife-icon10.png" alt="User picture">
                     </div>
                     <div class="user-info">
                         <?php if (User::currentUser()) : ?>
@@ -103,7 +103,7 @@
                                             <blockquote>
                                                 <div class="row">
                                                     <div class="col-md-10 offset-md-1 d-md-flex d-block text-center text-lg-left">
-                                                        <img class="rounded-circle" src="https://www.tutorialrepublic.com/examples/images/clients/4.jpg" style="width: 100px;height:100px;">
+                                                        <img class="rounded-circle" src = "<?= PROOT ?>img/plato2.png" style="width: 100px;height:100px;">
                                                         <div class="feedback-text pl-3">
                                                             <p>The greatest privilege of a human life is to become a midwife to the awakening of the Soul in another person!</p>
                                                             <small>-Plato-</small>
