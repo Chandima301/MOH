@@ -58,20 +58,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+
         </ul>
         <a href="<?= PROOT ?>mother/message" class="notification <?= $this->btn_state['messages'] ?> mr-3">
-              <p class="text-center"><span><i class="fa fa-comments fa-2x" aria-hidden="true"></i></span></p>
-              <span class="badge"><?= $this->newMsgCount ?></span>
-            </a>
+          <p class="text-center"><span><i class="fa fa-comments fa-2x" aria-hidden="true"></i></span></p>
+          <span class="badge"><?= $this->newMsgCount ?></span>
+        </a>
         <a class="btn-logout" href="<?= PROOT ?>login/logout">Log out</a>
       </div>
     </nav>
@@ -81,10 +73,10 @@
 
   <div class="row justify-content-between" style="background-color: #3d3d3d;">
     <div class="col-md-6 footer-text ">
-      <h1>Medical Officer of Health</h1>
-      Medical officer of health or MOH is the leader of Medical Officer Of Health (MOOH) offices and under his
-      guidance Public Health Nurses, Public Health Mid-wives and Public Health Inspectors distribute preventive
-      services at the rural levels.
+      <h1>Midwife</h1>
+      A midwife is a trained health professional who helps healthy women during labor, delivery, and after
+      the birth of their babies. Midwives may deliver babies at birthing centers or at home,
+      but most can also deliver babies at a hospital.
     </div>
     <div class="col-md-2 footer-icon">
       <a href="#" class="fa fa-facebook icon"></a>
@@ -102,7 +94,7 @@
     </div>
 
   </div>
-  </div>
+
 </body>
 
 </html>
