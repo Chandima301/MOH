@@ -475,3 +475,39 @@ img {
     height: 516px;
     overflow-y: auto;
 }
+
+.footer-text {
+    color: grey;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.footer-text h1 {
+    color: rgb(161, 160, 160);
+    font-size: 30px;
+}
+
+.footer-dashboard {
+    background-color: #4e4e4e;
+    color: rgb(154, 179, 179);
+    height: 50px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+.footer-icon {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.icon {
+    padding: 20px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-left: 10px;
+    text-decoration: none;
+    color: gray;
+}
