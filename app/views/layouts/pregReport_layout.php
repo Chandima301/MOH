@@ -9,11 +9,10 @@
 
     <script src="<?= PROOT ?>js/jquery-3.4.1.js"></script>
     <script src="<?= PROOT ?>bootstrap/js/bootstrap.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <script>
-    window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')
+        window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')
     </script>
     <script src="<?= PROOT ?>/bootstrap/js/bootstrap.bundle.js"></script>
 
@@ -24,23 +23,27 @@
     <link href="<?= PROOT ?>/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <style>
-    .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
-    }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
     </style>
     <!-- Custom styles for this template -->
     <link href="<?= PROOT ?>/css/Mother_css.css" rel="stylesheet">
+
+    <!-- icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -49,24 +52,18 @@
             <a class="navbar-brand" href="#">
                 <img src="<?= PROOT ?>/img/National.png" width="40" height="40" class="d-inline-block align-top" alt="">
             </a>
-            <a class="navbar-brand" href="#">MOH Kelaniya</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="<?= PROOT ?>mother/index">MOH Kelaniya</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?= PROOT ?>/mother/index">Home <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
+
                 </ul>
+                <a href="<?= PROOT ?>mother/message" class="notification <?= $this->btn_state['messages'] ?> mr-3">
+                    <p class="text-center"><span><i class="fa fa-comments fa-2x" aria-hidden="true"></i></span></p>
+                    <span class="badge"><?= $this->newMsgCount ?></span>
+                </a>
                 <a class="btn-logout" href="<?= PROOT ?>login/logout">Log out</a>
             </div>
         </nav>
@@ -87,16 +84,13 @@
                     <div class="card text-center" style="background-color: rgb(43, 51, 71); border:1px solid #999595;">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
-                                <button class="btn btn-link" style="color: #c9b499; font-size:18px" type="button"
-                                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne">
+                                <button class="btn btn-link" style="color: #c9b499; font-size:18px" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     පෞද්ගලික තොරතුරු
                                 </button>
                             </h5>
                         </div>
 
-                        <div id="collapseOne" class="collapse <?= $this->btn_state['1'] ?>" aria-labelledby="headingOne"
-                            data-parent="#accordionExample">
+                        <div id="collapseOne" class="collapse <?= $this->btn_state['1'] ?>" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card-body" style="padding: 0px;">
                                 <ul class="sidebar-btn">
                                     <li class="side-tab <?= $this->btn_state['1-1'] ?>">
@@ -114,15 +108,12 @@
                     <div class="card text-center" style="background-color: rgb(43, 51, 71); border:1px solid #999595;">
                         <div class="card-header" id="headingTwo">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px"
-                                    type="button" data-toggle="collapse" data-target="#collapseTwo"
-                                    aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     රෝග ඉතිහාසය
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseTwo" class="collapse <?= $this->btn_state['2'] ?>" aria-labelledby="headingTwo"
-                            data-parent="#accordionExample">
+                        <div id="collapseTwo" class="collapse <?= $this->btn_state['2'] ?>" aria-labelledby="headingTwo" data-parent="#accordionExample">
                             <div class="card-body" style="padding: 0px;">
                                 <ul class="sidebar-btn">
                                     <li class="side-tab <?= $this->btn_state['2-1'] ?>">
@@ -138,15 +129,12 @@
                     <div class="card text-center" style="background-color: rgb(43, 51, 71); border:1px solid #999595;">
                         <div class="card-header" id="headingThree">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px"
-                                    type="button" data-toggle="collapse" data-target="#collapseThree"
-                                    aria-expanded="false" aria-controls="collapseThree">
+                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     ගර්භනී ඉතිහාසය
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseThree" class="collapse <?= $this->btn_state['3'] ?>"
-                            aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div id="collapseThree" class="collapse <?= $this->btn_state['3'] ?>" aria-labelledby="headingThree" data-parent="#accordionExample">
                             <div class="card-body" style="padding: 0px;">
                                 <ul class="sidebar-btn">
                                     <li class="side-tab <?= $this->btn_state['3-1'] ?>">
@@ -162,15 +150,12 @@
                     <div class="card text-center" style="background-color: rgb(43, 51, 71); border:1px solid #999595;">
                         <div class="card-header" id="headingFour">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px;"
-                                    type="button" data-toggle="collapse" data-target="#collapseFour"
-                                    aria-expanded="false" aria-controls="collapseFour">
+                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px;" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     සායනික සං‍රක්ෂණය
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseFour" class="collapse <?= $this->btn_state['4'] ?>"
-                            aria-labelledby="headingFour" data-parent="#accordionExample">
+                        <div id="collapseFour" class="collapse <?= $this->btn_state['4'] ?>" aria-labelledby="headingFour" data-parent="#accordionExample">
                             <div class="card-body" style="padding: 0px;">
                                 <ul class="sidebar-btn">
                                     <li class="side-tab <?= $this->btn_state['4-1'] ?>">
@@ -186,15 +171,12 @@
                     <div class="card text-center" style="background-color: rgb(43, 51, 71); border:1px solid #999595;">
                         <div class="card-header" id="headingFive">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px"
-                                    type="button" data-toggle="collapse" data-target="#collapseFive"
-                                    aria-expanded="false" aria-controls="collapseFive">
+                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                     ප්‍රතිශක්තිකරණය හා බර සටහන
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseFive" class="collapse <?= $this->btn_state['5'] ?>"
-                            aria-labelledby="headingFive" data-parent="#accordionExample">
+                        <div id="collapseFive" class="collapse <?= $this->btn_state['5'] ?>" aria-labelledby="headingFive" data-parent="#accordionExample">
                             <div class="card-body" style="padding: 0px;">
                                 <ul class="sidebar-btn">
                                     <li class="side-tab <?= $this->btn_state['5-1'] ?>">
@@ -210,15 +192,12 @@
                     <div class="card text-center" style="background-color: rgb(43, 51, 71); border:1px solid #999595;">
                         <div class="card-header" id="headingSix">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px"
-                                    type="button" data-toggle="collapse" data-target="#collapseSix"
-                                    aria-expanded="false" aria-controls="collapseSix">
+                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                     තොරතුරු හා පවුල් සැලසුම්
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseSix" class="collapse <?= $this->btn_state['6'] ?>" aria-labelledby="headingSix"
-                            data-parent="#accordionExample">
+                        <div id="collapseSix" class="collapse <?= $this->btn_state['6'] ?>" aria-labelledby="headingSix" data-parent="#accordionExample">
                             <div class="card-body" style="padding: 0px;">
                                 <ul class="sidebar-btn">
                                     <li class="side-tab <?= $this->btn_state['6-1'] ?>">
@@ -237,15 +216,12 @@
                     <div class="card text-center" style="background-color: rgb(43, 51, 71); border:1px solid #999595;">
                         <div class="card-header" id="headingSeven">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px"
-                                    type="button" data-toggle="collapse" data-target="#collapseSeven"
-                                    aria-expanded="false" aria-controls="collapseSeven">
+                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                     රෝහල් සායනික සං‍රක්ෂණය
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseSeven" class="collapse <?= $this->btn_state['7'] ?>"
-                            aria-labelledby="headingSeven" data-parent="#accordionExample">
+                        <div id="collapseSeven" class="collapse <?= $this->btn_state['7'] ?>" aria-labelledby="headingSeven" data-parent="#accordionExample">
                             <div class="card-body" style="padding: 0px;">
                                 <ul class="sidebar-btn">
                                     <li class="side-tab <?= $this->btn_state['7-1'] ?>">
@@ -258,15 +234,12 @@
                     <div class="card text-center" style="background-color: rgb(43, 51, 71); border:1px solid #999595;">
                         <div class="card-header" id="headingEight">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px"
-                                    type="button" data-toggle="collapse" data-target="#collapseEight"
-                                    aria-expanded="false" aria-controls="collapseEight">
+                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                                     ප්‍රසව හා පසුප්‍රසව සං‍රක්ෂණය
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseEight" class="collapse <?= $this->btn_state['8'] ?>"
-                            aria-labelledby="headingEight" data-parent="#accordionExample">
+                        <div id="collapseEight" class="collapse <?= $this->btn_state['8'] ?>" aria-labelledby="headingEight" data-parent="#accordionExample">
                             <div class="card-body" style="padding: 0px;">
                                 <ul class="sidebar-btn">
                                     <li class="side-tab <?= $this->btn_state['8-1'] ?>">
@@ -279,15 +252,12 @@
                     <div class="card text-center" style="background-color: rgb(43, 51, 71); border:1px solid #999595;">
                         <div class="card-header" id="headingNine">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px"
-                                    type="button" data-toggle="collapse" data-target="#collapseNine"
-                                    aria-expanded="false" aria-controls="collapseNine">
+                                <button class="btn btn-link collapsed" style="color: #c9b499; font-size:18px" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                                     පසුප්‍රසව ක්ෂේත්‍ර් සං‍රක්ෂණය
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseNine" class="collapse <?= $this->btn_state['9'] ?>"
-                            aria-labelledby="headingNine" data-parent="#accordionExample">
+                        <div id="collapseNine" class="collapse <?= $this->btn_state['9'] ?>" aria-labelledby="headingNine" data-parent="#accordionExample">
                             <div class="card-body" style="padding: 0px;">
                                 <ul class="sidebar-btn">
                                     <li class="side-tab <?= $this->btn_state['9-1'] ?>">
@@ -312,14 +282,14 @@
 
     <div class="row justify-content-between" style="background-color: #3d3d3d;">
         <div class="col-md-6 footer-text ">
-            <h1>Medical Officer of Health</h1>
-            Medical officer of health or MOH is the leader of Medical Officer Of Health (MOOH) offices and under his
-            guidance Public Health Nurses, Public Health Mid-wives and Public Health Inspectors distribute preventive
-            services at the rural levels.
+            <h1>Midwife</h1>
+            A midwife is a trained health professional who helps healthy women during labor, delivery, and after
+            the birth of their babies. Midwives may deliver babies at birthing centers or at home,
+            but most can also deliver babies at a hospital.
         </div>
         <div class="col-md-2 footer-icon">
-            <a href="#" class="fa fa-facebook icon"></a>
-            <a href="#" class="fa fa-twitter icon"></a>
+            <a href="#" class="fa fa-facebook icon fa-2x"></a>
+            <a href="#" class="fa fa-twitter icon fa-2x"></a>
         </div>
 
     </div>
@@ -333,7 +303,7 @@
         </div>
 
     </div>
-    </div>
+
     <script src="<?= PROOT ?>js/medicalofficer.js"></script>
     <?= $this->script ?>
 </body>

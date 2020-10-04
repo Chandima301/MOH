@@ -1,8 +1,5 @@
-<?php $this->setSiteTitle('MidwifeMessages'); ?>
-
 <?php $this->start('head'); ?>
 <?php $this->end(); ?>
-
 <?php $this->start('body'); ?>
 <div class="container">
   <br>
@@ -17,7 +14,7 @@
           </div>
           <div class="srch_bar">
             <div class="stylish-input-group">
-              <form action="<?= PROOT ?>midwife/searchForMessage" method="POST">
+              <form action="<?= PROOT ?>mother/searchForMessage" method="POST">
                 <input type="text" class="search-bar" name="idcardnum" id="idcardnum" placeholder="Search" value="<?= $this->search_text["idcardnum"] ?>">
                 <span class="input-group-addon">
                   <button type="submit"> <i class="fa fa-search" aria-hidden="true"></i> </button>
@@ -39,11 +36,11 @@
                   <?php if (User::currentUser()->idcardnum == $chat->idcardnum) : ?>
                     <h5><?= $chat->reciver_name ?><span class="chat_date"><?= Helper::time_elapsed_string($chat->date); ?></span></h5>
                     <p><?= $chat->reciver_name ?>: <?= $chat->message ?></p>
-                    <div class="text-right" style="width: 100%;"><a href="<?= PROOT ?>midwife/message/<?= $chat->sender; ?>">view</a></div>
+                    <div class="text-right" style="width: 100%;"><a href="<?= PROOT ?>mother/message/<?= $chat->sender; ?>">view</a></div>
                   <?php else : ?>
                     <h5><?= $chat->sender_name ?><span class="chat_date"><?= Helper::time_elapsed_string($chat->date); ?></span></h5>
                     <p>You: <?= $chat->message ?></p>
-                    <div class="text-right" style="width: 100%;"><a href="<?= PROOT ?>midwife/message/<?= $chat->idcardnum; ?>">view</a></div>
+                    <div class="text-right" style="width: 100%;"><a href="<?= PROOT ?>mother/message/<?= $chat->idcardnum; ?>">view</a></div>
                   <?php endif; ?>
                 </div>
               </div>
@@ -59,7 +56,7 @@
 
                 </div>
               </div>
-              <a href="<?= PROOT ?>midwife/message/<?= $user->idcardnum; ?>">view</a>
+              <a href="<?= PROOT ?>mother/message/<?= $user->idcardnum; ?>">view</a>
             </div>
           <?php endforeach; ?>
         </div>
@@ -92,7 +89,7 @@
 
         </div>
         <div class="type_msg">
-          <form action="<?= PROOT ?>midwife/message/<?= $this->activeChat; ?>" method="POST">
+          <form action="<?= PROOT ?>mother/message/<?= $this->activeChat; ?>" method="POST">
             <div class="input_msg_write">
               <input type="text" class="write_msg" id='message' name="message" placeholder="Type a message" value="<?= $this->message['message'] ?>" />
               <button class="msg_send_btn" type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>

@@ -8,7 +8,10 @@
 
 <div style="background-color: #E8EAEE">
   <div class="mother-heading" style="color: #265667;">
-    ලියාපදිංචි කිරීම් හා සම්බන්ධ තොරතුරු
+    <center>
+      <h1 class="motherHead">ලියාපදිංචි කිරීම් හා සම්බන්ධ තොරතුරු</h1>
+    </center>
+
   </div>
 
   <!-- Tables with search bar-->

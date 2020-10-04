@@ -14,6 +14,12 @@ class TimeTable extends Model{
         'join' => 'INNER JOIN user ON user.idcardnum = time_table.idcardnum']);
     }
 
+    public function getPendingTimeTablesCount(){
+        return count($this->find(['conditions'=>'approved = ?',
+        'bind'=>['0']]));
+    }
+
+
     public function findByID($id){
         return $this->findfirst(['conditions'=>['time_table.id = ?'],
         'bind'=>[$id],
