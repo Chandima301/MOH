@@ -60,7 +60,9 @@ class PreportController extends Controller{
             $_SESSION["editMode"]=0;
             $this->view->editMode=0;
             $new_data =new $param($param);
-            Helper::dnd($_POST);
+
+            $_POST["id"]=$_SESSION["motherid"];
+
             $new_data->updateDatabase(Helper::posted_values($_POST));
             
         }
@@ -76,6 +78,7 @@ class PreportController extends Controller{
 
     public function clinicCare1Action($param = "clinicCare1")
     {
+      $this->view->btn_state["clinicCare1"]="active";
     if (isset($param)) {
       if (isset($_POST["editButton"])) {
         $_SESSION["editMode"] = 1;
@@ -101,6 +104,7 @@ class PreportController extends Controller{
 
   public function weightChartAction($param = "weightChart")
     {
+      $this->view->btn_state["weightChart"]="active";
       if (isset($param)) {
         if (isset($_POST["editButton"])) {
           $_SESSION["editMode"] = 1;
