@@ -1,12 +1,14 @@
 <?php
 
+
 require 'C:\xammp\htdocs\MOH\core\Model.php';
 require 'C:\xammp\htdocs\MOH\core\Report.php';
 require 'C:\xammp\htdocs\MOH\app\models\dailyworkReport.php';
 require 'C:\xammp\htdocs\MOH\config\config.php';
 require 'C:\xammp\htdocs\MOH\core\DB.php';
 require 'C:\xammp\htdocs\MOH\app\models\User.php';
-require '';
+require 'C:\xammp\htdocs\MOH\app\models\ICEmaterial.php';
+
 
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -60,9 +62,11 @@ function noticeArea()
             $newDailyworkReport = new dailyworkReport();
             $newDailyworkReport = $newDailyworkReport->findFirst(["conditions" => ["id =?", "period=?"], "bind" => [$user->id, strtotime("first day of last month")]]);
             $coulmn = date('j');
+            if( $newDailyworkReport->{$coulmn}){
             $msg = "අද දින සායන පැවැත්වීමට නියමිත ප්‍රදේශය " . $newDailyworkReport->{$coulmn};
             sendMail($user->email, "Daily Work Report Announcement", $msg);
         }
+     }
     }
 }
 
@@ -76,16 +80,55 @@ function notifyMother()
 
             $ICEreport = $ICEreport->findFirst(["conditions" => ["id =?"],"bind" =>[$user->id]]);
             $nextClinic = $ICEreport->{28};
+            if(date_format($nextClinic,"Y/m/j")){
+            if(isset($nextClinic)){
+            // $nextClinic="2020/10/2";
             $nextDate = explode('/',$nextClinic);
-
-            $nextMonth = $nextDate[0];
-            $nextDay = (string)(int)$nextDate[1];
-            $date = explode('/', date('Y/m/d'));
-            $month = $date[0] . '/' . $date[1];
-            $day = (string)(int)$date[2];
-            if ($day == $nextDay) {
-                Helper::dnd("sandaruwan");
+            
+            
+          
+            
+            if(date("Y")==$nextDate[0]){
+                if(date("m")==$nextDate[1]){
+                    if(date("j")+1==$nextDate[2]){
+                        $msg = "හෙට දින නියමිත මාතෲ සායනයක් පැවැත්වේ. එයට සහභාගි වන්න.";
+                        sendMail($user->email, "Maternity Clinic Remainder", $msg);
+                    }
+                }
             }
+        }
+            
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
         }
     }
 }
