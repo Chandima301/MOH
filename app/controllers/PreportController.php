@@ -60,7 +60,9 @@ class PreportController extends Controller{
             $_SESSION["editMode"]=0;
             $this->view->editMode=0;
             $new_data =new $param($param);
+
             $_POST["id"]=$_SESSION["motherid"];
+
             $new_data->updateDatabase(Helper::posted_values($_POST));
             
         }
