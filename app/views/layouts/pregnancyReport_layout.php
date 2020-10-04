@@ -86,14 +86,13 @@
 
 
 
+    <div class="footer">
+        
 
-
-
-
-
-
-
-
+        <div class="footer-bottom">
+            Created by <snap style="color: white;">University of Moratuwa</snap> | &copy; 2020 All Rights Reserved
+        </div>
+    </div>
 
 </body>
 

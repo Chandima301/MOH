@@ -5,12 +5,12 @@
 <main role="main">
   <div class="marketing mb-5" style="border: solid black; margin-top: 50px; padding:15px">
           <?php if(!$this->editMode){ ?>
-                    <form action="<?=PROOT?>mother/edit/postnatalCare" method="post">
+                    <form action="<?= PROOT ?><?= $this->controller; ?>/edit/postnatalCare" method="post">
                         <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                     </form>
           <?php }?>
 
-            <form action="<?=PROOT?>mother/save/postnatalCare" method="post" style="margin: 30px;">
+            <form action="<?= PROOT ?><?= $this->controller; ?>/save/postnatalCare" method="post" style="margin: 30px;">
               <div class='col-sm-6 alert alert-success mx-auto' id='success' style="display: none;">
                   <p>තොරතුරු සටහන්කිරීම සාර්ථකයි.</p>
               </div>
