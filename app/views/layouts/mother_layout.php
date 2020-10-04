@@ -46,7 +46,7 @@
 </head>
 
 
-<body style="background-color: rgb(198, 220, 253); ">
+<body style="background-color: rgb(198, 220, 253);">
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top " style="background-color:rgb(43, 51, 71) ;">
       <a class="navbar-brand" href="#">

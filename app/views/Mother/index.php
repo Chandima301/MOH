@@ -12,7 +12,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="<?= PROOT ?>/img/Pregnancy_Partner.jpg" class="d-block w-100" alt="">
+      <img src="<?= PROOT ?>/img/Pregnancy_Partner.jpg" class="d-block w-100" alt="" style="object-fit:cover;">
       <div class="container">
         <div class="carousel-caption text-left">
 
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="<?= PROOT ?>/img/food.webp" class="d-block w-100" alt="">
+      <img src="<?= PROOT ?>/img/food.webp" class="d-block w-100" alt="" style="object-fit:cover;">
       <div class="container">
         <div class="carousel-caption">
           <h1 style="color: black;">What Foods to Eat During Pregnancy for an Intelligent Baby.</h1>
