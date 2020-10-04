@@ -8,55 +8,84 @@
         <h5>MOH(Medical Officer Of Health) Office Kelaniya</h5>
     </div>
     <hr>
-
-    <div class="sub">
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Collapsible Group Item #1
-                        </button>
-                    </h2>
-                </div>
-
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Collapsible Group Item #2
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Collapsible Group Item #3
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <h6>Notifications</h6>
+    <div class='alert alert-info mx-auto mt-2' id='nonotifications' style="display: none;">
+        <p>No notifications</p>
     </div>
+    <div class="list-group mt-2">
+        <?php foreach ($this->notifications as $notification) : ?>
+            <a href="<?= PROOT ?>medicalofficer/approve" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><?= $notification["content"] ?></h5>
+                    <small><?= Helper::time_elapsed_string($notification["date"]); ?></small>
+                </div>
+
+            </a>
+        <?php endforeach; ?>
+
+    </div> 
+
+    <h6 class="mt-2">නව ලියාපදිංවීම් දත්ත</h6>
+
+    <div class="col-md-6 mt-2">
+        <canvas id="weight" width="500" height="300"></canvas>
+    </div>
+
+    <script src="<?= PROOT ?>/js/Chart.bundle.js"></script>
+
+    <script>
+        var ctx = document.getElementById('weight');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                label: 'Scatter Dataset',
+                datasets: [{
+                    label: 'Mothers',
+                    data: [<?php foreach ($this->monthlydata as $month => $num) : ?>
+                            {x: "<?= $month ?>",y: <?= $num ?>},
+                            <?php endforeach; ?>
+                            ],
+                    backgroundColor: [
+                        'rgba(0, 0, 0, 0)'
+                    ],
+                    borderColor: [
+                        'rgba(0, 0, 0,1)'
+                    ],
+                    borderWidth: 1,
+
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            stepSize: 1,
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'No. of registrations'
+                        }
+                    }],
+                    xAxes: [{
+                        type: 'time',
+                        time: {
+                            unit: 'month',
+                        },
+                        distribution: 'series',
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Month'
+                        }
+
+                    }]
+                }
+            }
+        });
+    </script>
+
+
 
 </div>
 

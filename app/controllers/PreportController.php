@@ -9,6 +9,7 @@ class PreportController extends Controller{
         $this->view->btn_state=['registerDetails'=>'', 'personalDetails'=>'','familyHistory'=>'','surgicalHistory'=>'','presentObsHistory'=>'','pastObsHistory'=>'','clinicCare1'=>'','clinicCare2'=>'','immunization'=>'','weightChart'=>'','emergancyPlan'=>'','iCEmaterial'=>'','preClinic'=>''];
         $this->view->editMode= isset($_SESSION['editMode']) ? $_SESSION['editMode'] : 0 ;
         $this->view->controller = 'preport';
+        $this->load_model('User');
     
     }
     public function indexAction(){
@@ -36,6 +37,9 @@ class PreportController extends Controller{
             $this->view->btn_state[$param]='active';
             $Mother = new $param($param);
             $this->view->Mother = $Mother->getFromDatabase($_SESSION['motherid']);
+            $MotherTable = new Mother();
+            $this->view->MotherTable = $MotherTable->getByID($this->UserModel->findByAutoIncID($_SESSION['motherid'])->idcardnum);
+            //Helper::dnd($MotherTable->getByUniqueID($_SESSION['motherid']));
             $this->view->render('Mother/'.$param);
 
         }

@@ -210,7 +210,8 @@
     display: inline-block;
     border-radius: 2px;
     border: solid 1px #646464;
-    width: 100px;
+    width: 50px;
+    margin-left: 10px;
 }
 
 .notification:hover {

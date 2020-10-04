@@ -3,7 +3,8 @@ class DB{
     private static $_instance = null;
     private $_pdo, $_query, $_error = false, $_result, $_count = 0, $_lastInsertID = null;
 
-    private function __construct(){
+    //Singleton Design Pattern                    
+    private function __construct(){         //Constructor is private. So other classes can't initiate an object from this class
         try{
             $this->_pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASSWORD);
             $this->_pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -13,7 +14,7 @@ class DB{
         }
 
     }
-
+    //If there is no object, this will create new one unless this will pass the firstly created one
     public static function getInstance(){
         if(!isset(self::$_instance)){
             self::$_instance = new DB();
@@ -21,6 +22,7 @@ class DB{
         return self::$_instance;
     }
 
+    //This method is used to get data from database. This prevent SQL injection. When we access database, we always go through this method
     public function query($sql, $params = []){
         $this->_error = false;
         if($this->_query = $this->_pdo->prepare($sql)){
@@ -32,7 +34,7 @@ class DB{
                 }
             }
             if($this->_query->execute()){
-                $this->_result = $this->_query->fetchAll(PDO::FETCH_OBJ);
+                $this->_result = $this->_query->fetchAll(PDO::FETCH_OBJ); //All the data are inserted to this variable
                 $this->_count = $this->_query->rowCount();
                 $this->_lastInsertID = $this->_pdo->lastInsertID();
             }else{
@@ -42,6 +44,7 @@ class DB{
         return $this; 
     }
     
+    //This method is used to insert data  to database
     public function insert($table, $fields = []){
         $fieldString = '';
         $valueString = '';
@@ -63,6 +66,7 @@ class DB{
         return false;
     }
 
+    //This method is used to update a database row
     public function update($table, $fields = [], $key, $keyvalue){
         $fieldString = '';
         $values = [];
@@ -83,6 +87,7 @@ class DB{
 
     }
 
+    //This method is used to delete a row in table
     public function delete($table, $key, $keyvalue){
         $sql = "DELETE FROM {$table} WHERE {$key} = {$keyvalue}";
         if(!$this->query($sql)->error()){
@@ -91,6 +96,7 @@ class DB{
         return false;
     }
 
+    //This method is used to search all the items corresponding to the conditions that are given
     protected function _read($table, $params=[]){
 
         $conditionString = '';
@@ -142,7 +148,10 @@ class DB{
 
 
         $sql = "SELECT {$columns} FROM {$table}{$join}{$conditionString}{$order}{$limit}";
-       // Helper::dnd($sql);
+
+        
+       //Query method is called to access database
+
         if ($this->query($sql, $bind)) {
             if (!count($this->_result)) {
                 return false;
@@ -152,19 +161,22 @@ class DB{
         return false;
     }
 
+    //This method returns all the items corresponding to the given conditions using read method
     public function find($table, $params){
         if($this->_read($table, $params)){
-            return $this->results();
+            return $this->results(); //give all the data in the result variable using result method
         }
         return false;
     }
 
+    //This method is used to return first item according to the given conditions using read method
     public function findFirst($table, $params){
         if($this->_read($table, $params)){
-            return $this->first();
+            return $this->first(); // give only first item from result variable
         }
         return false;
     }
+
 
     public function first(){
         return (!empty($this->_result))? $this->_result[0] : [];
@@ -179,6 +191,7 @@ class DB{
         return $this->_result;
     }
 
+    //This returns the number of items returned by query method
     public function count(){
         return $this->_count;
     }
@@ -186,7 +199,7 @@ class DB{
     public function get_columns($table){
         return $this->query("SHOW COLUMNS FROM {$table}")->results();
     }
-
+    
     public function lastID(){
         return $this->_lastInsertID;
     }
