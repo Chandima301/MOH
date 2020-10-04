@@ -84,6 +84,7 @@ class WorkplanController extends Controller{
         $month_sum =new $param();
         $month_sum =$month_sum->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
         
+        
         $today =new $param();
         $today =$today->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,date('Y-m-j')]]);
         $data=[];
@@ -91,10 +92,10 @@ class WorkplanController extends Controller{
         foreach($_POST as $key => $value){
             if(is_numeric($value)){
                 if((int)$value!=$today->$key ){
-                   if(isset($today->$key)) {
+                   if(!isset($today->$key)) {
                     $today->$key=0;
                    }
-                   if(isset($month_sum->$key)) {
+                   if(!isset($month_sum->$key)) {
                     $month_sum->$key=0;
                    }
                 $data[$key]=((int)$value-$today->$key) + $month_sum->$key;
