@@ -1,8 +1,14 @@
 <?php 
 $this->start("body"); ?>
 <!--list of the mothers have registered-->
+<div class="row justify-content-center mt-5 mb-2">
+<center>
+        <h1>ලියාපදිංචි </h1>
+    </center>
+</div>
+<div  class="container" style="background:white; padding:10px; border: 2px black solid;">
 <div class="container" style="position: relative ;">
-    <div class="row justify-content-center mt-3">
+    <div class="row justify-content-center" >
         <div class="sub-tab" id="midwifedetail" style="display: block;width: 100%;" style="font-size: small;">
             <nav class="navbar navbar-light" style="background-color: #d4d3cf;">
                 <form class="form-inline" style="display:block;width: 100%;" method="POST"
@@ -12,7 +18,7 @@ $this->start("body"); ?>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </nav>
-
+            
             <table class="table">
                 <thead>
                     <tr>
@@ -56,11 +62,13 @@ $this->start("body"); ?>
 
                 </tbody>
             </table>
+        
 
 
         </div>
 
 
     </div>
+</div>
 </div>
 <?php $this->end("body");?>
