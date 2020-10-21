@@ -12,6 +12,9 @@ class PreportController extends Controller
     $this->view->editMode = isset($_SESSION['editMode']) ? $_SESSION['editMode'] : 0;
     $this->view->controller = 'preport';
     $this->load_model('User');
+    $this->load_model('Message');
+    $this->view->newMsgCount = $this->MessageModel->getNewMsgCount();
+
   }
   public function indexAction()
   {

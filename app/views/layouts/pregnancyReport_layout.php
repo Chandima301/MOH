@@ -55,7 +55,7 @@
                         <a href="<?= PROOT ?>midwife/message">
                             <button type="button" class="btn btn-primary btn-msg">
                                 <i class="fa fa-comments fa-lg"></i>
-                                <span class="badge badge-danger">40</span>
+                                <span class="badge badge-danger"><?= $this->newMsgCount ?></span>
                             </button>
                         </a>
                     </li>
@@ -87,8 +87,6 @@
 
 
     <div class="footer">
-        
-
         <div class="footer-bottom">
             Created by <snap style="color: white;">University of Moratuwa</snap> | &copy; 2020 All Rights Reserved
         </div>
