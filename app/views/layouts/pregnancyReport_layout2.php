@@ -126,6 +126,15 @@
                     <li class="side-tab <?=$this->btn_state['preClinic'];?>">
                         <a href="<?=PROOT?>preport/reportView/preClinic">13.පූර්ව ප්‍රසව සැසි සදහා පැමිණීම</a>
                     </li>
+                    <li class="side-tab <?=$this->btn_state['hospitalClinc'];?>">
+                        <a href="<?=PROOT?>preport/hospitalClinc/hospitalClinc">14.රෝහල් සායනික සං‍රක්ෂණය</a>
+                    </li>
+                    <li class="side-tab <?=$this->btn_state['postnatalCare'];?>">
+                        <a href="<?=PROOT?>preport/reportView/postnatalCare">15.ප්‍රසව සහ පසුප්‍රසව සං‍රක්ෂණය</a>
+                    </li>
+                    <li class="side-tab <?=$this->btn_state['postpatumCare'];?>">
+                        <a href="<?=PROOT?>preport/reportView/postpatumCare">16.පසු ප්‍රසව සානික සං‍රක්ෂණය</a>
+                    </li>
 
                 </ul>
             </div>

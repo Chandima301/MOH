@@ -60,7 +60,7 @@
                         <a href="<?= PROOT ?>midwife/message">
                             <button type="button" class="btn btn-primary btn-msg">
                                 <i class="fa fa-comments fa-lg"></i>
-                                <span class="badge badge-danger">40</span>
+                                <span class="badge badge-danger"><?= $this->newMsgCount ?></span>
                             </button>
                         </a>
                     </li>
@@ -77,7 +77,7 @@
             </div>
         </header>
     </nav>
-    <div class="container"></div>
+   
     <script src="/js/jquery-3.4.1.js"></script>
     <script src="/bootstrap/js/bootstrap.js"></script>
     <!--end of the menu bar-->
@@ -86,28 +86,8 @@
 
 
     <?= $this->content("body"); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
 </body>
 
 </html>

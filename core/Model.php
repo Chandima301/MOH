@@ -6,7 +6,7 @@ class Model {
     public $id;
 
     public function __construct($table){
-        $this->_db = DB::getInstance();
+        $this->_db = DbPdoImp::getInstance();
         $this->_table = $table;
         $this->_setTableColumns();
         $this->_modelName = str_replace(' ', '', ucwords(str_replace('_', ' ', $this->_table)));

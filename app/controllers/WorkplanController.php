@@ -10,6 +10,8 @@ class WorkplanController extends Controller{
         $this->view->editMode= isset($_SESSION['editMode_w']) ? $_SESSION['editMode_w'] : 0 ;
         $this->period= isset($_SESSION['period']) ? $_SESSION['period'] : date('Y-m') ;
         $this->view->period =$this->period;
+        $this->load_model('Message');
+        $this->view->newMsgCount = $this->MessageModel->getNewMsgCount();
 
 
 
