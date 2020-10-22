@@ -77,7 +77,11 @@ class Model {
 
         if(property_exists($this, 'id') && $this->id != ''){
             return $this->update($fields, 'id', $this->id);
-        }else{
+        }else if($this->findFirst(["idcardnum"=>$this->idcardnum])){
+            Helper::dnd($fields);
+            return $this->update($fields, 'idcardnum', $this->idcardnum);
+        }
+        else{
             return $this->insert($fields);
         }
     }

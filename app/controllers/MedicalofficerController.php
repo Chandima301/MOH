@@ -26,15 +26,14 @@ class MedicalofficerController extends Controller
         }
 
         $this->view->notifications = $notifications;
-        if(!$notifications){
+        if (!$notifications) {
             $this->view->script = "<script>view('nonotifications');</script>";
         }
-       
+
         $this->view->monthlydata = $this->MotherModel->getApprovedMothersCountMonthly();
         //Helper::dnd($this->view->monthlydata);
         $this->view->render('medicalOfficer/index');
-        
-       }
+    }
 
     public function messageAction($id = '')
     {
@@ -149,31 +148,29 @@ class MedicalofficerController extends Controller
     public function cancelAction()
     {
         $logs = [];
-        $posted_values = ['date' => '', 'message'=>''];
-        if($_POST){
+        $posted_values = ['date' => '', 'message' => ''];
+        if ($_POST) {
             $posted_values = Helper::posted_values($_POST);
             $mediator = new Emailmediator();
             $mothers = $this->MedicalofficerModel->getMothersForGivenClinicDate($_POST['date']);
-            foreach($mothers as $mother){
+            foreach ($mothers as $mother) {
                 $mother->setMediator($mediator);
                 $mediator->addUser($mother);
             }
             User::currentUser()->setMediator($mediator);
             $mediator->addUser(User::currentUser());
-            
+
             $logs = User::currentUser()->send($_POST['message']);
-            if($logs){
+            if ($logs) {
                 $this->view->script = "<script>view('logs');</script>";
             }
-
         }
 
         $this->view->logs = $logs;
         $this->posted_values = $posted_values;
-        
+
         $this->view->btn_state['cancel'] = 'active';
         $this->view->render('medicalOfficer/cancel');
-
     }
 
     public function detailsAction()
@@ -189,7 +186,27 @@ class MedicalofficerController extends Controller
     {
         $this->view->btn_state['details'] = 'active';
         $this->view->btn_state['register-tab'] = 'active';
+        $this->view->page_state = 'register';
         $this->view->post = ['name' => '', 'idcardnum' => '', 'birthday' => '', 'address' => '', 'phone' => '', 'email' => '', 'pwd' => '', 'confirm' => ''];
+        $this->view->render('medicalOfficer/register');
+    }
+
+    public function updateAction($idcardnum = "")
+    {
+        $this->view->btn_state['details'] = 'active';
+        $this->view->btn_state['register-tab'] = 'active';
+        $this->view->page_state = 'update';
+        $post = ['name' => '', 'idcardnum' => '', 'birthday' => '', 'address' => '', 'phone' => '', 'email' => ''];
+        $this->view->post = $post;
+        if ($idcardnum != "") {
+            $midwife = $this->MedicalofficerModel->findByID($idcardnum);
+            foreach ($post as $p => $s) {
+                $this->view->post[$p] = $midwife->$p;
+            }
+            $this->view->id = $midwife->id;
+            $this->view->post["pwd"] = "";
+            $this->view->post["confirm"] = "";
+        }
         $this->view->render('medicalOfficer/register');
     }
 
@@ -219,66 +236,85 @@ class MedicalofficerController extends Controller
 
 
     public function registermidwifeAction()
-    {
+    {   
+        $this->view->page_state = 'register';
         $this->view->btn_state['details'] = 'active';
         $this->view->btn_state['register-tab'] = 'active';
         $validation = new Validate();
         $posted_values = ['name' => '', 'idcardnum' => '', 'birthday' => '', 'address' => '', 'phone' => '', 'email' => '', 'pwd' => '', 'confirm' => ''];
         if ($_POST) {
+            $this->view->page_state = $_POST["page_state"];
             $posted_values = Helper::posted_values($_POST);
-            $validation->check($_POST, [
-                'name' => [
-                    'display' => 'Name',
-                    'required' => true,
-                    'max' => 100
-                ],
-                'idcardnum' => [
+            if ($_POST["page_state"] == "register") {
+                $validate = [
+                    'name' => [
+                        'display' => 'Name',
+                        'required' => true,
+                        'max' => 100
+                    ],
+                    'idcardnum' => [
+                        'display' => 'ID card number',
+                        'required' => true,
+                        'min' => 10,
+                        'unique' => 'user'
+
+                    ],
+                    'birthday' => [
+                        'display' => 'Birthday',
+                        'required' => true,
+                        'max' => 10
+                    ],
+                    'address' => [
+                        'display' => 'address',
+                        'required' => true,
+                        'max' => 250
+                    ],
+                    'phone' => [
+                        'display' => 'Phone number',
+                        'required' => true,
+                        'max' => 10,
+                        'is_numeric' => true
+                    ],
+                    'email' => [
+                        'display' => 'Email address',
+                        'required' => true,
+                        'max' => 150,
+                        'valid_email' => true,
+                        'unique' => 'user'
+                    ],
+                    'pwd' => [
+                        'display' => 'Password',
+                        'required' => true,
+                        'min' => 8
+                    ],
+                    'confirm' => [
+                        'display' => 'Repeat-password',
+                        'required' => true,
+                        'matches' => 'pwd'
+                    ],
+                ];
+                $validation->check($_POST, $validate);
+            } else {
+                $validate["idcardnum"] = [
                     'display' => 'ID card number',
                     'required' => true,
-                    'min' => 10,
-                    'unique' => 'user'
-
-                ],
-                'birthday' => [
-                    'display' => 'Birthday',
-                    'required' => true,
-                    'max' => 10
-                ],
-                'address' => [
-                    'display' => 'address',
-                    'required' => true,
-                    'max' => 250
-                ],
-                'phone' => [
-                    'display' => 'Phone number',
-                    'required' => true,
-                    'max' => 10,
-                    'is_numeric' => true
-                ],
-                'email' => [
+                    'min' => 10
+                ];
+                $validate["email"] = [
                     'display' => 'Email address',
                     'required' => true,
                     'max' => 150,
-                    'valid_email' => true,
-                    'unique' => 'user'
-                ],
-                'pwd' => [
-                    'display' => 'Password',
-                    'required' => true,
-                    'min' => 8
-                ],
-                'confirm' => [
-                    'display' => 'Repeat-password',
-                    'required' => true,
-                    'matches' => 'pwd'
-                ],
-            ]);
+                    'valid_email' => true
+                ];
+                $validation->check($_POST, $validate);
+            }
+
             if ($validation->passed()) {
                 $newUser = new User();
                 $newUser->user_type = 'MI';
                 $newUser->registerNewUser($_POST);
                 $this->view->btn_state['details'] = 'active';
-                $posted_values = ['name' => '', 'idcardnum' => '', 'birthday' => '', 'address' => '', 'phone' => '', 'email' => '', 'pwd' => '', 'confirm' => ''];
+                if ($_POST["page_state"] == "register")$posted_values = ['name' => '', 'idcardnum' => '', 'birthday' => '', 'address' => '', 'phone' => '', 'email' => '', 'pwd' => '', 'confirm' => ''];
                 $this->view->script = "<script>view('success');</script>";
             }
         }
