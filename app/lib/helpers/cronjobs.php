@@ -1,6 +1,6 @@
 <?php
 
-
+//import all the files which waant to crete corresponding models
 require 'C:\xammp\htdocs\MOH\core\Model.php';
 require 'C:\xammp\htdocs\MOH\core\Report.php';
 require 'C:\xammp\htdocs\MOH\app\models\dailyworkReport.php';
@@ -23,7 +23,7 @@ require 'PHPMailer\src\PHPMailer.php';
 /* SMTP class, needed if you want to use SMTP. */
 require 'PHPMailer\src\SMTP.php';
 
-function sendMail($to, $subject, $msg)
+function sendMail($to, $subject, $msg) // email function to send emails
 {
     $mail = new PHPMailer();
     $mail->IsSMTP();
@@ -52,10 +52,10 @@ function sendMail($to, $subject, $msg)
     }
 }
 
-function noticeArea()
+function noticeArea() //notify midwifes about their work area
 {
     $users = new User();
-    $users = $users->getAllusers("MI");
+    $users = $users->getAllusers("MI"); //get all the midwifws
     foreach ($users as $user) {
         if ($user->id) {
             var_dump($user->name);
@@ -70,10 +70,10 @@ function noticeArea()
     }
 }
 
-function notifyMother()
+function notifyMother()  //notify mother about the clinc dates which they should come to
 {
     $users = new User();
-    $users = $users->getAllusers("M");
+    $users = $users->getAllusers("M"); //get all the mothers
     foreach ($users as $user) {
         if ($user->id) {
             $ICEreport = new ICEmaterial();

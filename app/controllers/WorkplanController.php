@@ -9,7 +9,7 @@ class WorkplanController extends Controller{
         $this->view->btn_state=['familiesWkp'=>'', 'maternitypreservation'=>'','mtpr'=>'','mtfpj'=>'','preganacyResult'=>'','latepreganacypreservation'=>'','babypreservation'=>'','babypreservation1to5'=>'','babyandteenpreservation1to5'=>'','familyplan'=>'','genderhelth'=>''];
         $this->view->editMode= isset($_SESSION['editMode_w']) ? $_SESSION['editMode_w'] : 0 ;
         $this->period= isset($_SESSION['period']) ? $_SESSION['period'] : date('Y-m') ;
-        $this->view->period =$this->period;
+        $this->view->period =$this->period; 
 
 
 
@@ -20,7 +20,7 @@ class WorkplanController extends Controller{
          $mohid= $this->user->id;
          $this->view->btn_state['familiesWkp']="active";
          $this->view->dates=$this->findDates($this->period,"familiesWkp");
-         $month_sum =new familiesWkp();
+         $month_sum =new familiesWkp(); // go to the first sub report of the report
          $this->view->month_sum =$month_sum->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
 
          $this->view->render('Midwife/Workplan/familiesWkp');
@@ -29,7 +29,7 @@ class WorkplanController extends Controller{
      public function reportViewAction($param="familiesWkp"){
         if(isset($param)){
             $this->view->btn_state[$param]='active';
-            $this->view->dates=$this->findDates($this->period,$param);
+            $this->view->dates=$this->findDates($this->period,$param); // find all the dates of the corresponding period
             $month_sum =new $param();
             $this->view->month_sum =$month_sum->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
 
@@ -41,7 +41,7 @@ class WorkplanController extends Controller{
     public function findDates( $month,$param){
         $dates=[];
         $mohid= $this->user->id;
-        $numOfDates=cal_days_in_month(CAL_GREGORIAN,date("m"),date("Y"));
+        $numOfDates=cal_days_in_month(CAL_GREGORIAN,date("m"),date("Y")); //num of dates of the month
         for($date=1; $date<=$numOfDates; $date++){
             $newDate =new $param();
             $dates[] =$newDate->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$mohid,$this->period."-".$date]]);
@@ -50,7 +50,7 @@ class WorkplanController extends Controller{
         return $dates;
 
     }
-    public function editModeAction($param=null){
+    public function editModeAction($param=null){ // edit the report
         if(isset($_POST["editButton"])){
             $_SESSION["editMode_w"]=1;
             $this->view->editMode=1;
@@ -58,19 +58,19 @@ class WorkplanController extends Controller{
         }
        $this->reportViewAction($param);
     }
-    public function saveModeAction($param){
+    public function saveModeAction($param){ // save the edited data
         if(isset($_POST["saveButton"])){
             $_SESSION["editMode_w"]=0;
             $this->view->editMode=0;
             $this->savetoSum($param);
-            $newDate =new $param(); // dnd(posted_values($_POST));
+            $newDate =new $param(); 
             $newDate->updateDatabase2(Helper::posted_values($_POST),["period"=>date('Y-m-j')]);
             
             
         }
         $this->reportViewAction($param);
     }
-    public function seeMonthReportsAction($param){
+    public function seeMonthReportsAction($param){ // see previous months reports
         $_SESSION['editMode_w'] = 0 ;
         $this->view->editMode=0;
         if($_POST["period"]){
@@ -80,9 +80,9 @@ class WorkplanController extends Controller{
             $this->reportViewAction($param);
         }
     }
-    public function savetoSum($param){
+    public function savetoSum($param){  //count the sum of the date from beginning the month to today
         $month_sum =new $param();
-        $month_sum =$month_sum->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
+        $month_sum =$month_sum->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]); //get the sum row
         
         
         $today =new $param();
@@ -98,18 +98,18 @@ class WorkplanController extends Controller{
                    if(!isset($month_sum->$key)) {
                     $month_sum->$key=0;
                    }
-                $data[$key]=((int)$value-$today->$key) + $month_sum->$key;
+                $data[$key]=((int)$value-$today->$key) + $month_sum->$key; // get the actuall difference and add to current month sum
         }
         }
         }
-       // helper::dnd($data);
+       
         $data["id"]=$this->user->id;
         $data["period"]=$this->period;
         $month_sum->updateDatabase2(Helper::posted_values($data),["period"=>$this->period]);
 
     
     }
-    public function getMonthReportAction(){
+    public function getMonthReportAction(){  //get month report summery
         $fwk =new familiesWkp();
         $fwk=$fwk->findFirst(["conditions"=>["id =?", "period=?"],"bind"=>[$this->user->id,$this->period]]);
         $this->view->fwk=$fwk;

@@ -82,8 +82,7 @@ class Model {
         }
     }
 
-    public function save1($params=[],$conditons=[]){
-        //Helper::dnd($params);
+    public function save1($params=[],$conditons=[]){ // save data the row which has id and if not insert new row
         $fields = [];
         foreach($params as $param =>$value){
             if(in_array($param, $this->_columnNames)){
@@ -101,19 +100,15 @@ class Model {
         }
 
         if(property_exists($this, 'id') && $this->id != ''){
-            //Helper::dnd($arr);
             if(!empty( $this->_db->findFirst($this->_table,$arr))){ //dnd($conditons);
-                  //Helper::dnd($this->id);
                  return $this->update2($fields, 'id', $this->id, $conditons);
 
             }
             else{
-              //Helper::dnd($fields);
                 return  $this->insert($fields);
 
             }
         }else{
-            //Helper::dnd($fields);
             return $this->insert($fields);
 
         }
@@ -124,17 +119,17 @@ class Model {
         return $this->_db->insert($this->_table, $fields);
     }
 
-    public function update($fields, $key, $keyvalue){
+    public function update($fields, $key, $keyvalue){ //update  with given id
         if(empty($fields) || $key == '' || $keyvalue == '') return false;
         return $this->_db->update($this->_table, $fields, $key, $keyvalue);
     }
 
-    public function update1($fields, $conditions){
+    public function update1($fields, $conditions){ //update with conditions
         if(empty($fields) || empty($conditions)) return false;
         return $this->_db->update1($this->_table, $fields, $conditions);
     }
 
-    public function update2($fields, $key, $keyvalue, $params=[]){
+    public function update2($fields, $key, $keyvalue, $params=[]){ //update with given id and more conditions
         
         if(empty($fields) || $key == '' || $keyvalue=='') return false;
         return $this->_db->update2($this->_table, $fields, $key, $keyvalue,$params);
@@ -173,7 +168,7 @@ class Model {
         return $this->_db->delete($this->_table, 'id', $id);
     }
 
-    public function lockANDfindFirst($params = []){
+    public function lockANDfindFirst($params = []){ // lock the table row for syncronization
         $params = $this->_softDeleteParamsAdding($params);
         $resultsQuery = $this->_db->lockANDfindFirst($this->_table, $params);
         $result = new $this->_modelName($this->_table);

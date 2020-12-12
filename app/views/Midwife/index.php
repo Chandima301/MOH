@@ -28,7 +28,7 @@
                     <i class="fa fa-desktop"></i>
                 </div>
                 <a href="<?=PROOT?>midwife/workplan" class="main-item">
-                    <h3>මගේ සැලැස්ම</h3>
+                    <h3>දින වැඩ වාර්තාව</h3>
                 </a>
             </div>
         </a>
@@ -48,7 +48,7 @@
                     <i class="fa fa-tablet"></i>
                 </div>
                 <a href="<?=PROOT?>midwife/dailyworkReport" class="main-item">
-                    <h3>දින වැඩ වාර්තාව</h3>
+                    <h3> ඉදිරි කාල සටහන</h3>
                 </a>
             </div>
         </a>

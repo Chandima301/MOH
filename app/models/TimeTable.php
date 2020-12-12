@@ -1,6 +1,6 @@
 <?php
 
-class TimeTable extends Model{
+class TimeTable extends Report{
     public function __construct(){
         $table = 'time_table';
         parent::__construct($table);

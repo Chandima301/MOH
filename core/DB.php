@@ -230,7 +230,7 @@ class DB{
 
     }
 
-    public function update2($table, $fields = [], $key, $keyvalue,$params=[]){
+    public function update2($table, $fields = [], $key, $keyvalue,$params=[]){ //update with more than one conditions
         $fieldString = '';
         $values = [];
         foreach($fields as $field => $value){

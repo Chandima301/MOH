@@ -10,16 +10,17 @@ class Report extends Model{
         return $this->findFirst(['conditions'=>"id = ?", 'bind' =>[$id]]);
 
     }
-    public function updateDatabase($params){
-        //Helper::dnd($params)
+    public function updateDatabase($params){ // update database with parameters
         $this->assign($params);
         $this->save1($params);
 
     }
-    public function updateDatabase2($params,$conditions){
+    public function updateDatabase2($params,$conditions){ //update data which has specific conditions 
         $this->assign($params);
         $this->save1($params,$conditions);
     }
+
+    
     
 
 
