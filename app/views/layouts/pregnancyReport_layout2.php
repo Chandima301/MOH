@@ -115,7 +115,7 @@
                         <a href="<?=PROOT?>preport/reportView/immunization">9.ප්‍රතිශක්තිකරණය</a>
                     </li>
                     <li class="side-tab <?=$this->btn_state['weightChart'];?>">
-                        <a href="<?=PROOT?>preport/reportView/weightChart">10.බර වැඩිවීමේ සටහන</a>
+                        <a href="<?=PROOT?>preport/weightChart/weightChart">10.බර වැඩිවීමේ සටහන</a>
                     </li>
                     <li class="side-tab <?=$this->btn_state['emergancyPlan'];?>">
                         <a href="<?=PROOT?>preport/reportView/emergancyPlan">11.හදිසි අවස්ථාවන් සදහා සැලසුම්</a>
@@ -125,6 +125,15 @@
                     </li>
                     <li class="side-tab <?=$this->btn_state['preClinic'];?>">
                         <a href="<?=PROOT?>preport/reportView/preClinic">13.පූර්ව ප්‍රසව සැසි සදහා පැමිණීම</a>
+                    </li>
+                    <li class="side-tab <?=$this->btn_state['hospitalClinc'];?>">
+                        <a href="<?=PROOT?>preport/hospitalClinc/hospitalClinc">14.රෝහල් සායනික සං‍රක්ෂණය</a>
+                    </li>
+                    <li class="side-tab <?=$this->btn_state['postnatalCare'];?>">
+                        <a href="<?=PROOT?>preport/reportView/postnatalCare">15.ප්‍රසව සහ පසුප්‍රසව සං‍රක්ෂණය</a>
+                    </li>
+                    <li class="side-tab <?=$this->btn_state['postpatumCare'];?>">
+                        <a href="<?=PROOT?>preport/reportView/postpatumCare">16.පසු ප්‍රසව සානික සං‍රක්ෂණය</a>
                     </li>
 
                 </ul>

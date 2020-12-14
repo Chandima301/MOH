@@ -9,11 +9,11 @@
                 <h3> 15. පසු ප්‍රසව සානික සං‍රක්ෂණය</h3>
             </div>
             <?php if(!$this->editMode){ ?>
-                      <form action="<?=PROOT?>mother/edit/postpatumCare" method="post">
+                      <form action="<?= PROOT ?><?= $this->controller; ?>/edit/postpatumCare" method="post">
                           <button type="submit" name="editButton" class="btn btn-primary edit">Edit</button>
                       </form>
             <?php }?>
-            <form action="<?=PROOT?>mother/save/postpatumCare" method="post" style="margin: 30px;">
+            <form action="<?= PROOT ?><?= $this->controller; ?>/save/postpatumCare" method="post" style="margin: 30px;">
               <div class='col-sm-6 alert alert-success mx-auto' id='success' style="display: none;">
                   <p>තොරතුරු සටහන්කිරීම සාර්ථකයි.</p>
               </div>

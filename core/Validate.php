@@ -6,7 +6,7 @@ class Validate
 
     public function __construct()
     {
-        $this->_db = DB::getInstance();
+        $this->_db = DbPdoImp::getInstance();
     }
 
     public function check($source, $items = [])

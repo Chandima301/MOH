@@ -7,7 +7,11 @@ class DwreportController extends Controller{
         $this->user =User::currentUser();
         $this->view->name = $this->user->name;
         $this->view->editMode= isset($_SESSION['editMode_dw']) ? $_SESSION['editMode_dw'] : 0 ;
+
         $this->load_model('User');
+
+        $this->load_model('Message');
+        $this->view->newMsgCount = $this->MessageModel->getNewMsgCount();
 
 
     }

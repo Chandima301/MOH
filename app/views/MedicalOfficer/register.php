@@ -4,18 +4,32 @@
 
 <div class="col-md-10 tab" id="detail">
     <div class="tab-heading">
-        පවුල් සෞඛ්‍ය සේවා නිලධාරිනියන් ලියාපදිංචි කිරීම් හා තොරතුරු
+        <?php if ($this->page_state == "register") : ?>
+            පවුල් සෞඛ්‍ය සේවා නිලධාරිනියන් ලියාපදිංචි කිරීම් හා තොරතුරු
+        <?php else : ?>
+            තොරතුරු යාවත්කාලීන කිරීම
+        <?php endif; ?>
     </div>
     <hr>
 
-    <div class="btn-group" id="tab-btn" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary <?= $this->btn_state['details-tab'] ?>" onclick="document.location = '<?= PROOT ?>medicalofficer/details'">තොරතුරු</button>
-        <button type="button" class="btn btn-secondary <?= $this->btn_state['register-tab'] ?>" onclick="document.location = '<?= PROOT ?>medicalofficer/register'">ලියාපදිංචි කිරිම්</button>
-    </div>
+    <?php if ($this->page_state == "register") : ?>
+        <div class="btn-group" id="tab-btn" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary <?= $this->btn_state['details-tab'] ?>" onclick="document.location = '<?= PROOT ?>medicalofficer/details'">තොරතුරු</button>
+            <button type="button" class="btn btn-secondary <?= $this->btn_state['register-tab'] ?>" onclick="document.location = '<?= PROOT ?>medicalofficer/register'">ලියාපදිංචි කිරිම්</button>
+        </div>
+
+    <?php endif; ?>
+
+
 
     <div class="sub-tab" id="midwiferegister" style="font-size: small;">
         <div class='alert alert-success mx-auto' id='success' style="display: none;">
-            <p>Registraction Sucsessfull</p>
+            <?php if ($this->page_state == "register") : ?>
+                <p>Registration Sucsessfull</p>
+            <?php else : ?>
+                <p>Updated sucsessfully</p>
+            <?php endif; ?>
+
         </div>
 
 
@@ -89,10 +103,21 @@
                         කරුනාකර මුරපදය නැවත ඇතුලත් කරන්න.
                     </div>
                 </div>
-            </div>
+            </div>  
+            <input type="hidden" class="form-control" id="page_state" name="page_state" value="<?= $this->page_state ?>">
+            
+            <?php if ($this->page_state == "update") : ?>
+                <input type="hidden" class="form-control" id="id" name="id" value="<?= $this->id ?>">
+            <?php endif; ?>
 
 
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <?php if ($this->page_state == "register") : ?>
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            <?php else : ?>
+                <button class="btn btn-primary" type="submit">Update</button>
+            <?php endif; ?>
+            <?php $_POST["page_state"] = $this->page_state;?>
+
         </form>
     </div>
 

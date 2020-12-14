@@ -6,7 +6,7 @@ class Model {
     public $id;
 
     public function __construct($table){
-        $this->_db = DB::getInstance();
+        $this->_db = DbPdoImp::getInstance();
         $this->_table = $table;
         $this->_setTableColumns();
         $this->_modelName = str_replace(' ', '', ucwords(str_replace('_', ' ', $this->_table)));
@@ -77,7 +77,11 @@ class Model {
 
         if(property_exists($this, 'id') && $this->id != ''){
             return $this->update($fields, 'id', $this->id);
-        }else{
+        }else if($this->findFirst(["idcardnum"=>$this->idcardnum])){
+            Helper::dnd($fields);
+            return $this->update($fields, 'idcardnum', $this->idcardnum);
+        }
+        else{
             return $this->insert($fields);
         }
     }

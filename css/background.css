@@ -1,8 +1,9 @@
-body{
+body {
     height: 100%;
     background-position: 0px 30px;
-    color:rgb(255, 255, 255) !important;
-    background-color:#4d5152 !important;
+
+    color: #fff !important;
     width: 100%;
-    
-   }
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/Midwife.jpg') !important;
+    background-size: cover !important;
+}

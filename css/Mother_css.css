@@ -15,9 +15,14 @@
     text-decoration: none;
 }
 
+.btn-logout:hover {
+    background-color: gray;
+    color: rgb(59, 59, 59);
+    transition: 0.3s;
+}
+
 body {
     padding-top: 3rem;
-    padding-bottom: 3rem;
     color: #5a5a5a;
 }
 

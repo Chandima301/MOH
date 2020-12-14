@@ -140,12 +140,14 @@
     border: 2px solid #b3aa85;
     animation-name: fadeIn;
     animation-duration: 0.2s;
+    overflow: auto;
 }
 
 .sub {
     background-color: #f5f3ee;
     padding: 10px;
     border: 2px solid #b3aa85;
+    overflow: auto;
 }
 
 #tab-btn button {

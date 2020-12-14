@@ -31,6 +31,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><i class="fa fa-birthday-cake"></i> <?= $this->midwife->birthday; ?></li>
                             <li class="list-group-item"><i class="fa fa-home"></i> <?= $this->midwife->address; ?></li>
+                            <li class="list-group-item"><a href="<?= PROOT ?>medicalofficer/update/<?= $this->midwife->idcardnum; ?>" class="btn btn-primary mt-3">Update details</a></li>
                         </ul>
                     </div>
                 </div>
