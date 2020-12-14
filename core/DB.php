@@ -1,4 +1,5 @@
 <?php
+
 interface DB{
 
     public function query($sql, $params = []);
@@ -17,5 +18,6 @@ interface DB{
     public function update2($table, $fields = [], $key, $keyvalue,$params=[]);
     public function lockANDfind($table, $params);
     public function lockANDfindFirst($table, $params);
+
 
 }
