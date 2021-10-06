@@ -5,7 +5,7 @@
    - ![image](https://user-images.githubusercontent.com/62075899/136267618-5716475a-94a3-4022-be3b-0171fac190a5.png)
    - ![image](https://user-images.githubusercontent.com/62075899/136267580-88b46dc3-28f6-4e4a-a1cc-7f6ea818414f.png)
 ### 2. Copy MOH folder to this -> `C:\xampp\htdocs`
-### 3. Open XAMPP 
+### 3. Open `XAMPP`
    - ![image](https://user-images.githubusercontent.com/62075899/136267676-e64113dd-ead9-439b-9793-3303ad7b48b8.png)
 ### 4. Click start button of the first two(Apache and MySQL). Then minimize this software. You need this to log in to the website
    - ![image](https://user-images.githubusercontent.com/62075899/136267781-4ab3f96f-c3b6-460d-96de-36b22c02a7d2.png)
