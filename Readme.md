@@ -1,5 +1,6 @@
-# This is the implementation of MOH web based application
-## How to install
+# This is the implementation of the application for Medical Officer of Health, Kelaniya, Sri Lanka.
+
+## How to install the application
 
 ### 1. Install [XAMPP](https://www.apachefriends.org/index.html) software. 
    - ![image](https://user-images.githubusercontent.com/62075899/136267618-5716475a-94a3-4022-be3b-0171fac190a5.png)
